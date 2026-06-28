@@ -8,7 +8,7 @@ class AudioEngine {
     this.ctx = null;
     this.masterGain = null;
     this.isPlayingMusic = false;
-    this.audioElement = new Audio('audio/carrots.mp3');
+    this.audioElement = new Audio('/audio/carrots.mp3');
     this.audioElement.loop = true;
     this.audioElement.volume = 0.50; // Pleasant background volume
   }
@@ -697,7 +697,17 @@ document.getElementById('btn-activate').addEventListener('click', async () => {
 
   // Audio initialization
   audio.init();
-  audio.startAmbientMusic();
+  // Resume AudioContext (required by Chrome)
+  if (audio.ctx && audio.ctx.state === "suspended") {
+    audio.ctx.resume();
+  }
+
+  // Start the music
+  audio.audioElement.play()
+    .then(() => {
+      audio.isPlayingMusic = true;
+    })
+    .catch(err => console.log(err));
   audioPanel.classList.remove('hidden');
   audioPanel.classList.add('flex');
   audioIcon.className = 'fas fa-volume-up text-cyber-cyan';
@@ -1357,4 +1367,3 @@ async function runEndingSequence() {
 }
 
 // Start playing music loop as soon as the script parses/loads
-audio.startAmbientMusic();
