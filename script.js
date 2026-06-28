@@ -8,7 +8,7 @@ class AudioEngine {
     this.ctx = null;
     this.masterGain = null;
     this.isPlayingMusic = false;
-    this.audioElement = new Audio('/audio/carrots.mp3');
+    this.audioElement = new Audio('audio/carrots.mp3');
     this.audioElement.loop = true;
     this.audioElement.volume = 0.50; // Pleasant background volume
   }
