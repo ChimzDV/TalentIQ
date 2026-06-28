@@ -1,7 +1,4 @@
-/**
- * OPERATION CARROTS - MAIN LOGIC SHEET (VANILLA JAVASCRIPT)
- * Features: Web Audio API Synth, Canvas Particles, Phase Controllers, Keyboard Buffers
- */
+
 
 // -------------------------------------------------------------
 // 1. AUDIO SYNTHESIZER ENGINE (Web Audio API)
@@ -11,9 +8,9 @@ class AudioEngine {
     this.ctx = null;
     this.masterGain = null;
     this.isPlayingMusic = false;
-    this.audioElement = new Audio('/audio/carrots.mp3');
+    this.audioElement = new Audio('audio/carrots.mp3');
     this.audioElement.loop = true;
-    this.audioElement.volume = 0.45; // Pleasant background volume
+    this.audioElement.volume = 0.50; // Pleasant background volume
   }
 
   init() {
