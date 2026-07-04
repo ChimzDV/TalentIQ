@@ -1,397 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-  <!-- SEO & Metadata -->
-  <title>CLASSIFIED: OPERATION CARROTS</title>
-  <meta name="description" content="Mission Briefing: Operation Carrots. Restricted clearance required." />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
-    rel="stylesheet">
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- Custom Style Sheet -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="A quiet little moment, made just for you." />
+  <title>For You</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap"
+    rel="stylesheet" />
 </head>
 
-<body class="bg-cyber-bg text-cyber-text antialiased selection:bg-cyber-cyan/30 overflow-x-hidden selection:text-white">
+<body>
 
-  <!-- CRT monitor overlays -->
-  <div class="crt-overlay"></div>
-  <div class="crt-scanline"></div>
+  <!-- ═══════════════════════════════════════ BUTTERFLY LAYER ═══════════════════════════ -->
+  <div id="butterfly-layer" aria-hidden="true"></div>
 
-  <!-- White Glitched Transition Overlay -->
-  <div id="white-flash" class="screen-transition-white"></div>
-
-  <!-- Background Particle Canvas -->
-  <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
-
-  <!-- Tech Grid Background -->
-  <div class="fixed inset-0 cyber-grid pointer-events-none z-1"></div>
-
-  <!-- Background Glow Vignettes -->
-  <div class="fixed -top-40 -left-40 w-96 h-96 bg-cyber-blue-glow rounded-full pointer-events-none z-0"></div>
-  <div class="fixed -bottom-40 -right-40 w-96 h-96 bg-cyber-cyan-glow rounded-full pointer-events-none z-0"></div>
-
-  <!-- Ending Fullscreen Background Layer -->
-  <div id="ending-background" class="fixed inset-0 pointer-events-none opacity-0"
-    style="background-image: url('images/final.jpeg'); z-index: -3;"></div>
-  <div id="ending-background-overlay" class="fixed inset-0 pointer-events-none opacity-0"
-    style="background-color: rgba(11, 15, 23, 0.65); z-index: -2; transition: opacity 3s ease;"></div>
-
-  <!-- Audio / Music Controller -->
-  <div id="audio-panel"
-    class="fixed top-6 right-6 z-50 hidden items-center gap-3 glass-panel px-4 py-2 rounded-full cursor-pointer hover:border-cyber-cyan transition-colors">
-    <div class="flex items-end gap-[2px] h-3 w-5" id="audio-visualizer">
-      <span class="audio-bar h-2"></span>
-      <span class="audio-bar h-3"></span>
-      <span class="audio-bar h-1"></span>
-      <span class="audio-bar h-2"></span>
-    </div>
-    <span id="audio-status-text"
-      class="text-xs font-mono uppercase tracking-wider text-cyber-cyan select-none">Muted</span>
-    <button class="text-cyber-cyan hover:text-white transition-colors" aria-label="Toggle Audio">
-      <i id="audio-icon" class="fas fa-volume-mute"></i>
-    </button>
+  <!-- ═══════════════════════════════════════ LARGE BG BUTTERFLY ══════════════════════ -->
+  <div id="bg-butterfly" aria-hidden="true">
+    <svg viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg">
+      <!-- Upper left wing -->
+      <ellipse cx="72" cy="62" rx="65" ry="46" fill="#6FA8FF" transform="rotate(-18,72,62)" />
+      <!-- Lower left wing -->
+      <ellipse cx="54" cy="110" rx="46" ry="28" fill="#6FA8FF" transform="rotate(22,54,110)" />
+      <!-- Upper right wing -->
+      <ellipse cx="168" cy="62" rx="65" ry="46" fill="#6FA8FF" transform="rotate(18,168,62)" />
+      <!-- Lower right wing -->
+      <ellipse cx="186" cy="110" rx="46" ry="28" fill="#6FA8FF" transform="rotate(-22,186,110)" />
+      <!-- Body -->
+      <ellipse cx="120" cy="88" rx="5" ry="36" fill="#2D4F7C" />
+      <!-- Antennae -->
+      <line x1="115" y1="54" x2="88" y2="12" stroke="#2D4F7C" stroke-width="2.5" stroke-linecap="round" />
+      <circle cx="88" cy="12" r="4.5" fill="#2D4F7C" />
+      <line x1="125" y1="54" x2="152" y2="12" stroke="#2D4F7C" stroke-width="2.5" stroke-linecap="round" />
+      <circle cx="152" cy="12" r="4.5" fill="#2D4F7C" />
+    </svg>
   </div>
 
-  <!-- Easter Egg Toasts -->
-  <div id="toast-container" class="fixed top-6 left-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
+  <!-- ═══════════════════════════════════════ MUSIC TOGGLE ══════════════════════════════ -->
+  <button id="music-toggle" aria-label="Toggle music" title="Toggle music">
+    <svg id="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <svg id="icon-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" class="hidden">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
 
-  <!-- Carrot Header Icon (Click 7 times for Easter Egg) -->
-  <div id="top-carrot-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-40 hidden cursor-pointer">
-    <div id="carrot-icon" class="text-3xl text-orange-500 hover:scale-110 active:scale-95 transition-transform"
-      title="Secure Core">
-      <i class="fa-solid fa-carrot"></i>
-    </div>
-  </div>
+  <!-- ═══════════════════════════════════════ AUDIO ═════════════════════════════════════ -->
+  <audio id="bg-music" loop preload="none">
+    <source src="audio/carrots.mp3" type="audio/mpeg" />
+  </audio>
 
-  <!-- MAIN APP CONTAINER -->
-  <div id="app" class="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-8 py-6">
+  <!-- ═══════════════════════════════════════ SECTION 1 ════════════════════════════════ -->
+  <section id="section-1" class="section active">
+    <div class="s1-bg-gradient"></div>
+    <div class="particles-canvas" id="particles-canvas" aria-hidden="true"></div>
 
-    <!-- STAGE 0: BRIEFING AUTHORIZATION -->
-    <section id="stage-activation"
-      class="flex flex-col items-center justify-center text-center max-w-md w-full glass-panel-glow p-8 rounded-2xl relative overflow-hidden z-20 transition-all duration-700">
-      <div
-        class="w-16 h-16 rounded-full bg-cyber-cyan-bg border border-cyber-cyan/30 flex items-center justify-center text-2xl text-cyber-cyan mb-6 animate-pulse">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-
-      <h1 class="text-2xl md:text-3xl font-mono font-bold tracking-tight text-white mb-2 uppercase">
-        Mission Authorization
-      </h1>
-      <p class="text-xs font-mono text-cyber-cyan mb-6 tracking-widest uppercase">
-        Clearance Level: REDACTED
-      </p>
-
-      <p class="text-sm text-cyber-muted mb-8 leading-relaxed font-sans font-light">
-        This system contains a highly personalized, encrypted message. Audio & fullscreen capabilities are required for
-        the decryption process.
-      </p>
-
-      <button id="btn-activate"
-        class="glow-btn px-8 py-4 bg-cyber-blue text-white font-mono text-sm tracking-wider uppercase rounded-lg flex items-center gap-3 w-full justify-center">
-        Initialize Briefing <i class="fa-solid fa-key text-xs"></i>
+    <div class="section-content s1-content">
+      <p id="typewriter" class="typewriter-text" aria-live="polite"></p>
+      <button id="btn-okay" class="btn-primary hidden" aria-label="Continue">
+        Okay
       </button>
-    </section>
+    </div>
+  </section>
 
-    <!-- STAGE 1: TERMINAL BOOT SEQUENCE -->
-    <section id="stage-terminal-boot"
-      class="hidden w-full max-w-2xl font-mono text-left glass-panel p-6 md:p-8 rounded-xl border border-cyber-cyan-border shadow-2xl transition-all duration-700">
-      <div class="flex items-center justify-between border-b border-cyber-cyan-border pb-4 mb-6">
-        <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-          <span class="text-xs text-cyber-muted ml-2">secure_session.sh</span>
-        </div>
-        <span class="text-xs text-cyber-cyan/80">SECURE SHELL</span>
+  <!-- ═══════════════════════════════════════ SECTION 2 ════════════════════════════════ -->
+  <section id="section-2" class="section">
+    <div class="section-content s2-content">
+      <div class="story-lines" id="story-lines" aria-live="polite">
+        <p class="story-line" data-index="0">We met because of business.</p>
+        <p class="story-line" data-index="1">…</p>
+        <p class="story-line" data-index="2">Somehow…</p>
+        <p class="story-line" data-index="3">…</p>
+        <p class="story-line" data-index="4">you became one of the most important people in my life.</p>
+        <p class="story-line" data-index="5">…</p>
+        <p class="story-line" data-index="6">I still don't know how that happened.</p>
+        <p class="story-line" data-index="7">…</p>
+        <p class="story-line" data-index="8">But I'm really glad it did.</p>
       </div>
-
-      <div id="boot-terminal-log" class="space-y-3 min-h-[300px] text-sm md:text-base leading-relaxed text-cyber-cyan">
-        <!-- Typewritten logs -->
-      </div>
-
-      <div id="boot-continue-container" class="mt-8 opacity-0 flex justify-end transition-opacity duration-500">
-        <button id="btn-boot-continue"
-          class="glow-btn px-6 py-3 bg-cyber-blue-btn text-cyber-cyan rounded-md flex items-center gap-2 font-mono text-sm">
-          Continue <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- STAGE 2: SCAN ENGINE -->
-    <section id="stage-scan-sequence"
-      class="hidden w-full max-w-xl font-mono text-left glass-panel p-6 md:p-8 rounded-xl border border-cyber-cyan-border transition-all duration-700">
-      <div class="flex items-center justify-between border-b border-cyber-cyan-border pb-4 mb-6">
-        <span class="text-xs text-red-400 font-bold uppercase tracking-wider"><i
-            class="fa-solid fa-crosshairs mr-1"></i> Analysis Engine</span>
-        <span id="scan-progress-percentage" class="text-xs text-cyber-cyan">0%</span>
-      </div>
-
-      <div id="scan-terminal-log" class="space-y-4 min-h-[280px] text-sm md:text-base text-cyber-cyan">
-        <!-- Steps output -->
-      </div>
-
-      <!-- Progress Track -->
-      <div class="w-full bg-cyber-sec border border-cyber-cyan-border h-2 rounded-full overflow-hidden mt-6">
-        <div id="scan-progress-bar" class="bg-cyber-gradient h-full w-0 transition-all duration-300"></div>
-      </div>
-    </section>
-
-    <!-- STAGE 3: MINIMALIST PAGE TWO (WHITE BACKDROP) -->
-    <section id="stage-page-two"
-      class="hidden fixed inset-0 bg-white text-black z-30 flex flex-col justify-center items-center text-center p-6 md:p-12 transition-all duration-1000 opacity-0">
-      <div class="max-w-2xl space-y-8">
-        <p id="page-two-text-1"
-          class="text-2xl md:text-3xl lg:text-4xl font-light tracking-wide text-neutral-800 transition-all duration-1000 min-h-[2em] flex items-center justify-center">
-          <!-- Injecting Typewriter Text -->
-        </p>
-        <p id="page-two-text-2"
-          class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-black transition-all duration-1000 min-h-[2em] flex items-center justify-center">
-          <!-- Injecting Typewriter Text -->
-        </p>
-
-        <div id="page-two-btn-container" class="pt-8 opacity-0 transition-opacity duration-700">
-          <button id="btn-page-two-continue"
-            class="px-8 py-3 bg-black hover:bg-neutral-800 text-white text-sm font-mono tracking-widest uppercase transition-all duration-300 rounded-lg hover:shadow-[0_0_15px_rgba(0,0,0,0.2)] focus:outline-none border border-neutral-300">
-            Continue <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- STAGE 4: MEMORY LOGS -->
-    <section id="stage-memory-logs"
-      class="hidden w-full max-w-4xl flex flex-col items-center transition-all duration-700">
-      <h2 class="text-xs font-mono text-cyber-cyan uppercase tracking-[0.3em] mb-2 text-center">Classified Intel</h2>
-      <h1 class="text-3xl md:text-4xl font-sans font-bold text-white mb-10 text-center tracking-tight cyber-glow-cyan">
-        Memory Logs
-      </h1>
-
-      <!-- Staggered cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-10">
-
-        <!-- LOG 001 -->
-        <div
-          class="memory-card glass-panel p-6 rounded-xl relative overflow-hidden opacity-0 transform translate-y-6 transition-all duration-700">
-          <div class="absolute top-0 left-0 w-2 h-full bg-cyber-blue"></div>
-          <div class="flex justify-between items-start mb-4 text-xs font-mono text-cyber-muted">
-            <span>LOG ENTRY 001</span>
-            <span>18:42</span>
-          </div>
-          <h3 class="text-sm font-mono text-cyber-cyan uppercase mb-3">First Conversation</h3>
-          <p class="text-sm text-cyber-text leading-relaxed font-sans font-light">
-            "I remember telling you how much I liked your voice. Funny enough... I still do and always will."
-          </p>
-        </div>
-
-        <!-- LOG 002 -->
-        <div
-          class="memory-card glass-panel p-6 rounded-xl relative overflow-hidden opacity-0 transform translate-y-6 transition-all duration-700">
-          <div class="absolute top-0 left-0 w-2 h-full bg-cyber-cyan"></div>
-          <div class="flex justify-between items-start mb-4 text-xs font-mono text-cyber-muted">
-            <span>LOG ENTRY 002</span>
-            <span>01:15</span>
-          </div>
-          <h3 class="text-sm font-mono text-cyber-cyan uppercase mb-3">Unexpected Discovery</h3>
-          <p class="text-sm text-cyber-text leading-relaxed font-sans font-light">
-            "I also discovered you smile & laugh alot... and somehow every time you do, it makes everything better. I
-            just love seeing you smile & hearing you laugh."
-          </p>
-        </div>
-
-        <!-- LOG 003 -->
-        <div
-          class="memory-card glass-panel p-6 rounded-xl relative overflow-hidden opacity-0 transform translate-y-6 transition-all duration-700">
-          <div class="absolute top-0 left-0 w-2 h-full bg-red-400"></div>
-          <div class="flex justify-between items-start mb-4 text-xs font-mono text-cyber-muted">
-            <span>LOG ENTRY 003</span>
-            <span>TACTICAL</span>
-          </div>
-          <h3 class="text-sm font-mono text-red-400 uppercase mb-3">Threat Analysis</h3>
-          <div class="space-y-2 text-xs font-mono leading-relaxed text-cyber-text">
-            <div><span class="text-cyber-muted">Event:</span> Carrots bullies me.</div>
-            <div><span class="text-cyber-muted">Response:</span> <span class="text-red-300 font-bold">"Fima
-                bums."</span></div>
-            <div><span class="text-cyber-muted">Effectiveness:</span> <span class="text-red-400 font-bold">0%</span>
-            </div>
-            <div class="text-cyber-text italic mt-1 font-sans">"Your silly ass still bullies me lol."</div>
-          </div>
-        </div>
-
-        <!-- LOG 004 -->
-        <div
-          class="memory-card glass-panel p-6 rounded-xl relative overflow-hidden opacity-0 transform translate-y-6 transition-all duration-700">
-          <div class="absolute top-0 left-0 w-2 h-full bg-purple-500"></div>
-          <div class="flex justify-between items-start mb-4 text-xs font-mono text-cyber-muted">
-            <span>LOG ENTRY 004</span>
-            <span>OBSERVATION</span>
-          </div>
-          <h3 class="text-sm font-mono text-purple-400 uppercase mb-3">Observation</h3>
-          <p class="text-sm text-cyber-text leading-relaxed font-sans font-light">
-            "I don't think you realize how easy you make conversations. One minute we're talking. The next... it's been
-            hours & i wouldnt get tired because i enjoy listening to you talk."
-          </p>
-        </div>
-
-        <!-- LOG 005 -->
-        <div
-          class="memory-card glass-panel p-6 rounded-xl relative overflow-hidden opacity-0 transform translate-y-6 transition-all duration-700">
-          <div class="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
-          <div class="flex justify-between items-start mb-4 text-xs font-mono text-cyber-muted">
-            <span>LOG ENTRY 005</span>
-            <span>CONCLUSION</span>
-          </div>
-          <h3 class="text-sm font-mono text-emerald-400 uppercase mb-3">Conclusion</h3>
-          <p class="text-sm text-cyber-text leading-relaxed font-sans font-light">
-            "Even with all your toxicity and bullying.... you've somehow become one of my favorite people in my life."
-          </p>
-        </div>
-
-        <!-- FINAL REPORT CARD -->
-        <div
-          class="memory-card glass-panel p-6 rounded-xl relative overflow-hidden opacity-0 transform translate-y-6 transition-all duration-700">
-          <div class="absolute top-0 left-0 w-2 h-full bg-amber-400"></div>
-          <div class="flex justify-between items-start mb-4 text-xs font-mono text-cyber-muted">
-            <span>SYSTEM REPORT</span>
-            <span>100%</span>
-          </div>
-          <h3 class="text-sm font-mono text-amber-400 uppercase mb-3">Mission Status</h3>
-          <div class="space-y-1 text-xs font-mono text-cyber-text">
-            <div><span class="text-cyber-muted">Status:</span> <span class="text-amber-400 font-bold">INCOMPLETE</span>
-            </div>
-            <div class="leading-relaxed"><span class="text-cyber-muted">Reason:</span> No vulnerability found.</div>
-            <div class="text-cyber-cyan italic mt-2 font-sans font-semibold">"However... Mission will continue."</div>
-          </div>
-        </div>
-
-      </div>
-
-      <button id="btn-memory-continue"
-        class="opacity-0 glow-btn px-8 py-3 bg-cyber-blue-btn text-white font-mono text-sm tracking-wider uppercase rounded-lg transition-opacity duration-500">
-        Access Collected Evidence <i class="fa-solid fa-folder-open ml-2"></i>
+      <button id="btn-continue" class="btn-primary hidden" aria-label="Continue to next section">
+        Continue
       </button>
-    </section>
+    </div>
+  </section>
 
-    <!-- STAGE 5: FINAL VERIFICATION REQUIRED (REPLACING EVIDENCE) -->
-    <section id="stage-evidence" class="hidden w-full max-w-xl transition-all duration-700">
-      <div class="glass-panel rounded-xl overflow-hidden border border-cyber-cyan-border shadow-2xl relative">
-        <!-- Header tab -->
-        <div class="bg-cyber-sec border-b border-cyber-cyan-border px-6 py-4 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-circle-nodes text-cyber-cyan text-lg animate-pulse"></i>
-            <span class="font-mono text-sm text-white tracking-widest uppercase font-semibold">Final Verification
-              Required</span>
+  <!-- ═══════════════════════════════════════ SECTION 3 ════════════════════════════════ -->
+  <section id="section-3" class="section">
+    <div class="section-content s3-content">
+      <div id="questions-container">
+
+        <div class="question-block" data-q="0">
+          <p class="question-text">Have I ever made you smile?</p>
+          <div class="answer-buttons">
+            <button class="btn-answer btn-heart" data-q="0" data-a="0">❤️ Yes</button>
+            <button class="btn-answer btn-nahh" data-q="0" data-a="1" data-nahh="true">🙂 Nahh</button>
           </div>
-          <span
-            class="text-xs font-mono text-red-500 border border-red-500/30 px-2 py-0.5 rounded bg-red-500/5">SECURITY
-            ASSURANCE</span>
-        </div>
-
-        <div class="p-6 md:p-8 space-y-6 relative" id="verification-card-body">
-          <!-- Text Question Block -->
-          <div id="verify-question-container"
-            class="space-y-3 min-h-[150px] font-mono text-sm md:text-base leading-relaxed text-cyber-cyan">
-            <!-- Typewriter output -->
-          </div>
-
-          <!-- Interactive Button Wrapper -->
-          <div id="verify-buttons-wrapper" class="relative min-h-[100px] w-full mt-6">
-            <button id="btn-verify-yes"
-              class="glow-btn px-8 py-3 bg-cyber-blue text-white rounded-md font-mono text-sm tracking-wider uppercase transition-all duration-300 hover:scale-105"
-              style="position: absolute; left: 10%; top: 20px; z-index: 10;">
-              YES 😌
-            </button>
-            <button id="btn-verify-no"
-              class="px-8 py-3 bg-transparent border border-cyber-muted text-cyber-muted rounded-md font-mono text-sm tracking-wider uppercase"
-              style="position: absolute; right: 10%; top: 20px; z-index: 10; transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275); touch-action: none;">
-              NO 🤭
-            </button>
-          </div>
-
-          <!-- Fake Terminal Log Block (Hidden initially) -->
-          <div id="verify-terminal-container"
-            class="hidden font-mono text-xs md:text-sm text-cyber-cyan space-y-3 bg-black/60 p-4 rounded-lg border border-cyber-cyan-border min-h-[180px]">
-            <!-- Verification result terminal animation logs -->
+          <div class="nahh-response">
+            <p>Hmm…</p>
+            <p>I don't believe you…</p>
+            <p>but I'll respect your answer.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- STAGE 6: FINAL MESSAGE -->
-    <section id="stage-final-message"
-      class="hidden w-full max-w-xl font-mono text-left glass-panel p-6 md:p-8 rounded-xl border border-cyber-cyan-border transition-all duration-700">
-      <div id="final-message-log" class="space-y-4 text-sm md:text-base leading-relaxed text-cyber-text font-light">
-        <!-- Typewriter message -->
-      </div>
-
-      <div id="final-btn-container" class="mt-8 opacity-0 flex justify-center transition-opacity duration-500">
-        <button id="btn-exit-program"
-          class="glow-btn px-8 py-3 bg-red-950/20 border border-red-500 text-red-400 hover:bg-red-500 hover:text-white rounded-md font-mono text-sm tracking-wider uppercase flex items-center gap-2">
-          <i class="fa-solid fa-power-off"></i> Exit Program
-        </button>
-      </div>
-    </section>
-
-    <!-- STAGE 7: TERMINAL SESSION CLOSE -->
-    <section id="stage-ending" class="hidden w-full max-w-lg font-mono text-left space-y-6 transition-all duration-700">
-      <div id="ending-terminal-log" class="text-sm md:text-base text-cyber-cyan space-y-2">
-        <!-- Typewritten save logging -->
-      </div>
-
-      <div id="ending-ps-container"
-        class="hidden flex flex-col items-center justify-center text-center pt-10 space-y-6">
-        <h2
-          class="text-3xl font-mono text-cyber-cyan tracking-wider font-semibold cyber-glow-cyan opacity-0 transition-opacity duration-1000"
-          id="ending-ps-header">P.S.</h2>
-        <p class="text-lg md:text-xl font-sans font-light text-white opacity-0 transition-opacity duration-1000"
-          id="ending-ps-body">
-          You still owe me one more smile. Love you Carrots!
-        </p>
-        <div class="text-4xl text-cyber-cyan cyber-glow-cyan opacity-0 transform scale-50 transition-all duration-1000"
-          id="ending-ps-smile">:)</div>
-
-        <p class="text-xs text-cyber-muted font-mono tracking-widest pt-4 opacity-0 transition-opacity duration-1000"
-          id="ending-ps-footer">-End Transmission-</p>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- Developer Note Easter Egg Modal -->
-  <div id="dev-note-modal"
-    class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-6 transition-opacity duration-300">
-    <div
-      class="glass-panel max-w-md w-full rounded-xl overflow-hidden border border-orange-500/30 transform scale-90 transition-transform duration-300">
-      <div
-        class="bg-orange-950/30 border-b border-orange-500/20 px-6 py-4 flex justify-between items-center text-orange-400 font-mono text-sm">
-        <span><i class="fa-solid fa-triangle-exclamation mr-2 animate-pulse"></i> SYS_DEV_NOTE.log</span>
-        <button id="btn-close-dev-note" class="text-orange-400 hover:text-white"><i
-            class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="p-6 font-mono text-sm space-y-4 text-orange-200">
-        <p class="text-xs text-orange-400/80">AUTHOR: Operator</p>
-        <p class="leading-relaxed italic">
-          "I still don't know how a small person has such a voice busy scaring people at you are a big person."
-        </p>
-        <div class="text-right text-xs text-orange-500/60 mt-4">
-          CARROTS // EST_2026
+        <div class="question-block hidden" data-q="1">
+          <p class="question-text">Have I ever made you laugh…<br><span class="question-sub">even on the days you didn't
+              feel like laughing?</span></p>
+          <div class="answer-buttons">
+            <button class="btn-answer" data-q="1" data-a="0">Yes</button>
+            <button class="btn-answer" data-q="1" data-a="1">Many times</button>
+          </div>
         </div>
+
+        <div class="question-block hidden" data-q="2">
+          <p class="question-text">Have I ever made you feel safe enough…<br><span class="question-sub">to simply be
+              yourself?</span></p>
+          <div class="answer-buttons">
+            <button class="btn-answer btn-heart" data-q="2" data-a="0">❤️ Yes</button>
+            <button class="btn-answer btn-nahh" data-q="2" data-a="1" data-nahh="true">🙂 Nahh</button>
+          </div>
+          <div class="nahh-response">
+            <p>That's okay.</p>
+            <p>I still hope I made at least one day easier.</p>
+          </div>
+        </div>
+
+        <div class="question-block hidden" data-q="3">
+          <p class="question-text">Have I ever made your day…<br><span class="question-sub">just a little
+              brighter?</span></p>
+          <div class="answer-buttons">
+            <button class="btn-answer btn-heart" data-q="3" data-a="0">❤️ You have.</button>
+            <button class="btn-answer btn-nahh" data-q="3" data-a="1" data-nahh="true">🙂 Nahh</button>
+          </div>
+          <div class="nahh-response">
+            <p>Maybe not…</p>
+            <p>But thank you for giving me the chance to try.</p>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Native Script Bundle -->
+  <!-- ═══════════════════════════════════════ SECTION 4 ════════════════════════════════ -->
+  <section id="section-4" class="section">
+    <div id="final-bg" class="final-bg" aria-hidden="true"></div>
+    <div class="final-overlay" aria-hidden="true"></div>
+
+    <div class="section-content s4-content">
+      <div id="final-lines" aria-live="polite">
+        <p class="final-line" data-delay="0">Then…</p>
+        <p class="final-line" data-delay="1400">That's all I ever wanted.</p>
+        <p class="final-line" data-delay="2800">To know that…</p>
+        <p class="final-line" data-delay="3800">somehow…</p>
+        <p class="final-line" data-delay="4600">I made your world…</p>
+        <p class="final-line" data-delay="5600">just a little happier.</p>
+
+        <div class="heart-wrap" data-delay="7000">
+          <svg class="animated-heart" viewBox="0 0 100 90" aria-hidden="true">
+            <path
+              d="M50 85 C50 85 5 55 5 28 C5 13 17 3 30 3 C39 3 47 8 50 15 C53 8 61 3 70 3 C83 3 95 13 95 28 C95 55 50 85 50 85Z" />
+          </svg>
+        </div>
+
+        <p class="final-line final-thank" data-delay="12000">Everything else…</p>
+        <p class="final-line final-thank" data-delay="13200">is just a bonus.</p>
+
+        <p class="final-line final-gap" data-delay="15000">Thank you…</p>
+        <p class="final-line final-thank" data-delay="16200">for becoming someone</p>
+        <p class="final-line final-thank" data-delay="17000">I genuinely enjoy being with.</p>
+
+        <p class="final-line final-gap" data-delay="19000">If one day you ever forget</p>
+        <p class="final-line final-thank" data-delay="20200">how amazing you are…</p>
+        <p class="final-line final-thank" data-delay="21200">come back here.</p>
+        <p class="final-line final-thank" data-delay="22200">I'll remind you.</p>
+
+        <p class="final-signature" data-delay="24500">— Chi</p>
+
+        <p class="final-ps" data-delay="27000">PS…</p>
+        <p class="final-ps-text" data-delay="28200">See the smile in the background...</p>
+        <p class="final-ps-text" data-delay="29000">ANGELIC!</p>
+      </div>
+    </div>
+  </section>
+
   <script src="script.js"></script>
 </body>
 
