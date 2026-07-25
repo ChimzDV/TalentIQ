@@ -136,6 +136,24 @@ jQuery(document).ready(function($) {
 		}, 300);
 	});
 
+	// Close mobile menu when nav-link is clicked
+	$('.navbar-nav .nav-link').on('click', function() {
+		if ($('.navbar-collapse').hasClass('show')) {
+			$('.navbar-toggler').click();
+		}
+	});
+
+	// Close mobile menu when clicking outside the header
+	$(document).on('click.mobileNav', function(e) {
+		var $header = $('header');
+		var $collapse = $('#navbarResponsive');
+		if (!$header.is(e.target) && $header.has(e.target).length === 0) {
+			if ($collapse.hasClass('show')) {
+				$('.navbar-toggler').click();
+			}
+		}
+	});
+
 	$(window).scroll(function() {
 		var scroll = $(window).scrollTop();
 		if (scroll > 50) {
