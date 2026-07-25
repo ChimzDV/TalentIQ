@@ -1,0 +1,353 @@
+/* ==========================================================================
+   CHIMZDV Staffing - Responsive Stylesheet (responsive.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOP & LARGE TABLETS (992px - 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1399px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .hero-title {
+    font-size: 52px;
+  }
+
+  .hero-content-wrapper {
+    width: 55%;
+  }
+
+  .choose-large-heading {
+    font-size: 2.1rem;
+  }
+
+  .cta-banner-card-enterprise {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .cta-banner-card-enterprise > .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .cta-main-heading {
+    font-size: 2.1rem;
+  }
+
+  .floating-service-card {
+    padding: 25px 15px;
+  }
+
+  .floating-service-card h5 {
+    font-size: 0.95rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET BREAKPOINT (768px - 991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+
+  /* Navigation */
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-brand h2 {
+    color: var(--primary-navy) !important;
+  }
+
+  .navbar-toggler-icon,
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    background-color: var(--primary-navy);
+  }
+
+  .navbar-collapse {
+    display: none !important;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    padding: 20px 25px;
+    box-shadow: 0 15px 30px rgba(6, 18, 36, 0.1);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .navbar-collapse.show {
+    display: block !important;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nav-link {
+    color: var(--navy-dark) !important;
+  }
+
+  .nav-cta-item {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .nav-cta-item .nav-cta-button {
+    display: block;
+    text-align: center;
+  }
+
+  /* Hero Section */
+  .hero-split-section {
+    min-height: 650px;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .hero-content-container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .hero-content-wrapper {
+    width: 80%;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  /* Floating Cards Grid Stacking */
+  .floating-cards-container {
+    margin-top: -40px;
+  }
+
+  .floating-cards-container .container {
+    max-width: 94%;
+  }
+
+  .floating-card-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .floating-card-col:last-child {
+    border-bottom: none;
+  }
+
+  /* Why Choose Us */
+  .choose-left-col {
+    padding-right: 15px;
+    margin-bottom: 40px;
+  }
+
+  .why-choose-card {
+    padding: 40px 30px;
+  }
+
+  /* Recruitment Process Timeline */
+  .process-horizontal-timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .process-horizontal-timeline::before {
+    display: none;
+  }
+
+  .timeline-step-item {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* CTA Banner */
+  .cta-banner-card-enterprise {
+    height: auto;
+    min-height: 380px;
+  }
+
+  .cta-banner-card-enterprise > .container {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .cta-main-heading {
+    font-size: 2rem;
+  }
+
+  .cta-btn-group {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  /* Service Grid */
+  .service-detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .executive-leader-card-body {
+    padding: 32px 28px 28px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE DEVICES (<768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.75rem; }
+
+  .hero-split-section {
+    min-height: 550px;
+    padding-top: 90px;
+    padding-bottom: 70px;
+  }
+
+  .hero-content-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .red-accent-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-paragraph {
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .executive-leadership-section {
+    padding: 70px 0;
+  }
+
+  .executive-leadership-heading h2 {
+    font-size: 1.85rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-image-card {
+    height: 240px;
+  }
+
+  .cta-banner-card-enterprise {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .cta-banner-card-enterprise > .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .cta-banner-content {
+    max-width: 100%;
+  }
+
+  .cta-main-heading {
+    font-size: 1.7rem;
+  }
+
+  .cta-paragraph {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .cta-btn-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .cta-btn-group a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .service-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-modal-content {
+    padding: 25px 20px;
+  }
+
+  .chatbot-drawer {
+    width: calc(100vw - 40px);
+    right: -10px;
+    bottom: 70px;
+  }
+
+  .footer-item {
+    margin-bottom: 35px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. SMALL MOBILE (<576px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 575px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .page-heading {
+    padding: 130px 0 60px 0;
+  }
+
+  .page-heading h1 {
+    font-size: 2.1rem;
+  }
+
+  .why-choose-card {
+    padding: 25px 18px;
+  }
+
+  .stat-premium-row {
+    padding: 10px;
+  }
+}
