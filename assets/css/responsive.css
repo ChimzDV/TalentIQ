@@ -614,3 +614,134 @@
     max-width: 120px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   6. PREMIUM MOBILE RESPONSIVENESS UPDATES (<768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Grid Layouts for Target Sections */
+  .floating-cards-wrapper .row,
+  .features-grid,
+  .why-choose-premium-section .row:nth-of-type(2),
+  .industry-row-cards,
+  .process-horizontal-timeline,
+  .service-detail-grid,
+  .industries-refined-grid,
+  .pbr-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* Reset Bootstrap column floats/widths for grid containers */
+  .floating-cards-wrapper .row > div,
+  .why-choose-premium-section .row:nth-of-type(2) > div,
+  .industry-row-cards > div,
+  .process-horizontal-timeline > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Reset alignment for Recruitment step items */
+  .timeline-step-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
+  }
+
+  /* Card Styling & Padding (Approx 20px) */
+  .floating-service-card,
+  .feature-grid-item,
+  .industry-image-card,
+  .service-detail-card.sdc-refined,
+  .industry-refined-card,
+  .pbr-card {
+    padding: 20px !important;
+  }
+
+  /* Reset margin on industry image cards */
+  .industry-image-card {
+    margin: 0 !important;
+    height: 200px !important;
+  }
+
+  /* Typography Adjustments */
+  .floating-service-card h5,
+  .feature-grid-item h4,
+  .industry-image-card h4,
+  .timeline-step-item h5,
+  .service-detail-card.sdc-refined h4,
+  .industry-refined-card h5,
+  .pbr-card h5 {
+    font-size: 16px !important;
+    font-weight: bold !important;
+  }
+
+  .floating-service-card p,
+  .feature-grid-item p,
+  .timeline-step-item p,
+  .service-detail-card.sdc-refined p,
+  .industry-refined-card p,
+  .pbr-card p {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Badge and Small Label Texts (11px, uppercase) */
+  .step-badge,
+  .choose-small-label,
+  .industries-small-label,
+  .premium-small-label {
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Icon Containers (44x44px inside compact badge containers) */
+  .floating-service-card .card-icon,
+  .feature-icon-circle,
+  .industry-card-icon,
+  .step-icon-wrapper,
+  .sdc-icon-circle,
+  .irc-icon-wrap,
+  .pbr-icon-circle {
+    width: 44px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    font-size: 18px !important;
+    margin-bottom: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .feature-icon-circle i,
+  .sdc-icon-circle i,
+  .irc-icon-wrap i,
+  .pbr-icon-circle i {
+    font-size: 18px !important;
+  }
+
+  /* Specifically style industry-card-icon as a circular badge on mobile */
+  .industry-card-icon {
+    border-radius: 50% !important;
+    background: rgba(229, 9, 20, 0.12) !important; /* accent red soft background */
+  }
+}
+
+/* Stacking for Narrow Viewports (<=480px) */
+@media (max-width: 480px) {
+  .floating-cards-wrapper .row,
+  .features-grid,
+  .why-choose-premium-section .row:nth-of-type(2),
+  .industry-row-cards,
+  .process-horizontal-timeline,
+  .service-detail-grid,
+  .industries-refined-grid,
+  .pbr-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
