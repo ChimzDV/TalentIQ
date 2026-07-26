@@ -1321,8 +1321,8 @@ header.background-header .nav-link {
 .cta-banner-card-enterprise>.container {
   position: relative;
   z-index: 2;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Optional swap-in: place assets/images/cta-banner.jpg and use .cta-banner-alt */
@@ -3029,16 +3029,4 @@ textarea.form-control-premium {
   background-color: var(--accent-gold-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(198, 146, 20, 0.35);
-}
-
-/* Responsive Overrides */
-@media (max-width: 767px) {
-  .contact-form-container {
-    padding: 25px 20px;
-  }
-
-  .premium-submit-btn {
-    width: 100%;
-    min-width: 100%;
-  }
 }

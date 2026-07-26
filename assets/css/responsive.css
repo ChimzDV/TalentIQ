@@ -33,9 +33,9 @@
     min-height: 380px;
   }
 
-  .cta-banner-card-enterprise > .container {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  .cta-banner-card-enterprise>.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .cta-main-heading {
@@ -66,7 +66,7 @@
     padding: 10px 0 !important;
   }
 
-  .navbar > .container {
+  .navbar>.container {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
@@ -330,7 +330,7 @@
     padding: 60px 0;
   }
 
-  .cta-banner-card-enterprise > .container {
+  .cta-banner-card-enterprise>.container {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -367,13 +367,33 @@
   }
 }
 
+/* Responsive Overrides */
+@media (max-width: 767px) {
+  .contact-form-container {
+    padding: 25px 20px;
+  }
+
+  .premium-submit-btn {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
 /* --------------------------------------------------------------------------
    3. MOBILE DEVICES (<768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 767px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.6rem; }
-  h3 { font-size: 1.35rem; }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
 
   /* Page Heading Hero */
   .page-heading {
@@ -407,7 +427,7 @@
     height: 220px;
   }
 
-  .industry-row-cards > div {
+  .industry-row-cards>div {
     margin-bottom: 20px;
   }
 
@@ -516,7 +536,8 @@
   /* Forms & Buttons touch targets */
   .contact-form .form-control {
     height: 48px;
-    font-size: 16px; /* Prevents auto-zoom on iOS */
+    font-size: 16px;
+    /* Prevents auto-zoom on iOS */
     padding: 12px 16px;
   }
 
