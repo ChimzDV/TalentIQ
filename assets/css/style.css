@@ -3052,7 +3052,8 @@ textarea.form-control-premium {
 }
 
 .executive-leader-card-accent {
-  display: none; /* Removed thin gradient line for cleaner luxury card style */
+  display: none;
+  /* Removed thin gradient line for cleaner luxury card style */
 }
 
 .executive-leader-card-body {
@@ -3111,7 +3112,8 @@ textarea.form-control-premium {
 }
 
 .executive-leader-focus-list li i {
-  display: none !important; /* Hide icon inside badges */
+  display: none !important;
+  /* Hide icon inside badges */
 }
 
 .executive-profile-trigger-wrap {
@@ -3223,14 +3225,14 @@ textarea.form-control-premium {
   .team-item {
     padding: 24px !important;
   }
-  
+
   .team-item .down-content {
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     gap: 15px !important;
   }
-  
+
   .team-item .icon-wrapper {
     width: 56px !important;
     height: 56px !important;
@@ -3243,7 +3245,7 @@ textarea.form-control-premium {
   .executive-leader-card {
     padding: 24px !important;
   }
-  
+
   .executive-leader-desc {
     margin-bottom: 18px !important;
   }

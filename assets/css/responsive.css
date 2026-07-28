@@ -303,7 +303,7 @@
   }
 
   .why-choose-card {
-    padding: 40px 30px;
+    padding: 20px 15px;
   }
 
   /* Recruitment Process Timeline */
@@ -369,6 +369,7 @@
 
 /* Responsive Overrides (<768px) */
 @media (max-width: 767px) {
+
   /* Reset general sizes & base elements */
   body {
     font-size: 13.5px !important;
@@ -388,7 +389,7 @@
   .contact-information,
   .callback-form,
   .leadership-section {
-    padding: 50px 0 !important;
+    padding: 30px 0 !important;
   }
 
   .section-heading {
@@ -561,17 +562,17 @@
   .latest-insights-container .row:nth-of-type(2) {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
+    gap: 10px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   /* Reset bootstrap columns in grids */
-  .floating-cards-wrapper .row > div,
-  .why-choose-premium-section .row:nth-of-type(2) > div,
-  .industry-row-cards > div,
-  .contact-information .row > div,
-  .latest-insights-container .row:nth-of-type(2) > div {
+  .floating-cards-wrapper .row>div,
+  .why-choose-premium-section .row:nth-of-type(2)>div,
+  .industry-row-cards>div,
+  .contact-information .row>div,
+  .latest-insights-container .row:nth-of-type(2)>div {
     width: 100% !important;
     max-width: 100% !important;
     flex: none !important;
@@ -589,8 +590,8 @@
     padding: 0 !important;
   }
 
-  .executive-leadership-section .row:nth-of-type(2) > div,
-  .team .row:nth-of-type(2) > div {
+  .executive-leadership-section .row:nth-of-type(2)>div,
+  .team .row:nth-of-type(2)>div {
     width: 100% !important;
     max-width: 100% !important;
     flex: none !important;
@@ -612,7 +613,7 @@
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    padding: 18px !important;
+    padding: 9px !important;
     border-radius: 12px !important;
     box-shadow: 0 8px 24px rgba(6, 18, 36, 0.05) !important;
     background: var(--bg-white) !important;
@@ -776,6 +777,7 @@
   .hero-title {
     font-size: 22px !important;
   }
+
   .navbar-brand img {
     max-width: 140px !important;
   }
