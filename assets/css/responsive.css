@@ -367,259 +367,188 @@
   }
 }
 
-/* Responsive Overrides */
+/* Responsive Overrides (<768px) */
 @media (max-width: 767px) {
-  .contact-form-container {
-    padding: 25px 20px;
+  /* Reset general sizes & base elements */
+  body {
+    font-size: 13.5px !important;
   }
 
-  .premium-submit-btn {
-    width: 100%;
-    min-width: 100%;
+  /* Section Padding & Spacing Reductions */
+  .why-choose-premium-section,
+  .industries-serve-premium,
+  .global-recruitment-testimonials-premium,
+  .latest-insights-container,
+  .single-services,
+  .industries-section-refined,
+  .partner-benefits-refined,
+  .more-info,
+  .team,
+  .executive-leadership-section,
+  .contact-information,
+  .callback-form,
+  .leadership-section {
+    padding: 50px 0 !important;
   }
-}
 
-/* --------------------------------------------------------------------------
-   3. MOBILE DEVICES (<768px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 767px) {
+  .section-heading {
+    margin-bottom: 25px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Typography Scales */
   h1 {
-    font-size: 2rem;
+    font-size: 26px !important;
   }
 
-  h2 {
-    font-size: 1.6rem;
+  h2,
+  .section-heading h2,
+  .choose-large-heading,
+  .industries-main-heading,
+  .premium-heading,
+  .cta-main-heading,
+  .insights-main-heading,
+  .page-heading h1,
+  .about-info h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
   }
 
-  h3 {
-    font-size: 1.35rem;
+  /* Card and item titles */
+  h3,
+  h4,
+  h5,
+  .floating-service-card h5,
+  .feature-grid-item h4,
+  .industry-image-card h4,
+  .timeline-step-item h5,
+  .service-detail-card h4,
+  .industry-refined-card h5,
+  .pbr-card h5,
+  .team-item h3,
+  .executive-leader-name,
+  .contact-item h4,
+  .insight-article-card-enterprise h4,
+  .insight-article-card-enterprise h4 a {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Body copy */
+  p,
+  .floating-service-card p,
+  .feature-grid-item p,
+  .timeline-step-item p,
+  .service-detail-card p,
+  .industry-refined-card p,
+  .pbr-card p,
+  .team-item p,
+  .executive-leader-desc,
+  .executive-leader-focus-list li,
+  .contact-item p,
+  .insight-article-card-enterprise p,
+  footer p,
+  .more-info-content p,
+  .about-info p,
+  .cta-paragraph,
+  .insights-intro-paragraph,
+  .page-heading span {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Buttons */
+  .filled-button,
+  .border-button,
+  .nav-cta-button,
+  .premium-submit-btn,
+  .explore-global-btn,
+  .cta-btn-group a {
+    font-size: 14px !important;
+    padding: 10px 16px !important;
+    min-height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Icon Containers */
+  .floating-service-card .card-icon,
+  .feature-icon-circle,
+  .industry-card-icon,
+  .step-icon-wrapper,
+  .sdc-icon-circle,
+  .irc-icon-wrap,
+  .pbr-icon-circle,
+  .team-item .icon-wrapper i,
+  .contact-item i {
+    width: 38px !important;
+    height: 38px !important;
+    line-height: 38px !important;
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    box-sizing: border-box !important;
+  }
+
+  .floating-service-card .card-icon,
+  .feature-icon-circle,
+  .sdc-icon-circle,
+  .irc-icon-wrap,
+  .pbr-icon-circle {
+    background: rgba(198, 146, 20, 0.08) !important;
+    color: var(--accent-gold) !important;
+  }
+
+  .feature-icon-circle i,
+  .sdc-icon-circle i,
+  .irc-icon-wrap i,
+  .pbr-icon-circle i {
+    font-size: 16px !important;
+    margin: 0 !important;
   }
 
   /* Page Heading Hero */
   .page-heading {
-    padding: 130px 20px 60px 20px !important;
+    padding: 110px 15px 45px 15px !important;
   }
 
-  .page-heading h1 {
-    font-size: 2.1rem !important;
-  }
-
+  /* Hero Section */
   .hero-split-section {
-    padding-top: 110px;
-    padding-bottom: 50px;
-  }
-
-  .red-accent-line {
-    margin-left: auto;
-    margin-right: auto;
+    padding-top: 100px !important;
+    padding-bottom: 45px !important;
+    min-height: auto !important;
   }
 
   .hero-title {
-    font-size: 30px;
+    font-size: 26px !important;
+    line-height: 1.2 !important;
   }
 
-  .hero-paragraph {
-    font-size: 0.95rem;
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
   }
 
-  /* Industry Sector Cards */
-  .industry-image-card {
-    height: 220px;
+  .hero-buttons a {
+    flex: 1 !important;
+    max-width: 180px !important;
+    margin: 0 !important;
   }
 
-  .industry-row-cards>div {
-    margin-bottom: 20px;
-  }
-
-  /* Global Reach timeline */
-  .global-recruitment-testimonials-premium {
-    padding: 40px 0;
-  }
-
-  .global-reach-col {
-    text-align: center;
-  }
-
-  .explore-global-btn {
-    align-self: center;
-    margin-top: 15px;
-  }
-
-  .stats-premium-card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .stat-premium-row {
-    margin-bottom: 0 !important;
-    border-bottom: none !important;
-    padding: 20px 15px;
-    background: var(--bg-light);
-    border-radius: var(--radius-md);
-  }
-
-  /* Executive Leadership */
-  .executive-leadership-section {
-    padding: 50px 0;
-  }
-
-  .executive-leadership-heading {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .executive-leadership-heading h2 {
-    font-size: 1.7rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* Modals */
-  .custom-modal-content {
-    padding: 30px 20px;
-    width: 95%;
-  }
-
-  .modal-grid-2 {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  /* Chatbot Drawer */
-  .chatbot-drawer {
-    width: calc(100vw - 30px) !important;
-    max-width: 360px;
-    height: 450px !important;
-    right: 15px !important;
-    bottom: 85px !important;
-  }
-
-  .chatbot-widget {
-    bottom: 15px !important;
-    right: 15px !important;
-  }
-
-  .chatbot-toggle {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-
-  /* Footer Layout */
-  .footer-item {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .footer-item h4::after {
-    left: 50% !important;
-    transform: translateX(-50%);
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  .footer-bottom {
-    text-align: center;
-  }
-
-  .footer-bottom .text-right {
-    text-align: center !important;
-    margin-top: 10px;
-  }
-
-  /* Forms & Buttons touch targets */
-  .contact-form .form-control {
-    height: 48px;
-    font-size: 16px;
-    /* Prevents auto-zoom on iOS */
-    padding: 12px 16px;
-  }
-
-  .contact-form textarea.form-control {
-    height: 120px;
-  }
-
-  .filled-button,
-  .border-button {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Image scaling & styling */
-  img {
-    height: auto !important;
-    max-width: 100%;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4. SMALL MOBILE (<576px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 575px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .page-heading {
-    padding: 120px 15px 50px 15px !important;
-  }
-
-  .page-heading h1 {
-    font-size: 1.85rem !important;
-  }
-
-  .why-choose-card {
-    padding: 30px 20px;
-  }
-
-  .stat-premium-row {
-    padding: 15px;
-  }
-
-  .stats-premium-card {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-item {
-    padding: 30px 20px;
-  }
-
-  .contact-form {
-    padding: 0 !important;
-  }
-
-  .more-info-content {
-    padding: 30px 20px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   5. ULTRA SMALL MOBILE (<360px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 359px) {
-  .hero-title {
-    font-size: 26px;
-  }
-
-  .navbar-brand img {
-    max-width: 120px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   6. PREMIUM MOBILE RESPONSIVENESS UPDATES (<768px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 767px) {
-  /* Grid Layouts for Target Sections */
+  /* 2-Column Grid Layouts for target sections */
   .floating-cards-wrapper .row,
   .features-grid,
   .why-choose-premium-section .row:nth-of-type(2),
@@ -627,17 +556,22 @@
   .process-horizontal-timeline,
   .service-detail-grid,
   .industries-refined-grid,
-  .pbr-grid {
+  .pbr-grid,
+  .contact-information .row,
+  .latest-insights-container .row:nth-of-type(2) {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Reset Bootstrap column floats/widths for grid containers */
+  /* Reset bootstrap columns in grids */
   .floating-cards-wrapper .row > div,
   .why-choose-premium-section .row:nth-of-type(2) > div,
   .industry-row-cards > div,
-  .process-horizontal-timeline > div {
+  .contact-information .row > div,
+  .latest-insights-container .row:nth-of-type(2) > div {
     width: 100% !important;
     max-width: 100% !important;
     flex: none !important;
@@ -645,103 +579,204 @@
     margin-bottom: 0 !important;
   }
 
-  /* Reset alignment for Recruitment step items */
-  .timeline-step-item {
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
+  /* Single-column mobile layout for text-heavy content */
+  .executive-leadership-section .row:nth-of-type(2),
+  .team .row:nth-of-type(2) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin: 0 !important;
     padding: 0 !important;
   }
 
-  /* Card Styling & Padding (Approx 20px) */
+  .executive-leadership-section .row:nth-of-type(2) > div,
+  .team .row:nth-of-type(2) > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Card Styling (18px padding, equal height, rounded corners, premium shadow, no overflow) */
   .floating-service-card,
   .feature-grid-item,
-  .industry-image-card,
-  .service-detail-card.sdc-refined,
+  .service-detail-card,
   .industry-refined-card,
-  .pbr-card {
-    padding: 20px !important;
-  }
-
-  /* Reset margin on industry image cards */
-  .industry-image-card {
+  .pbr-card,
+  .executive-leader-card,
+  .team-item,
+  .contact-item,
+  .insight-article-card-enterprise,
+  .timeline-step-item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    padding: 18px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(6, 18, 36, 0.05) !important;
+    background: var(--bg-white) !important;
+    border: 1px solid var(--border-color) !important;
+    overflow: hidden !important;
+    word-wrap: break-word !important;
     margin: 0 !important;
-    height: 200px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Typography Adjustments */
-  .floating-service-card h5,
-  .feature-grid-item h4,
-  .industry-image-card h4,
-  .timeline-step-item h5,
-  .service-detail-card.sdc-refined h4,
-  .industry-refined-card h5,
-  .pbr-card h5 {
-    font-size: 16px !important;
-    font-weight: bold !important;
+  /* Industry image card specific styles */
+  .industry-image-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 150px !important;
+    padding: 18px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(6, 18, 36, 0.05) !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
   }
 
-  .floating-service-card p,
-  .feature-grid-item p,
-  .timeline-step-item p,
-  .service-detail-card.sdc-refined p,
-  .industry-refined-card p,
-  .pbr-card p {
-    font-size: 13.5px !important;
-    line-height: 1.55 !important;
-  }
-
-  /* Badge and Small Label Texts (11px, uppercase) */
-  .step-badge,
-  .choose-small-label,
-  .industries-small-label,
-  .premium-small-label {
-    font-size: 11px !important;
-    text-transform: uppercase !important;
-  }
-
-  /* Icon Containers (44x44px inside compact badge containers) */
-  .floating-service-card .card-icon,
-  .feature-icon-circle,
-  .industry-card-icon,
-  .step-icon-wrapper,
-  .sdc-icon-circle,
-  .irc-icon-wrap,
-  .pbr-icon-circle {
-    width: 44px !important;
-    height: 44px !important;
-    line-height: 44px !important;
-    font-size: 18px !important;
-    margin-bottom: 12px !important;
-    display: inline-flex !important;
+  .industry-image-card .card-content {
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 
-  .feature-icon-circle i,
-  .sdc-icon-circle i,
-  .irc-icon-wrap i,
-  .pbr-icon-circle i {
+  .industry-image-card .industry-card-icon {
+    background: rgba(198, 146, 20, 0.2) !important;
+    color: var(--accent-gold) !important;
+  }
+
+  /* Floating Service Cards container padding */
+  .floating-cards-container {
+    padding: 30px 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .floating-cards-wrapper {
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Why Choose Us Left Col centering */
+  .choose-left-col {
+    text-align: center !important;
+    margin-bottom: 25px !important;
+    padding: 0 !important;
+  }
+
+  /* Recruitment Process 2x3 Grid connecting arrows */
+  .process-horizontal-timeline .timeline-step-item {
+    position: relative !important;
+  }
+
+  .process-horizontal-timeline .timeline-step-item:nth-child(odd)::after {
+    content: "→" !important;
+    position: absolute !important;
+    right: -10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     font-size: 18px !important;
+    color: var(--accent-gold) !important;
+    font-weight: bold !important;
+    z-index: 10 !important;
   }
 
-  /* Specifically style industry-card-icon as a circular badge on mobile */
-  .industry-card-icon {
-    border-radius: 50% !important;
-    background: rgba(229, 9, 20, 0.12) !important; /* accent red soft background */
+  /* Reset default timeline before lines */
+  .process-horizontal-timeline::before {
+    display: none !important;
+  }
+
+  /* Stats card style */
+  .stats-premium-card {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 15px !important;
+  }
+
+  .stat-premium-row {
+    padding: 12px !important;
+    gap: 10px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .stat-premium-row i {
+    font-size: 20px !important;
+  }
+
+  /* Insight Article Cards Image scaling */
+  .article-image-wrapper {
+    height: 120px !important;
+  }
+
+  .article-content-wrapper {
+    padding: 15px !important;
+  }
+
+  .insight-article-card-enterprise p {
+    margin-bottom: 12px !important;
+  }
+
+  /* Footer Layout */
+  footer {
+    padding: 40px 0 20px 0 !important;
+  }
+
+  .footer-item {
+    margin-bottom: 25px !important;
+    text-align: center !important;
+  }
+
+  .footer-item h4 {
+    margin-bottom: 15px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .footer-item h4::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .menu-list li {
+    margin-bottom: 8px !important;
+  }
+
+  .social-icons {
+    justify-content: center !important;
+    margin-top: 15px !important;
+  }
+
+  .sub-footer {
+    padding: 15px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Navigation overrides for dropdown */
+  .navbar-collapse {
+    width: 240px !important;
+    padding: 12px !important;
+  }
+
+  /* Form spacing */
+  .contact-form-container {
+    padding: 20px 15px !important;
+  }
+
+  .form-group-premium {
+    margin-bottom: 15px !important;
   }
 }
 
-/* Stacking for Narrow Viewports (<=480px) */
+/* Extra small device adjustments */
 @media (max-width: 480px) {
-  .floating-cards-wrapper .row,
-  .features-grid,
-  .why-choose-premium-section .row:nth-of-type(2),
-  .industry-row-cards,
-  .process-horizontal-timeline,
-  .service-detail-grid,
-  .industries-refined-grid,
-  .pbr-grid {
-    grid-template-columns: 1fr !important;
+  .hero-title {
+    font-size: 22px !important;
+  }
+  .navbar-brand img {
+    max-width: 140px !important;
   }
 }
