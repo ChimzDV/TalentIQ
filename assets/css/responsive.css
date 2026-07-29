@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    CHIMZDV Staffing - Responsive Stylesheet (responsive.css)
    ========================================================================== */
 
@@ -773,6 +773,10 @@
   .form-group-premium {
     margin-bottom: 15px !important;
   }
+
+  .team .team-item {
+    padding: 25px 40px !important;
+  }
 }
 
 /* Extra small device adjustments */
@@ -786,11 +790,6 @@
   }
 }
 
-/* ==========================================================================
-   SERVICES SECTION — DESKTOP / MOBILE VISIBILITY
-   Rule: desktop-services = visible by default, hidden below 992px.
-         mobile-services  = hidden by default, visible below 992px.
-   ========================================================================== */
 
 /* ── Default: carousel is ALWAYS hidden unless mobile media query enables it ── */
 .mobile-services {
