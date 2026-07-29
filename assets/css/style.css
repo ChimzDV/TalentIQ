@@ -3302,7 +3302,6 @@ textarea.form-control-premium {
 
 /* 3. Services Page -> Staffing Solutions We Offer */
 .service-detail-card.sdc-refined {
-  padding: 50px 35px 45px !important;
   text-align: center !important;
   display: flex !important;
   flex-direction: column !important;

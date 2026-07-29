@@ -777,6 +777,10 @@
   .team .team-item {
     padding: 25px 40px !important;
   }
+
+  .service-detail-card.sdc-refined {
+    padding: 28px 15px 20px;
+  }
 }
 
 /* Extra small device adjustments */
