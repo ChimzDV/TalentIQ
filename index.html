@@ -89,52 +89,115 @@
   <!-- Floating Service Cards -->
   <div class="floating-cards-container">
     <div class="container">
-      <div class="floating-cards-wrapper fade-in-up delay-4">
-        <div class="row no-gutters">
+
+      <!-- Desktop Grid (hidden on mobile via .desktop-services) -->
+      <div class="floating-cards-wrapper fade-in-up delay-4 desktop-services">
+        <div class="row">
           <div class="col-lg-2 col-md-4 col-sm-6 col-12 floating-card-col">
             <div class="floating-service-card">
-              <i class="fa fa-handshake-o card-icon"></i>
               <h5>Permanent Placement</h5>
               <p>Full-time hires matched for skills, culture, and long-term fit.</p>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6 col-12 floating-card-col">
             <div class="floating-service-card">
-              <i class="fa fa-search card-icon"></i>
               <h5>Executive Search</h5>
               <p>Targeted recruitment for senior leaders and specialized roles.</p>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6 col-12 floating-card-col">
             <div class="floating-service-card">
-              <i class="fa fa-users card-icon"></i>
               <h5>Professional Recruitment</h5>
               <p>Skilled professionals sourced across our 5 core staffing categories nationwide.</p>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6 col-12 floating-card-col">
             <div class="floating-service-card">
-              <i class="fa fa-bullseye card-icon"></i>
               <h5>Talent Acquisition</h5>
               <p>Strategic hiring support aligned with your workforce goals.</p>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6 col-12 floating-card-col">
             <div class="floating-service-card">
-              <i class="fa fa-check-square-o card-icon"></i>
               <h5>Candidate Screening</h5>
               <p>Rigorous evaluation to deliver qualified, job-ready talent.</p>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 col-sm-6 col-12 floating-card-col">
             <div class="floating-service-card">
-              <i class="fa fa-cogs card-icon"></i>
               <h5>Workforce Consulting</h5>
               <p>Guidance to strengthen hiring strategy and team performance.</p>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Mobile-Only Premium Carousel -->
+      <div class="mobile-services" id="servicesMobileCarousel" aria-label="Our Staffing Solutions">
+        <!-- Prev Button -->
+        <button class="smc-btn smc-btn-prev" id="smcPrev" aria-label="Previous service">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+
+        <!-- Track -->
+        <div class="smc-viewport">
+          <div class="smc-track" id="smcTrack">
+
+            <div class="smc-slide">
+              <div class="smc-card">
+                <h5 class="smc-card-title">Permanent Placement</h5>
+                <p class="smc-card-desc">Full-time hires matched for skills, culture, and long-term fit.</p>
+              </div>
+            </div>
+
+            <div class="smc-slide">
+              <div class="smc-card">
+                <h5 class="smc-card-title">Executive Search</h5>
+                <p class="smc-card-desc">Targeted recruitment for senior leaders and specialized roles.</p>
+              </div>
+            </div>
+
+            <div class="smc-slide">
+              <div class="smc-card">
+                <h5 class="smc-card-title">Professional Recruitment</h5>
+                <p class="smc-card-desc">Skilled professionals sourced across our 5 core staffing categories nationwide.</p>
+              </div>
+            </div>
+
+            <div class="smc-slide">
+              <div class="smc-card">
+                <h5 class="smc-card-title">Talent Acquisition</h5>
+                <p class="smc-card-desc">Strategic hiring support aligned with your workforce goals.</p>
+              </div>
+            </div>
+
+            <div class="smc-slide">
+              <div class="smc-card">
+                <h5 class="smc-card-title">Candidate Screening</h5>
+                <p class="smc-card-desc">Rigorous evaluation to deliver qualified, job-ready talent.</p>
+              </div>
+            </div>
+
+            <div class="smc-slide">
+              <div class="smc-card">
+                <h5 class="smc-card-title">Workforce Consulting</h5>
+                <p class="smc-card-desc">Guidance to strengthen hiring strategy and team performance.</p>
+              </div>
+            </div>
+
+          </div><!-- /.smc-track -->
+        </div><!-- /.smc-viewport -->
+
+        <!-- Next Button -->
+        <button class="smc-btn smc-btn-next" id="smcNext" aria-label="Next service">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+
+        <!-- Pagination Dots -->
+        <div class="smc-dots" id="smcDots" role="tablist" aria-label="Service slides"></div>
+
+      </div><!-- /.mobile-services -->
+
     </div>
   </div>
 

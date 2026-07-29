@@ -409,5 +409,186 @@ jQuery(document).ready(function($) {
 
 	initExecutiveDrawer();
 
+	// =========================================================================
+	// SERVICES MOBILE CAROUSEL
+	// Runs only when the carousel element exists and viewport < 992px.
+	// Uses CSS translateX for GPU-accelerated sliding.
+	// Matches @media (max-width: 991.98px) in responsive.css exactly.
+	// =========================================================================
+	(function initServicesMobileCarousel() {
+		var $carousel   = $('#servicesMobileCarousel');
+		var $track      = $('#smcTrack');
+		var $dotsWrap   = $('#smcDots');
+		var $btnPrev    = $('#smcPrev');
+		var $btnNext    = $('#smcNext');
+
+		if (!$carousel.length || !$track.length) return;
+
+		// Only activate below 992px — matchMedia keeps desktop clean
+		var mql = window.matchMedia('(max-width: 991.98px)');
+
+		var currentIndex = 0;
+		var totalSlides  = $track.find('.smc-slide').length;
+		var autoTimer    = null;
+		var isPaused     = false;
+		var AUTO_DELAY   = 6000; // ms
+
+		// --- Build pagination dots ---
+		function buildDots() {
+			$dotsWrap.empty();
+			for (var i = 0; i < totalSlides; i++) {
+				(function(idx) {
+					var $dot = $('<button></button>')
+						.addClass('smc-dot')
+						.attr({
+							'type'       : 'button',
+							'role'       : 'tab',
+							'aria-label' : 'Go to slide ' + (idx + 1),
+							'aria-selected': idx === 0 ? 'true' : 'false'
+						})
+						.on('click', function() { goTo(idx); });
+					$dotsWrap.append($dot);
+				})(i);
+			}
+			updateDots();
+		}
+
+		function updateDots() {
+			$dotsWrap.find('.smc-dot').each(function(i) {
+				$(this)
+					.toggleClass('is-active', i === currentIndex)
+					.attr('aria-selected', i === currentIndex ? 'true' : 'false');
+			});
+		}
+
+		// --- Move carousel to a given index ---
+		function goTo(index) {
+			// Clamp / wrap
+			if (index < 0)            index = totalSlides - 1;
+			if (index >= totalSlides) index = 0;
+
+			currentIndex = index;
+			var offset = -(currentIndex * 100); // each slide = 100% of viewport
+			$track.css('transform', 'translateX(' + offset + '%)');
+			updateDots();
+		}
+
+		// --- Auto-slide ---
+		function startAuto() {
+			stopAuto();
+			autoTimer = setInterval(function() {
+				if (!isPaused) {
+					goTo(currentIndex + 1);
+				}
+			}, AUTO_DELAY);
+		}
+
+		function stopAuto() {
+			if (autoTimer) {
+				clearInterval(autoTimer);
+				autoTimer = null;
+			}
+		}
+
+		// --- Pause on hover / focus ---
+		$carousel
+			.on('mouseenter focusin', function() { isPaused = true; })
+			.on('mouseleave focusout', function() { isPaused = false; });
+
+		// --- Pause on touch ---
+		$carousel[0].addEventListener('touchstart', function() {
+			isPaused = true;
+		}, { passive: true });
+		$carousel[0].addEventListener('touchend', function() {
+			// Resume after a short delay so the touch-swipe can complete
+			setTimeout(function() { isPaused = false; }, 800);
+		}, { passive: true });
+
+		// --- Button handlers ---
+		$btnPrev.on('click', function() {
+			goTo(currentIndex - 1);
+			startAuto(); // reset timer on manual nav
+		});
+		$btnNext.on('click', function() {
+			goTo(currentIndex + 1);
+			startAuto();
+		});
+
+		// --- Keyboard navigation ---
+		// Keyboard nav: only fires when carousel is active (< 992px)
+		$(document).on('keydown.smc', function(e) {
+			if (!mql.matches) return;
+			if (e.key === 'ArrowLeft')  { goTo(currentIndex - 1); startAuto(); }
+			if (e.key === 'ArrowRight') { goTo(currentIndex + 1); startAuto(); }
+		});
+
+		// --- Touch / swipe support ---
+		var touchStartX = 0;
+		var touchStartY = 0;
+		var isSwiping   = false;
+
+		$carousel[0].addEventListener('touchstart', function(e) {
+			touchStartX = e.touches[0].clientX;
+			touchStartY = e.touches[0].clientY;
+			isSwiping   = false;
+		}, { passive: true });
+
+		$carousel[0].addEventListener('touchmove', function(e) {
+			var dx = e.touches[0].clientX - touchStartX;
+			var dy = e.touches[0].clientY - touchStartY;
+			// Only hijack if horizontal swipe is dominant
+			if (!isSwiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+				isSwiping = true;
+			}
+		}, { passive: true });
+
+		$carousel[0].addEventListener('touchend', function(e) {
+			if (!isSwiping) return;
+			var dx = e.changedTouches[0].clientX - touchStartX;
+			var SWIPE_THRESHOLD = 40; // px
+			if (dx < -SWIPE_THRESHOLD) {
+				goTo(currentIndex + 1);
+				startAuto();
+			} else if (dx > SWIPE_THRESHOLD) {
+				goTo(currentIndex - 1);
+				startAuto();
+			}
+			isSwiping = false;
+		}, { passive: true });
+
+		// --- Boot ---
+		function activate() {
+			buildDots();
+			goTo(0);
+			startAuto();
+		}
+
+		// Initialise only when in mobile range
+		function handleMQ(e) {
+			if (e.matches) {
+				activate();
+			} else {
+				stopAuto();
+				// Reset track position so desktop sees no offset
+				$track.css('transform', '');
+			}
+		}
+
+		if (mql.addEventListener) {
+			mql.addEventListener('change', handleMQ);
+		} else {
+			// Safari <14 fallback
+			mql.addListener(handleMQ);
+		}
+
+		// Run immediately if already in mobile range
+		if (mql.matches) {
+			activate();
+		}
+	})();
+	// =========================================================================
+	// END SERVICES MOBILE CAROUSEL
+	// =========================================================================
+
 });
 

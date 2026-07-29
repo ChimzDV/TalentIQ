@@ -839,69 +839,67 @@ header.background-header .nav-link {
 }
 
 .floating-cards-wrapper {
-  background: var(--bg-white);
-  border-radius: 16px;
-  box-shadow: 0 20px 45px rgba(6, 18, 36, 0.12);
-  padding: 10px 0;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border: none;
 }
 
 .floating-card-col {
-  border-right: 1px solid var(--border-color);
   position: relative;
 }
 
-.floating-card-col:last-child {
-  border-right: none;
-}
-
 .floating-service-card {
-  padding: 35px 25px 35px 30px;
-  text-align: left;
-  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 50px 20px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   height: 100%;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-top: 3px solid transparent;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(6, 18, 36, 0.04);
 }
 
 .floating-service-card:hover {
-  background-color: #FAFCFF;
-  transform: translateY(-6px);
-}
-
-.floating-service-card .card-icon {
-  font-size: 26px;
-  color: var(--accent-gold);
-  background: rgba(198, 146, 20, 0.12);
-  width: 54px;
-  height: 54px;
-  line-height: 54px;
-  border-radius: 50%;
-  margin-bottom: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-.floating-service-card:hover .card-icon {
-  background: var(--accent-red);
-  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(6, 18, 36, 0.08);
+  border-top-color: #D4AF37;
 }
 
 .floating-service-card h5 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--navy-dark);
-  margin-bottom: 8px;
+  color: #D4AF37;
+  margin-bottom: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70px;
+  width: 100%;
+}
+
+.floating-service-card h5::after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 2px;
+  background: #D4AF37;
+  margin-top: 12px;
 }
 
 .floating-service-card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.55;
+  font-size: 0.88rem;
+  color: #333333;
+  line-height: 1.7;
   margin-bottom: 0;
 }
 
@@ -1686,7 +1684,7 @@ footer {
 .more-info-content {
   background: var(--bg-light);
   border-radius: var(--radius-lg);
-  padding: 60px;
+  padding: 22px;
 }
 
 .left-image img {
@@ -3041,7 +3039,7 @@ textarea.form-control-premium {
   border-radius: var(--radius-lg) !important;
   box-shadow: 0 10px 35px rgba(6, 18, 36, 0.04) !important;
   border: 1px solid var(--border-color);
-  padding: 40px !important;
+  padding: 20px !important;
   height: 100% !important;
   margin-bottom: 0 !important;
 }
@@ -3049,11 +3047,6 @@ textarea.form-control-premium {
 .executive-leader-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(198, 146, 20, 0.12) !important;
-}
-
-.executive-leader-card-accent {
-  display: none;
-  /* Removed thin gradient line for cleaner luxury card style */
 }
 
 .executive-leader-card-body {
@@ -3254,4 +3247,85 @@ textarea.form-control-premium {
     margin-bottom: 20px !important;
     padding-top: 15px !important;
   }
+}
+
+/* ==========================================================================
+   PREMIUM OVERRIDES FOR SPECIFIC SECTIONS
+   ========================================================================== */
+
+/* 1. Home Page -> Why Choose Us */
+.why-choose-premium-section .feature-grid-item {
+  text-align: center;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-premium-section .feature-icon-circle {
+  display: none !important;
+}
+
+.why-choose-premium-section .feature-grid-item h4 {
+  color: #D4AF37 !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 14px !important;
+  text-align: center !important;
+}
+
+.why-choose-premium-section .feature-grid-item p {
+  text-align: center !important;
+}
+
+/* 2. About Page -> Our Mission & Vision */
+.team .team-item {
+  padding: 50px 40px !important;
+}
+
+.team .team-item .down-content {
+  display: block !important;
+  text-align: center !important;
+}
+
+.team .team-item .icon-wrapper {
+  display: none !important;
+}
+
+.team .team-item h3 {
+  color: #D4AF37 !important;
+  text-align: center !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+}
+
+.team .team-item p {
+  text-align: center !important;
+}
+
+/* 3. Services Page -> Staffing Solutions We Offer */
+.service-detail-card.sdc-refined {
+  padding: 50px 35px 45px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.service-detail-card.sdc-refined .sdc-icon-circle {
+  display: none !important;
+}
+
+.service-detail-card.sdc-refined h4 {
+  color: #D4AF37 !important;
+  text-align: center !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+}
+
+.service-detail-card.sdc-refined p {
+  text-align: center !important;
 }
