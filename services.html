@@ -8,7 +8,8 @@
   <meta name="description"
     content="Explore staffing and recruitment services from TalentIQ Staffing LLC, including permanent placement, executive search, talent acquisition, candidate screening, and workforce consulting.">
   <meta name="author" content="TalentIQ Staffing LLC">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
     rel="stylesheet">
 
   <title>Our Services - TalentIQ Staffing LLC</title>
@@ -84,66 +85,259 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Staffing <em>Solutions</em> We Offer</h2>
-            <span>Permanent placement and recruitment services tailored to your hiring goals</span>
+          <div class="section-heading-custom text-center">
+            <span class="eyebrow-heading">WHAT WE DO</span>
+            <h2>Comprehensive Staffing Solutions</h2>
+            <div class="heading-line-divider"></div>
+            <p class="section-lead-text">From strategic hiring to workforce consulting, we provide end-to-end solutions
+              that help your business grow with the right people.</p>
           </div>
         </div>
       </div>
-      <div class="service-detail-grid">
-        <!-- Card 1 -->
-        <div class="service-detail-card sdc-refined">
-          <div class="sdc-icon-circle">
-            <i class="fa fa-briefcase"></i>
-          </div>
-          <h4>Permanent Placement</h4>
-          <p>Connect with full-time professionals who match your skills requirements, culture, and long-term vision.
-            Reduce turnover and build teams positioned for sustained success.</p>
+      <div class="staffing-solutions-wrapper">
+        <!-- Left Side: Interactive Services Navigation -->
+        <div class="staffing-nav-card" role="tablist" aria-label="Our Services">
+          <button class="staffing-nav-item active" role="tab" aria-selected="true" aria-controls="staffing-panel-1"
+            id="staffing-tab-1" data-target="staffing-panel-1" data-index="0" data-icon="fa-briefcase">
+            <span class="staffing-item-icon-wrap"><i class="fa fa-briefcase"></i></span>
+            <div class="staffing-item-text">
+              <span class="staffing-item-title">Permanent Placement</span>
+              <span class="staffing-item-desc">Build your team for the future.</span>
+            </div>
+            <i class="fa fa-chevron-right staffing-arrow"></i>
+          </button>
+
+          <button class="staffing-nav-item" role="tab" aria-selected="false" aria-controls="staffing-panel-2"
+            id="staffing-tab-2" data-target="staffing-panel-2" data-index="1" data-icon="fa-search">
+            <span class="staffing-item-icon-wrap"><i class="fa fa-search"></i></span>
+            <div class="staffing-item-text">
+              <span class="staffing-item-title">Executive Search</span>
+              <span class="staffing-item-desc">Leadership that drives results.</span>
+            </div>
+            <i class="fa fa-chevron-right staffing-arrow"></i>
+          </button>
+
+          <button class="staffing-nav-item" role="tab" aria-selected="false" aria-controls="staffing-panel-3"
+            id="staffing-tab-3" data-target="staffing-panel-3" data-index="2" data-icon="fa-users">
+            <span class="staffing-item-icon-wrap"><i class="fa fa-users"></i></span>
+            <div class="staffing-item-text">
+              <span class="staffing-item-title">Professional Recruitment</span>
+              <span class="staffing-item-desc">Skilled talent for every role.</span>
+            </div>
+            <i class="fa fa-chevron-right staffing-arrow"></i>
+          </button>
+
+          <button class="staffing-nav-item" role="tab" aria-selected="false" aria-controls="staffing-panel-4"
+            id="staffing-tab-4" data-target="staffing-panel-4" data-index="3" data-icon="fa-calendar-check-o">
+            <span class="staffing-item-icon-wrap"><i class="fa fa-calendar-check-o"></i></span>
+            <div class="staffing-item-text">
+              <span class="staffing-item-title">Workforce Consulting</span>
+              <span class="staffing-item-desc">Solutions that optimize performance.</span>
+            </div>
+            <i class="fa fa-chevron-right staffing-arrow"></i>
+          </button>
+
+          <button class="staffing-nav-item" role="tab" aria-selected="false" aria-controls="staffing-panel-5"
+            id="staffing-tab-5" data-target="staffing-panel-5" data-index="4" data-icon="fa-laptop">
+            <span class="staffing-item-icon-wrap"><i class="fa fa-laptop"></i></span>
+            <div class="staffing-item-text">
+              <span class="staffing-item-title">IT &amp; Digital Staffing</span>
+              <span class="staffing-item-desc">Tech talent. Business impact.</span>
+            </div>
+            <i class="fa fa-chevron-right staffing-arrow"></i>
+          </button>
+
+          <button class="staffing-nav-item" role="tab" aria-selected="false" aria-controls="staffing-panel-6"
+            id="staffing-tab-6" data-target="staffing-panel-6" data-index="5" data-icon="fa-user-md">
+            <span class="staffing-item-icon-wrap"><i class="fa fa-user-md"></i></span>
+            <div class="staffing-item-text">
+              <span class="staffing-item-title">Healthcare Staffing</span>
+              <span class="staffing-item-desc">Compassionate care. Trusted professionals.</span>
+            </div>
+            <i class="fa fa-chevron-right staffing-arrow"></i>
+          </button>
         </div>
-        <!-- Card 2 -->
-        <div class="service-detail-card sdc-refined">
-          <div class="sdc-icon-circle">
-            <i class="fa fa-search"></i>
+
+        <!-- Mobile-only shared info panel (populated by JS, hidden on desktop) -->
+        <div id="staffing-mobile-panel" class="staffing-mobile-panel" aria-live="polite" hidden>
+          <div class="smp-inner">
+            <div class="panel-badge-container"><i id="smp-icon" class="fa"></i></div>
+            <h3 id="smp-title" class="panel-service-title"></h3>
+            <h4 id="smp-subhead" class="panel-service-subhead"></h4>
+            <p id="smp-desc" class="panel-service-desc"></p>
+            <ul id="smp-bullets" class="panel-bullets-list"></ul>
+            <img id="smp-img" class="smp-image panel-img" src="" alt="">
+            <a id="smp-cta" href="contact.html" class="filled-button accent-button staffing-cta-btn">Learn More</a>
           </div>
-          <h4>Executive Search</h4>
-          <p>Identify and secure senior leaders and specialized executives through targeted, confidential search
-            strategies designed for high-impact roles.</p>
         </div>
-        <!-- Card 3 -->
-        <div class="service-detail-card sdc-refined">
-          <div class="sdc-icon-circle">
-            <i class="fa fa-users"></i>
+
+        <!-- Right Side: Content Panel Card (desktop) -->
+        <div class="staffing-content-card">
+          <div class="staffing-panels-container">
+            <!-- Panel 1 (Active) -->
+            <div class="staffing-content-panel active" id="staffing-panel-1" role="tabpanel"
+              aria-labelledby="staffing-tab-1">
+              <div class="panel-layout">
+                <div class="panel-left-content">
+                  <div class="panel-badge-container">
+                    <i class="fa fa-briefcase"></i>
+                  </div>
+                  <h3 class="panel-service-title">Permanent Placement</h3>
+                  <h4 class="panel-service-subhead">Build Your Team for Long-Term Success</h4>
+                  <p class="panel-service-desc">We connect you with highly qualified professionals who align with your
+                    company culture and long-term goals.</p>
+                  <ul class="panel-bullets-list">
+                    <li><i class="fa fa-check"></i> In-depth candidate screening</li>
+                    <li><i class="fa fa-check"></i> Culture and skills alignment</li>
+                    <li><i class="fa fa-check"></i> Reduced turnover and hiring risks</li>
+                    <li><i class="fa fa-check"></i> Ongoing support through placement</li>
+                  </ul>
+                  <a href="contact.html" class="filled-button accent-button staffing-cta-btn">Learn More</a>
+                </div>
+                <div class="panel-right-image">
+                  <img src="assets/images/about-image.jpg" alt="Permanent Placement Staffing" class="panel-img">
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2 -->
+            <div class="staffing-content-panel" id="staffing-panel-2" role="tabpanel" aria-labelledby="staffing-tab-2"
+              style="display: none;">
+              <div class="panel-layout">
+                <div class="panel-left-content">
+                  <div class="panel-badge-container">
+                    <i class="fa fa-search"></i>
+                  </div>
+                  <h3 class="panel-service-title">Executive Search</h3>
+                  <h4 class="panel-service-subhead">Secure High-Impact Leadership</h4>
+                  <p class="panel-service-desc">Identify and attract executive talent who can drive growth, innovation,
+                    and long-term strategic success.</p>
+                  <ul class="panel-bullets-list">
+                    <li><i class="fa fa-check"></i> Targeted search strategy</li>
+                    <li><i class="fa fa-check"></i> Confidential candidate outreach</li>
+                    <li><i class="fa fa-check"></i> Rigorous leadership assessment</li>
+                    <li><i class="fa fa-check"></i> Seamless integration planning</li>
+                  </ul>
+                  <a href="contact.html" class="filled-button accent-button staffing-cta-btn">Learn More</a>
+                </div>
+                <div class="panel-right-image">
+                  <img src="assets/images/service_02.jpg" alt="Executive Search Solutions" class="panel-img">
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="staffing-content-panel" id="staffing-panel-3" role="tabpanel" aria-labelledby="staffing-tab-3"
+              style="display: none;">
+              <div class="panel-layout">
+                <div class="panel-left-content">
+                  <div class="panel-badge-container">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <h3 class="panel-service-title">Professional Recruitment</h3>
+                  <h4 class="panel-service-subhead">Find the Right Talent Quickly</h4>
+                  <p class="panel-service-desc">Streamline your hiring process with custom recruitment strategies
+                    designed to attract skilled professionals.</p>
+                  <ul class="panel-bullets-list">
+                    <li><i class="fa fa-check"></i> Tailored sourcing pipelines</li>
+                    <li><i class="fa fa-check"></i> Extensive candidate database</li>
+                    <li><i class="fa fa-check"></i> Rigorous qualifications vetting</li>
+                    <li><i class="fa fa-check"></i> Speed and efficiency optimized</li>
+                  </ul>
+                  <a href="contact.html" class="filled-button accent-button staffing-cta-btn">Learn More</a>
+                </div>
+                <div class="panel-right-image">
+                  <img src="assets/images/service_03.jpg" alt="Professional Recruitment" class="panel-img">
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 4 -->
+            <div class="staffing-content-panel" id="staffing-panel-4" role="tabpanel" aria-labelledby="staffing-tab-4"
+              style="display: none;">
+              <div class="panel-layout">
+                <div class="panel-left-content">
+                  <div class="panel-badge-container">
+                    <i class="fa fa-calendar-check-o"></i>
+                  </div>
+                  <h3 class="panel-service-title">Workforce Consulting</h3>
+                  <h4 class="panel-service-subhead">Optimize Your Talent Strategy</h4>
+                  <p class="panel-service-desc">Consulting services to help align your workforce with your
+                    organizational goals and improve productivity.</p>
+                  <ul class="panel-bullets-list">
+                    <li><i class="fa fa-check"></i> Strategic workforce planning</li>
+                    <li><i class="fa fa-check"></i> Compensation benchmarking</li>
+                    <li><i class="fa fa-check"></i> Retention and culture advice</li>
+                    <li><i class="fa fa-check"></i> Hiring process optimization</li>
+                  </ul>
+                  <a href="contact.html" class="filled-button accent-button staffing-cta-btn">Learn More</a>
+                </div>
+                <div class="panel-right-image">
+                  <img src="assets/images/slide_01.jpg" alt="Workforce Consulting" class="panel-img">
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 5 -->
+            <div class="staffing-content-panel" id="staffing-panel-5" role="tabpanel" aria-labelledby="staffing-tab-5"
+              style="display: none;">
+              <div class="panel-layout">
+                <div class="panel-left-content">
+                  <div class="panel-badge-container">
+                    <i class="fa fa-laptop"></i>
+                  </div>
+                  <h3 class="panel-service-title">IT &amp; Digital Staffing</h3>
+                  <h4 class="panel-service-subhead">Power Your Digital Transformation</h4>
+                  <p class="panel-service-desc">Get access to top technology professionals, developers, and project
+                    managers to execute your IT initiatives.</p>
+                  <ul class="panel-bullets-list">
+                    <li><i class="fa fa-check"></i> Software and cloud engineers</li>
+                    <li><i class="fa fa-check"></i> Cybersecurity specialists</li>
+                    <li><i class="fa fa-check"></i> Project managers and analysts</li>
+                    <li><i class="fa fa-check"></i> Flexible staffing options</li>
+                  </ul>
+                  <a href="contact.html" class="filled-button accent-button staffing-cta-btn">Learn More</a>
+                </div>
+                <div class="panel-right-image">
+                  <img src="assets/images/slide_02.jpg" alt="IT & Digital Staffing" class="panel-img">
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 6 -->
+            <div class="staffing-content-panel" id="staffing-panel-6" role="tabpanel" aria-labelledby="staffing-tab-6"
+              style="display: none;">
+              <div class="panel-layout">
+                <div class="panel-left-content">
+                  <div class="panel-badge-container">
+                    <i class="fa fa-user-md"></i>
+                  </div>
+                  <h3 class="panel-service-title">Healthcare Staffing</h3>
+                  <h4 class="panel-service-subhead">Support Your Healthcare Operations</h4>
+                  <p class="panel-service-desc">Reliable staffing for medical facilities and offices to maintain high
+                    standards of patient care and efficiency.</p>
+                  <ul class="panel-bullets-list">
+                    <li><i class="fa fa-check"></i> Vetted clinical professionals</li>
+                    <li><i class="fa fa-check"></i> Compliance and credentialing</li>
+                    <li><i class="fa fa-check"></i> Administrative support staff</li>
+                    <li><i class="fa fa-check"></i> Short and long-term coverage</li>
+                  </ul>
+                  <a href="contact.html" class="filled-button accent-button staffing-cta-btn">Learn More</a>
+                </div>
+                <div class="panel-right-image">
+                  <img src="assets/images/slide_03.jpg" alt="Healthcare Staffing" class="panel-img">
+                </div>
+              </div>
+            </div>
           </div>
-          <h4>Professional Recruitment</h4>
-          <p>Source qualified professionals across industries with a personalized approach that prioritizes both
-            technical competency and cultural alignment.</p>
-        </div>
-        <!-- Card 4 -->
-        <div class="service-detail-card sdc-refined">
-          <div class="sdc-icon-circle">
-            <i class="fa fa-bullseye"></i>
+
+          <!-- Slider Navigation controls -->
+          <div class="staffing-slider-nav">
+            <button id="staffing-prev-btn" class="staffing-nav-arrow" aria-label="Previous service"><i
+                class="fa fa-arrow-left"></i></button>
+            <button id="staffing-next-btn" class="staffing-nav-arrow active" aria-label="Next service"><i
+                class="fa fa-arrow-right"></i></button>
           </div>
-          <h4>Talent Acquisition</h4>
-          <p>Strengthen your hiring pipeline with strategic talent acquisition support driven by market intelligence and
-            rigorous candidate evaluation.</p>
-        </div>
-        <!-- Card 5 -->
-        <div class="service-detail-card sdc-refined">
-          <div class="sdc-icon-circle">
-            <i class="fa fa-check-square-o"></i>
-          </div>
-          <h4>Candidate Screening</h4>
-          <p>Receive thoroughly vetted candidates through detailed screening processes that save time and improve the
-            quality of every hire.</p>
-        </div>
-        <!-- Card 6 -->
-        <div class="service-detail-card sdc-refined">
-          <div class="sdc-icon-circle">
-            <i class="fa fa-calendar-check-o"></i>
-          </div>
-          <h4>Workforce Consulting</h4>
-          <p>Gain guidance on hiring strategy, workforce planning, and team development to support smarter recruitment
-            decisions and long-term growth.</p>
         </div>
       </div>
     </div>

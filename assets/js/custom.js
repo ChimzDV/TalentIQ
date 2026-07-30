@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
 	"use strict";
 
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 			];
 			var $repliesContainer = $('#chatbot-quick-replies');
 			$repliesContainer.empty();
-			replies.forEach(function(reply) {
+			replies.forEach(function (reply) {
 				var btnHtml = '<button type="button" class="quick-reply-btn" data-action="' + reply.action + '">' + reply.text + '</button>';
 				$repliesContainer.append(btnHtml);
 			});
@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
 				botReply = "Thank you for your message! A TalentIQ Staffing LLC representative will contact you shortly, or you can use the quick links below to explore our services.";
 			}
 
-			setTimeout(function() {
+			setTimeout(function () {
 				addChatbotMessage(botReply, 'bot');
 				renderQuickReplies();
 			}, 600);
@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
 
 			if (!chatbotWelcomeSent) {
 				chatbotWelcomeSent = true;
-				setTimeout(function() {
+				setTimeout(function () {
 					addChatbotMessage("Hello! Whether you're looking to hire top professionals or find your next opportunity, how can TalentIQ Staffing LLC help you today?", "bot");
 					renderQuickReplies();
 				}, 300);
@@ -71,7 +71,7 @@ jQuery(document).ready(function($) {
 			$drawer.removeClass('active');
 		}
 
-		$toggleBtn.off('click.chatbot').on('click.chatbot', function(e) {
+		$toggleBtn.off('click.chatbot').on('click.chatbot', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 
@@ -82,13 +82,13 @@ jQuery(document).ready(function($) {
 			}
 		});
 
-		$closeBtn.off('click.chatbot').on('click.chatbot', function(e) {
+		$closeBtn.off('click.chatbot').on('click.chatbot', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 			closeChatbot();
 		});
 
-		$('#chatbot-quick-replies').off('click.chatbot').on('click.chatbot', '.quick-reply-btn', function(e) {
+		$('#chatbot-quick-replies').off('click.chatbot').on('click.chatbot', '.quick-reply-btn', function (e) {
 			e.preventDefault();
 			var action = $(this).attr('data-action');
 			var text = $(this).text();
@@ -108,12 +108,12 @@ jQuery(document).ready(function($) {
 			}
 		}
 
-		$('#chatbot-send-btn').off('click.chatbot').on('click.chatbot', function(e) {
+		$('#chatbot-send-btn').off('click.chatbot').on('click.chatbot', function (e) {
 			e.preventDefault();
 			submitChatInput();
 		});
 
-		$('#chatbot-text-input').off('keypress.chatbot').on('keypress.chatbot', function(e) {
+		$('#chatbot-text-input').off('keypress.chatbot').on('keypress.chatbot', function (e) {
 			if (e.which === 13) {
 				e.preventDefault();
 				submitChatInput();
@@ -130,21 +130,21 @@ jQuery(document).ready(function($) {
 	// Page loading animation
 	$("#preloader").animate({
 		'opacity': '0'
-	}, 600, function() {
-		setTimeout(function() {
+	}, 600, function () {
+		setTimeout(function () {
 			$("#preloader").css("visibility", "hidden").fadeOut();
 		}, 300);
 	});
 
 	// Close mobile menu when nav-link is clicked
-	$('.navbar-nav .nav-link').on('click', function() {
+	$('.navbar-nav .nav-link').on('click', function () {
 		if ($('.navbar-collapse').hasClass('show')) {
 			$('.navbar-toggler').click();
 		}
 	});
 
 	// Close mobile menu when clicking outside the header
-	$(document).on('click.mobileNav', function(e) {
+	$(document).on('click.mobileNav', function (e) {
 		var $header = $('header');
 		var $collapse = $('#navbarResponsive');
 		if (!$header.is(e.target) && $header.has(e.target).length === 0) {
@@ -154,7 +154,7 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$(window).scroll(function() {
+	$(window).scroll(function () {
 		var scroll = $(window).scrollTop();
 		if (scroll > 50) {
 			$("header").addClass("background-header");
@@ -165,8 +165,8 @@ jQuery(document).ready(function($) {
 
 	// IntersectionObserver for scroll animations
 	if ('IntersectionObserver' in window) {
-		var animationObserver = new IntersectionObserver(function(entries, observer) {
-			entries.forEach(function(entry) {
+		var animationObserver = new IntersectionObserver(function (entries, observer) {
+			entries.forEach(function (entry) {
 				if (entry.isIntersecting) {
 					$(entry.target).addClass('visible');
 					observer.unobserve(entry.target);
@@ -176,7 +176,7 @@ jQuery(document).ready(function($) {
 			threshold: 0.15,
 			rootMargin: "0px 0px -50px 0px"
 		});
-		$('.fade-in-up').each(function() {
+		$('.fade-in-up').each(function () {
 			animationObserver.observe(this);
 		});
 	} else {
@@ -273,17 +273,17 @@ jQuery(document).ready(function($) {
 		return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
 	}
 
-	$(window).scroll(function() {
+	$(window).scroll(function () {
 		if (visible($('.count-digit'))) {
 			if ($('.count-digit').hasClass('counter-loaded')) return;
 			$('.count-digit').addClass('counter-loaded');
 
-			$('.count-digit').each(function() {
+			$('.count-digit').each(function () {
 				var $this = $(this);
 				jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
 					duration: 3000,
 					easing: 'swing',
-					step: function() {
+					step: function () {
 						$this.text(Math.ceil(this.Counter));
 					}
 				});
@@ -292,14 +292,14 @@ jQuery(document).ready(function($) {
 	});
 
 	// TalentIQ Staffing LLC custom modal functionality
-	$('[data-toggle="custom-modal"]').on('click', function(e) {
+	$('[data-toggle="custom-modal"]').on('click', function (e) {
 		e.preventDefault();
 		var target = $(this).attr('data-target');
 		$(target).addClass('active');
 		$('body').css('overflow', 'hidden');
 	});
 
-	$('.custom-modal-close, .custom-modal').on('click', function(e) {
+	$('.custom-modal-close, .custom-modal').on('click', function (e) {
 		if (e.target === this) {
 			$('.custom-modal').removeClass('active');
 			$('body').css('overflow', 'auto');
@@ -307,7 +307,7 @@ jQuery(document).ready(function($) {
 	});
 
 	// Handle all contact form submissions to show success popup
-	$('form').on('submit', function(e) {
+	$('form').on('submit', function (e) {
 		e.preventDefault();
 		this.reset();
 		$('#successModal').addClass('active');
@@ -330,7 +330,7 @@ jQuery(document).ready(function($) {
 			try {
 				return JSON.parse(attrValue);
 			} catch (e) {
-				return attrValue.split(',').map(function(s) { return s.trim(); });
+				return attrValue.split(',').map(function (s) { return s.trim(); });
 			}
 		}
 
@@ -352,12 +352,12 @@ jQuery(document).ready(function($) {
 			$('#drawer-exec-quote').text(quote);
 
 			var $focusContainer = $('#drawer-exec-focus').empty();
-			focusList.forEach(function(item) {
+			focusList.forEach(function (item) {
 				$focusContainer.append('<span class="executive-badge">' + item + '</span>');
 			});
 
 			var $expertiseContainer = $('#drawer-exec-expertise').empty();
-			expertiseList.forEach(function(item) {
+			expertiseList.forEach(function (item) {
 				$expertiseContainer.append('<li><i class="fa fa-check"></i> ' + item + '</li>');
 			});
 
@@ -368,7 +368,7 @@ jQuery(document).ready(function($) {
 			$drawer.addClass('active').attr('aria-hidden', 'false');
 			$('body').addClass('drawer-open');
 
-			setTimeout(function() {
+			setTimeout(function () {
 				$drawer.focus();
 			}, 50);
 		}
@@ -383,22 +383,22 @@ jQuery(document).ready(function($) {
 			}
 		}
 
-		$(document).on('click', '.executive-profile-link', function(e) {
+		$(document).on('click', '.executive-profile-link', function (e) {
 			e.preventDefault();
 			var $card = $(this).closest('.executive-leader-card');
 			openDrawer($card, this);
 		});
 
-		$closeBtn.on('click', function(e) {
+		$closeBtn.on('click', function (e) {
 			e.preventDefault();
 			closeDrawer();
 		});
 
-		$backdrop.on('click', function(e) {
+		$backdrop.on('click', function (e) {
 			closeDrawer();
 		});
 
-		$(document).on('keydown', function(e) {
+		$(document).on('keydown', function (e) {
 			if (e.key === 'Escape' || e.keyCode === 27) {
 				if ($drawer.hasClass('active')) {
 					closeDrawer();
@@ -416,11 +416,11 @@ jQuery(document).ready(function($) {
 	// Matches @media (max-width: 991.98px) in responsive.css exactly.
 	// =========================================================================
 	(function initServicesMobileCarousel() {
-		var $carousel   = $('#servicesMobileCarousel');
-		var $track      = $('#smcTrack');
-		var $dotsWrap   = $('#smcDots');
-		var $btnPrev    = $('#smcPrev');
-		var $btnNext    = $('#smcNext');
+		var $carousel = $('#servicesMobileCarousel');
+		var $track = $('#smcTrack');
+		var $dotsWrap = $('#smcDots');
+		var $btnPrev = $('#smcPrev');
+		var $btnNext = $('#smcNext');
 
 		if (!$carousel.length || !$track.length) return;
 
@@ -428,25 +428,25 @@ jQuery(document).ready(function($) {
 		var mql = window.matchMedia('(max-width: 991.98px)');
 
 		var currentIndex = 0;
-		var totalSlides  = $track.find('.smc-slide').length;
-		var autoTimer    = null;
-		var isPaused     = false;
-		var AUTO_DELAY   = 6000; // ms
+		var totalSlides = $track.find('.smc-slide').length;
+		var autoTimer = null;
+		var isPaused = false;
+		var AUTO_DELAY = 6000; // ms
 
 		// --- Build pagination dots ---
 		function buildDots() {
 			$dotsWrap.empty();
 			for (var i = 0; i < totalSlides; i++) {
-				(function(idx) {
+				(function (idx) {
 					var $dot = $('<button></button>')
 						.addClass('smc-dot')
 						.attr({
-							'type'       : 'button',
-							'role'       : 'tab',
-							'aria-label' : 'Go to slide ' + (idx + 1),
+							'type': 'button',
+							'role': 'tab',
+							'aria-label': 'Go to slide ' + (idx + 1),
 							'aria-selected': idx === 0 ? 'true' : 'false'
 						})
-						.on('click', function() { goTo(idx); });
+						.on('click', function () { goTo(idx); });
 					$dotsWrap.append($dot);
 				})(i);
 			}
@@ -454,7 +454,7 @@ jQuery(document).ready(function($) {
 		}
 
 		function updateDots() {
-			$dotsWrap.find('.smc-dot').each(function(i) {
+			$dotsWrap.find('.smc-dot').each(function (i) {
 				$(this)
 					.toggleClass('is-active', i === currentIndex)
 					.attr('aria-selected', i === currentIndex ? 'true' : 'false');
@@ -464,7 +464,7 @@ jQuery(document).ready(function($) {
 		// --- Move carousel to a given index ---
 		function goTo(index) {
 			// Clamp / wrap
-			if (index < 0)            index = totalSlides - 1;
+			if (index < 0) index = totalSlides - 1;
 			if (index >= totalSlides) index = 0;
 
 			currentIndex = index;
@@ -476,7 +476,7 @@ jQuery(document).ready(function($) {
 		// --- Auto-slide ---
 		function startAuto() {
 			stopAuto();
-			autoTimer = setInterval(function() {
+			autoTimer = setInterval(function () {
 				if (!isPaused) {
 					goTo(currentIndex + 1);
 				}
@@ -492,48 +492,48 @@ jQuery(document).ready(function($) {
 
 		// --- Pause on hover / focus ---
 		$carousel
-			.on('mouseenter focusin', function() { isPaused = true; })
-			.on('mouseleave focusout', function() { isPaused = false; });
+			.on('mouseenter focusin', function () { isPaused = true; })
+			.on('mouseleave focusout', function () { isPaused = false; });
 
 		// --- Pause on touch ---
-		$carousel[0].addEventListener('touchstart', function() {
+		$carousel[0].addEventListener('touchstart', function () {
 			isPaused = true;
 		}, { passive: true });
-		$carousel[0].addEventListener('touchend', function() {
+		$carousel[0].addEventListener('touchend', function () {
 			// Resume after a short delay so the touch-swipe can complete
-			setTimeout(function() { isPaused = false; }, 800);
+			setTimeout(function () { isPaused = false; }, 800);
 		}, { passive: true });
 
 		// --- Button handlers ---
-		$btnPrev.on('click', function() {
+		$btnPrev.on('click', function () {
 			goTo(currentIndex - 1);
 			startAuto(); // reset timer on manual nav
 		});
-		$btnNext.on('click', function() {
+		$btnNext.on('click', function () {
 			goTo(currentIndex + 1);
 			startAuto();
 		});
 
 		// --- Keyboard navigation ---
 		// Keyboard nav: only fires when carousel is active (< 992px)
-		$(document).on('keydown.smc', function(e) {
+		$(document).on('keydown.smc', function (e) {
 			if (!mql.matches) return;
-			if (e.key === 'ArrowLeft')  { goTo(currentIndex - 1); startAuto(); }
+			if (e.key === 'ArrowLeft') { goTo(currentIndex - 1); startAuto(); }
 			if (e.key === 'ArrowRight') { goTo(currentIndex + 1); startAuto(); }
 		});
 
 		// --- Touch / swipe support ---
 		var touchStartX = 0;
 		var touchStartY = 0;
-		var isSwiping   = false;
+		var isSwiping = false;
 
-		$carousel[0].addEventListener('touchstart', function(e) {
+		$carousel[0].addEventListener('touchstart', function (e) {
 			touchStartX = e.touches[0].clientX;
 			touchStartY = e.touches[0].clientY;
-			isSwiping   = false;
+			isSwiping = false;
 		}, { passive: true });
 
-		$carousel[0].addEventListener('touchmove', function(e) {
+		$carousel[0].addEventListener('touchmove', function (e) {
 			var dx = e.touches[0].clientX - touchStartX;
 			var dy = e.touches[0].clientY - touchStartY;
 			// Only hijack if horizontal swipe is dominant
@@ -542,7 +542,7 @@ jQuery(document).ready(function($) {
 			}
 		}, { passive: true });
 
-		$carousel[0].addEventListener('touchend', function(e) {
+		$carousel[0].addEventListener('touchend', function (e) {
 			if (!isSwiping) return;
 			var dx = e.changedTouches[0].clientX - touchStartX;
 			var SWIPE_THRESHOLD = 40; // px
@@ -589,6 +589,173 @@ jQuery(document).ready(function($) {
 	// =========================================================================
 	// END SERVICES MOBILE CAROUSEL
 	// =========================================================================
+
+	// =========================================================================
+	// SERVICES INTERACTIVE TABS & SLIDER
+	// =========================================================================
+	(function initServicesInteractiveTabs() {
+		var $tabs       = $('.staffing-nav-item');
+		var $panels     = $('.staffing-content-panel'); // desktop panels only
+		var $navCard    = $('.staffing-nav-card');
+		var $prevBtn    = $('#staffing-prev-btn');
+		var $nextBtn    = $('#staffing-next-btn');
+		var $mobilePanel = $('#staffing-mobile-panel');
+
+		if (!$tabs.length || !$panels.length || !$mobilePanel.length) return;
+
+		function isMobile() {
+			return window.matchMedia('(max-width: 991px)').matches;
+		}
+
+		// Populate the shared mobile panel from the corresponding desktop panel source
+		function populateMobilePanel($srcPanel, $btn) {
+			var $left  = $srcPanel.find('.panel-left-content');
+			var icon   = $btn.data('icon') || '';
+			var title  = $left.find('.panel-service-title').text();
+			var subhead = $left.find('.panel-service-subhead').text();
+			var desc   = $left.find('.panel-service-desc').text();
+			var bullets = [];
+			$left.find('.panel-bullets-list li').each(function () {
+				bullets.push($(this).text().trim());
+			});
+			var imgSrc = $srcPanel.find('.panel-img').attr('src') || '';
+			var imgAlt = $srcPanel.find('.panel-img').attr('alt') || '';
+
+			$('#smp-icon').attr('class', 'fa ' + icon);
+			$('#smp-title').text(title);
+			$('#smp-subhead').text(subhead);
+			$('#smp-desc').text(desc);
+
+			var $ul = $('#smp-bullets').empty();
+			bullets.forEach(function (b) {
+				$ul.append('<li><i class="fa fa-check"></i> ' + b + '</li>');
+			});
+
+			$('#smp-img').attr({ src: imgSrc, alt: imgAlt });
+		}
+
+		// Return the last tab button in the same 2-column row as the given index
+		function rowEndTab(idx) {
+			var rowEnd = Math.floor(idx / 2) * 2 + 1;
+			return $tabs.eq(Math.min(rowEnd, $tabs.length - 1));
+		}
+
+		// Move the mobile panel inside .staffing-nav-card after the row-end sibling
+		function placePanel(idx) {
+			rowEndTab(idx).after($mobilePanel);
+		}
+
+		function showMobilePanel($srcPanel, $btn) {
+			var currentTarget = $mobilePanel.data('active-target');
+			var thisTarget    = $btn.attr('data-target');
+			var idx           = parseInt($btn.data('index'), 10);
+
+			// Toggle: same card tapped again → collapse
+			if (currentTarget === thisTarget) {
+				$mobilePanel.data('active-target', '');
+				$tabs.filter('[data-target="' + thisTarget + '"]')
+					.removeClass('active').attr('aria-selected', 'false');
+				$mobilePanel.slideUp(275);
+				return;
+			}
+
+			// Update active tab state
+			$tabs.removeClass('active').attr('aria-selected', 'false');
+			$btn.addClass('active').attr('aria-selected', 'true');
+
+			populateMobilePanel($srcPanel, $btn);
+			$mobilePanel.data('active-target', thisTarget);
+
+			if ($mobilePanel.is(':visible')) {
+				// Panel already open in a different row → slide up, reposition, slide down
+				var currentRowEnd = rowEndTab(
+					parseInt($tabs.filter('[data-target="' + currentTarget + '"]').data('index'), 10)
+				);
+				var newRowEnd = rowEndTab(idx);
+
+				if (currentRowEnd.is(newRowEnd)) {
+					// Same row: content swap in place (no reposition needed)
+					$mobilePanel.slideUp(150, function () {
+						$mobilePanel.slideDown(275);
+					});
+				} else {
+					$mobilePanel.slideUp(200, function () {
+						placePanel(idx);
+						$mobilePanel.slideDown(275);
+					});
+				}
+			} else {
+				// Panel hidden: place and open
+				placePanel(idx);
+				$mobilePanel.slideDown(275);
+			}
+		}
+
+		// Core tab switch — routes to mobile or desktop behaviour
+		function switchTab(index) {
+			var $targetTab = $tabs.eq(index);
+			if (!$targetTab.length) return;
+
+			var targetId    = $targetTab.attr('data-target');
+			var $targetPanel = $('#' + targetId);
+			if (!$targetPanel.length) return;
+
+			if (isMobile()) {
+				showMobilePanel($targetPanel, $targetTab);
+			} else {
+				// Desktop: classic fade-swap (skip if already active)
+				if ($targetPanel.hasClass('active')) return;
+
+				$tabs.removeClass('active').attr('aria-selected', 'false');
+				$targetTab.addClass('active').attr('aria-selected', 'true');
+
+				var $activePanel = $panels.filter('.active');
+				$activePanel.fadeOut(150, function () {
+					$activePanel.removeClass('active');
+					$targetPanel.fadeIn(150).addClass('active');
+				});
+
+				if (index === 0) {
+					$prevBtn.removeClass('active'); $nextBtn.addClass('active');
+				} else if (index === $tabs.length - 1) {
+					$prevBtn.addClass('active'); $nextBtn.removeClass('active');
+				} else {
+					$prevBtn.addClass('active'); $nextBtn.addClass('active');
+				}
+			}
+		}
+
+		// Event bindings
+		$tabs.on('click', function (e) {
+			e.preventDefault();
+			switchTab($(this).data('index'));
+		});
+
+		$prevBtn.on('click', function (e) {
+			e.preventDefault();
+			var cur = $tabs.filter('.active').data('index');
+			switchTab((cur - 1 + $tabs.length) % $tabs.length);
+		});
+
+		$nextBtn.on('click', function (e) {
+			e.preventDefault();
+			var cur = $tabs.filter('.active').data('index');
+			switchTab((cur + 1) % $tabs.length);
+		});
+
+		// Resize: going from mobile → desktop, restore clean desktop state
+		$(window).on('resize.staffingTabs', function () {
+			if (!isMobile()) {
+				// Pull panel out of grid and hide it
+				$mobilePanel.hide().data('active-target', '').appendTo($navCard.parent());
+
+				var activeIdx = $tabs.filter('.active').data('index');
+				if (activeIdx === undefined) { activeIdx = 0; }
+				$panels.hide().removeClass('active');
+				$panels.eq(activeIdx).show().addClass('active');
+			}
+		});
+	})();
 
 });
 
