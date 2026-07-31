@@ -3711,3 +3711,55 @@ textarea.form-control-premium {
 .service-detail-card.sdc-refined p {
   text-align: center !important;
 }
+
+/* ==========================================================================
+   26. HIGH-VISIBILITY WATERMARKS AND BACKGROUND PATTERNS
+   ========================================================================== */
+
+/* Target every white section and div */
+section, .bg-white, div[class*="section"], .wrapper {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Inject visible watermarks & patterns into every section */
+section::before, .bg-white::before, div[class*="section"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(212, 175, 55, 0.18) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 90% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 10% 80%, rgba(11, 25, 44, 0.12) 0%, transparent 40%);
+  background-size: 28px 28px, 100% 100%, 100% 100%;
+  background-position: 0 0, center, center;
+  opacity: 0.85 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* Ensure Card Content Stays Elevated above background layer */
+.card, .container > *, .row, form, button, h1, h2, h3, h4, h5, p {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* TalentIQ Watermark Emblem Overlay on alternating sections */
+section:nth-of-type(even)::after,
+div[class*="section"]:nth-of-type(even)::after {
+  content: '';
+  position: absolute;
+  right: -50px;
+  bottom: 10%;
+  width: 350px;
+  height: 350px;
+  background-image: url('../images/lg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.15 !important;
+  pointer-events: none;
+  z-index: 1;
+}
