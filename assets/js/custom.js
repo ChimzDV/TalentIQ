@@ -14,26 +14,48 @@ jQuery(document).ready(function ($) {
 
 		var chatbotWelcomeSent = false;
 
-		function addChatbotMessage(text, sender) {
+		function addChatbotMessage(text, sender, isWelcome) {
 			var msgClass = sender === 'bot' ? 'bot' : 'user';
+			if (isWelcome) {
+				msgClass += ' welcome-card';
+			}
 			var msgHtml = '<div class="chat-msg ' + msgClass + '">' + text + '</div>';
 			var $msgContainer = $('#chatbot-messages');
 			$msgContainer.append(msgHtml);
 			$msgContainer.scrollTop($msgContainer[0].scrollHeight);
 		}
 
+		function showTypingIndicator() {
+			var $msgContainer = $('#chatbot-messages');
+			if ($msgContainer.find('.typing-indicator').length === 0) {
+				var indicatorHtml = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+				$msgContainer.append(indicatorHtml);
+				$msgContainer.scrollTop($msgContainer[0].scrollHeight);
+			}
+		}
+
+		function removeTypingIndicator() {
+			var $msgContainer = $('#chatbot-messages');
+			$msgContainer.find('.typing-indicator').remove();
+		}
+
 		function renderQuickReplies() {
 			var replies = [
 				{ text: "Request Talent", action: "request_staff" },
 				{ text: "View Services", action: "view_services" },
-				{ text: "Contact Us", action: "contact_us" }
+				{ text: "Find a Job", action: "find_job" }
 			];
 			var $repliesContainer = $('#chatbot-quick-replies');
-			$repliesContainer.empty();
+			$repliesContainer.empty().addClass('has-replies');
 			replies.forEach(function (reply) {
 				var btnHtml = '<button type="button" class="quick-reply-btn" data-action="' + reply.action + '">' + reply.text + '</button>';
 				$repliesContainer.append(btnHtml);
 			});
+
+			var $msgContainer = $('#chatbot-messages');
+			setTimeout(function () {
+				$msgContainer.scrollTop($msgContainer[0].scrollHeight);
+			}, 100);
 		}
 
 		function handleBotResponse(action) {
@@ -43,16 +65,21 @@ jQuery(document).ready(function ($) {
 				botReply = "Excellent! You can request talent across IT & Digital, Healthcare, Engineering & Technical, Aerospace & Defense, or Federal & Government Staffing by visiting our <a href='contact.html'>Contact Us page</a> or filling out the form on our homepage.";
 			} else if (action === "view_services") {
 				botReply = "We specialize in 5 core staffing categories: IT & Digital, Healthcare, Engineering & Technical, Aerospace & Defense, and Federal & Government Staffing. Explore all services on our <a href='services.html'>Services page</a>.";
+			} else if (action === "find_job") {
+				botReply = "We are always looking for outstanding talent! You can explore career opportunities by visiting our <a href='contact.html'>Contact Us page</a> and sharing your resume or details with us.";
 			} else if (action === "contact_us") {
 				botReply = "Feel free to reach out on our <a href='contact.html'>Contact page</a> or email us at <a href='mailto:info@talentiqstaffing.com'>info@talentiqstaffing.com</a>.";
 			} else {
 				botReply = "Thank you for your message! A TalentIQ Staffing LLC representative will contact you shortly, or you can use the quick links below to explore our services.";
 			}
 
+			showTypingIndicator();
+
 			setTimeout(function () {
+				removeTypingIndicator();
 				addChatbotMessage(botReply, 'bot');
 				renderQuickReplies();
-			}, 600);
+			}, 1000);
 		}
 
 		function openChatbot() {
@@ -60,10 +87,12 @@ jQuery(document).ready(function ($) {
 
 			if (!chatbotWelcomeSent) {
 				chatbotWelcomeSent = true;
+				showTypingIndicator();
 				setTimeout(function () {
-					addChatbotMessage("Hello! Whether you're looking to hire top professionals or find your next opportunity, how can TalentIQ Staffing LLC help you today?", "bot");
+					removeTypingIndicator();
+					addChatbotMessage("Hello! Whether you're looking to hire top professionals or find your next opportunity, how can TalentIQ Staffing LLC help you today?", "bot", true);
 					renderQuickReplies();
-				}, 300);
+				}, 800);
 			}
 		}
 
@@ -93,7 +122,7 @@ jQuery(document).ready(function ($) {
 			var action = $(this).attr('data-action');
 			var text = $(this).text();
 			addChatbotMessage(text, 'user');
-			$('#chatbot-quick-replies').empty();
+			$('#chatbot-quick-replies').empty().removeClass('has-replies');
 			handleBotResponse(action);
 		});
 
@@ -103,7 +132,7 @@ jQuery(document).ready(function ($) {
 			if (text) {
 				addChatbotMessage(text, 'user');
 				$input.val('');
-				$('#chatbot-quick-replies').empty();
+				$('#chatbot-quick-replies').empty().removeClass('has-replies');
 				handleBotResponse('custom');
 			}
 		}

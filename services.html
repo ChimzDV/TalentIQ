@@ -344,7 +344,7 @@
   </div>
 
   <!-- Industries We Serve Section -->
-  <div class="industries-section-refined fade-in-up">
+  <div id="industries" class="industries-section-refined fade-in-up">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -555,7 +555,16 @@
     </div>
     <div id="chatbot-window" class="chatbot-drawer">
       <div class="chatbot-header">
-        <h5><i class="fa fa-comments"></i> TalentIQ Assistant</h5>
+        <div class="chatbot-header-logo-container">
+          <img src="assets/images/logo.png" class="chatbot-header-logo" alt="TalentIQ Logo">
+          <div class="chatbot-header-title-container">
+            <span class="chatbot-header-title">TalentIQ Assistant</span>
+            <div class="chatbot-status-indicator">
+              <span class="status-dot"></span>
+              <span class="status-text">Online</span>
+            </div>
+          </div>
+        </div>
         <button id="chatbot-close-btn" class="chatbot-close">&times;</button>
       </div>
       <div id="chatbot-messages" class="chatbot-messages">
@@ -565,7 +574,10 @@
         <!-- Quick replies will be dynamically rendered here -->
       </div>
       <div class="chatbot-input-area">
-        <input type="text" id="chatbot-text-input" placeholder="Type a message..." autocomplete="off">
+        <div class="chatbot-input-wrapper">
+          <i class="fa fa-keyboard-o chatbot-input-icon"></i>
+          <input type="text" id="chatbot-text-input" placeholder="Type a message..." autocomplete="off">
+        </div>
         <button id="chatbot-send-btn" class="chatbot-send-btn"><i class="fa fa-paper-plane"></i></button>
       </div>
     </div>

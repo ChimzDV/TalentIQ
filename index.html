@@ -275,8 +275,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center mt-5">
-          <a href="#" class="border-button industries-view-all-btn" data-toggle="custom-modal"
-            data-target="#modalIndustries">View All Industries</a>
+          <a href="services.html#industries" class="border-button industries-view-all-btn">View All Industries</a>
         </div>
       </div>
     </div>
@@ -587,50 +586,6 @@
     </div>
   </div>
 
-  <!-- Custom Modal: Industries We Serve -->
-  <div id="modalIndustries" class="custom-modal">
-    <div class="custom-modal-content">
-      <span class="custom-modal-close" data-target="#modalIndustries">&times;</span>
-      <h3>Industries We Serve</h3>
-      <p>TalentIQ Staffing LLC provides permanent placement and recruitment support across these 5 core sectors:</p>
-      <div style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
-        <ul style="list-style: none; padding-left: 0;">
-          <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-            <strong style="color: #103E74; font-size: 16px;"><i class="fa fa-laptop"
-                style="color: #C69214; margin-right: 8px;"></i> IT & Digital Staffing</strong>
-            <p style="font-size: 13px; margin-top: 5px; margin-bottom: 0;">Connecting businesses with software
-              developers, cybersecurity professionals, cloud engineers, data specialists, AI experts, IT support, and
-              digital transformation talent.</p>
-          </li>
-          <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-            <strong style="color: #103E74; font-size: 16px;"><i class="fa fa-user-md"
-                style="color: #C69214; margin-right: 8px;"></i> Healthcare Staffing</strong>
-            <p style="font-size: 13px; margin-top: 5px; margin-bottom: 0;">Recruiting qualified healthcare professionals
-              including nurses, allied health specialists, healthcare administrators, and medical support personnel.</p>
-          </li>
-          <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-            <strong style="color: #103E74; font-size: 16px;"><i class="fa fa-cogs"
-                style="color: #C69214; margin-right: 8px;"></i> Engineering & Technical Staffing</strong>
-            <p style="font-size: 13px; margin-top: 5px; margin-bottom: 0;">Providing mechanical, electrical, civil,
-              industrial, manufacturing, and technical professionals for mission-critical projects.</p>
-          </li>
-          <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-            <strong style="color: #103E74; font-size: 16px;"><i class="fa fa-plane"
-                style="color: #C69214; margin-right: 8px;"></i> Aerospace & Defense Staffing</strong>
-            <p style="font-size: 13px; margin-top: 5px; margin-bottom: 0;">Delivering highly qualified professionals for
-              aerospace, aviation, defense contractors, military support services, and advanced technology programs.</p>
-          </li>
-          <li style="margin-bottom: 15px; padding-bottom: 10px;">
-            <strong style="color: #103E74; font-size: 16px;"><i class="fa fa-university"
-                style="color: #C69214; margin-right: 8px;"></i> Federal & Government Staffing</strong>
-            <p style="font-size: 13px; margin-top: 5px; margin-bottom: 0;">Supplying experienced professionals for
-              federal agencies, government contractors, public sector organizations, and compliance-driven projects.</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <!-- Custom Modal: Our Recruitment Process -->
   <div id="modalRecruitment" class="custom-modal">
     <div class="custom-modal-content">
@@ -691,7 +646,16 @@
     </div>
     <div id="chatbot-window" class="chatbot-drawer">
       <div class="chatbot-header">
-        <h5><i class="fa fa-comments"></i> TalentIQ Assistant</h5>
+        <div class="chatbot-header-logo-container">
+          <img src="assets/images/logo.png" class="chatbot-header-logo" alt="TalentIQ Logo">
+          <div class="chatbot-header-title-container">
+            <span class="chatbot-header-title">TalentIQ Assistant</span>
+            <div class="chatbot-status-indicator">
+              <span class="status-dot"></span>
+              <span class="status-text">Online</span>
+            </div>
+          </div>
+        </div>
         <button id="chatbot-close-btn" class="chatbot-close">&times;</button>
       </div>
       <div id="chatbot-messages" class="chatbot-messages">
@@ -701,7 +665,10 @@
         <!-- Quick replies will be dynamically rendered here -->
       </div>
       <div class="chatbot-input-area">
-        <input type="text" id="chatbot-text-input" placeholder="Type a message..." autocomplete="off">
+        <div class="chatbot-input-wrapper">
+          <i class="fa fa-keyboard-o chatbot-input-icon"></i>
+          <input type="text" id="chatbot-text-input" placeholder="Type a message..." autocomplete="off">
+        </div>
         <button id="chatbot-send-btn" class="chatbot-send-btn"><i class="fa fa-paper-plane"></i></button>
       </div>
     </div>
