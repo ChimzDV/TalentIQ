@@ -594,11 +594,11 @@ jQuery(document).ready(function ($) {
 	// SERVICES INTERACTIVE TABS & SLIDER
 	// =========================================================================
 	(function initServicesInteractiveTabs() {
-		var $tabs       = $('.staffing-nav-item');
-		var $panels     = $('.staffing-content-panel'); // desktop panels only
-		var $navCard    = $('.staffing-nav-card');
-		var $prevBtn    = $('#staffing-prev-btn');
-		var $nextBtn    = $('#staffing-next-btn');
+		var $tabs = $('.staffing-nav-item');
+		var $panels = $('.staffing-content-panel'); // desktop panels only
+		var $navCard = $('.staffing-nav-card');
+		var $prevBtn = $('#staffing-prev-btn');
+		var $nextBtn = $('#staffing-next-btn');
 		var $mobilePanel = $('#staffing-mobile-panel');
 
 		if (!$tabs.length || !$panels.length || !$mobilePanel.length) return;
@@ -609,11 +609,11 @@ jQuery(document).ready(function ($) {
 
 		// Populate the shared mobile panel from the corresponding desktop panel source
 		function populateMobilePanel($srcPanel, $btn) {
-			var $left  = $srcPanel.find('.panel-left-content');
-			var icon   = $btn.data('icon') || '';
-			var title  = $left.find('.panel-service-title').text();
+			var $left = $srcPanel.find('.panel-left-content');
+			var icon = $btn.data('icon') || '';
+			var title = $left.find('.panel-service-title').text();
 			var subhead = $left.find('.panel-service-subhead').text();
-			var desc   = $left.find('.panel-service-desc').text();
+			var desc = $left.find('.panel-service-desc').text();
 			var bullets = [];
 			$left.find('.panel-bullets-list li').each(function () {
 				bullets.push($(this).text().trim());
@@ -647,8 +647,8 @@ jQuery(document).ready(function ($) {
 
 		function showMobilePanel($srcPanel, $btn) {
 			var currentTarget = $mobilePanel.data('active-target');
-			var thisTarget    = $btn.attr('data-target');
-			var idx           = parseInt($btn.data('index'), 10);
+			var thisTarget = $btn.attr('data-target');
+			var idx = parseInt($btn.data('index'), 10);
 
 			// Toggle: same card tapped again → collapse
 			if (currentTarget === thisTarget) {
@@ -696,7 +696,7 @@ jQuery(document).ready(function ($) {
 			var $targetTab = $tabs.eq(index);
 			if (!$targetTab.length) return;
 
-			var targetId    = $targetTab.attr('data-target');
+			var targetId = $targetTab.attr('data-target');
 			var $targetPanel = $('#' + targetId);
 			if (!$targetPanel.length) return;
 

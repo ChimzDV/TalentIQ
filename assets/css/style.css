@@ -2719,13 +2719,10 @@ body.drawer-open {
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   22a. Interactive Services Section
-   -------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------
    22a. Interactive Staffing Solutions Section
    -------------------------------------------------------------------------- */
 .section-heading-custom {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .section-heading-custom .eyebrow-heading {
@@ -2735,7 +2732,7 @@ body.drawer-open {
   font-weight: 700;
   color: var(--accent-gold);
   display: block;
-  margin-bottom: 12px;
+  margin-top: 8px;
   text-transform: uppercase;
 }
 
@@ -3717,20 +3714,25 @@ textarea.form-control-premium {
    ========================================================================== */
 
 /* Target every white section and div */
-section, .bg-white, div[class*="section"], .wrapper {
+section,
+.bg-white,
+div[class*="section"],
+.wrapper {
   position: relative !important;
   overflow: hidden !important;
 }
 
 /* Inject visible watermarks & patterns into every section */
-section::before, .bg-white::before, div[class*="section"]::before {
+section::before,
+.bg-white::before,
+div[class*="section"]::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(rgba(212, 175, 55, 0.18) 1.5px, transparent 1.5px),
     radial-gradient(circle at 90% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
     radial-gradient(circle at 10% 80%, rgba(11, 25, 44, 0.12) 0%, transparent 40%);
@@ -3742,7 +3744,17 @@ section::before, .bg-white::before, div[class*="section"]::before {
 }
 
 /* Ensure Card Content Stays Elevated above background layer */
-.card, .container > *, .row, form, button, h1, h2, h3, h4, h5, p {
+.card,
+.container>*,
+.row,
+form,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   position: relative !important;
   z-index: 2 !important;
 }
