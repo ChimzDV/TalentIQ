@@ -8,7 +8,8 @@
   <meta name="description"
     content="Learn about TalentIQ Staffing LLC — a veteran-owned staffing and recruitment firm committed to integrity, quality hiring, and lasting employer partnerships across the United States.">
   <meta name="author" content="TalentIQ Staffing LLC">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
     rel="stylesheet">
 
   <title>About Us - TalentIQ Staffing LLC</title>
@@ -69,49 +70,82 @@
   </header>
 
   <!-- Page Content -->
-  <div class="page-heading header-text">
+  <div class="page-heading header-text about-hero">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>About Us</h1>
-          <span>Connecting Exceptional Talent With Outstanding Employers</span>
+          <h1>Connecting Exceptional Talent With Outstanding Employers</h1>
+          <!-- <span>Connecting Exceptional Talent With Outstanding Employers</span> -->
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Section 1 – Company Overview -->
-  <div class="more-info about-info fade-in-up">
+  <!-- Redesigned Premium About Us Section -->
+  <div class="about-redesign-wrapper">
     <div class="container">
-      <div class="more-info-content">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-12">
-            <div class="left-image mb-4 mb-lg-0">
-              <img src="assets/images/about-image.jpg" alt="TalentIQ Staffing LLC Team"
-                class="img-fluid rounded shadow">
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <div class="right-content">
-              <span>About Us</span>
-              <h2>Staffing Solutions, <br> <em>Built on Trust</em></h2>
-              <p>TalentIQ Staffing LLC is a veteran-owned staffing and recruitment firm dedicated to connecting
-                exceptional talent with outstanding employers across the United States. Guided by integrity,
-                accountability, discipline, and service, we provide permanent placement solutions that help
-                organizations build skilled, high-performing teams.</p>
-              <p>Founded by a U.S. military veteran, we understand that success is built on trust, commitment, and
-                delivering results. These principles shape everything we do—from identifying highly qualified candidates
-                to helping businesses build high-performing teams that drive long-term success.</p>
-              <p>Through a personalized, people-first approach, market expertise, and rigorous candidate screening, we
-                ensure every placement is the right fit for both our clients and candidates. Whether you're looking to
-                hire exceptional talent or take the next step in your career, we're committed to delivering a seamless,
-                transparent, and results-driven recruitment experience.</p>
+      
+      <!-- (1) Centered Heading -->
+      <div class="about-redesign-header fade-up-trigger">
+        <h2>About Us</h2>
+      </div>
+
+      <!-- (2) Modern Two-Column Layout -->
+      <div class="about-redesign-grid">
+        <!-- LEFT COLUMN (55%) -->
+        <div class="about-redesign-col-left fade-up-trigger">
+          <div class="about-redesign-img-wrapper">
+            <img src="assets/images/about-image.jpg" alt="TalentIQ Staffing LLC Team" class="about-redesign-img">
+            <!-- Floating Badge -->
+            <div class="about-redesign-badge">
+              <div class="about-redesign-badge-emblem">
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="about-redesign-badge-text">
+                <span>Veteran-Owned.</span>
+                <span>Values-Driven.</span>
+                <span>Mission Focused.</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- RIGHT COLUMN (45%) -->
+        <div class="about-redesign-col-right fade-up-trigger">
+          <span class="about-redesign-label">Who We Are</span>
+          <h1 class="about-redesign-headline">Staffing Solutions,<br><em>Built on Trust</em></h1>
+          <p class="about-redesign-p">TalentIQ Staffing LLC is a veteran-owned staffing and recruitment firm dedicated to connecting exceptional talent with outstanding employers across the United States. Guided by integrity, accountability, discipline, and service, we provide permanent placement solutions that help organizations build skilled, high-performing teams.</p>
+          <p class="about-redesign-p">Founded by a U.S. military veteran, we understand that success is built on trust, commitment, and delivering results. These principles shape everything we do—from identifying highly qualified candidates to helping businesses build high-performing teams that drive long-term success.</p>
+          <p class="about-redesign-p">Through a personalized, people-first approach, market expertise, and rigorous candidate screening, we ensure every placement is the right fit for both our clients and candidates. Whether you're looking to hire exceptional talent or take the next step in your career, we're committed to delivering a seamless, transparent, and results-driven recruitment experience.</p>
+        </div>
       </div>
+
+
+
     </div>
   </div>
+
+  <!-- Local Script for Animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Fade-up trigger observer
+      const fadeElements = document.querySelectorAll('.fade-up-trigger');
+      const fadeObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Add stagger animation delay
+            setTimeout(() => {
+              entry.target.classList.add('animated');
+            }, index * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      fadeElements.forEach(el => fadeObserver.observe(el));
+    });
+  </script>
+
 
   <!-- Section 2 – Mission & Vision -->
   <div class="team fade-in-up">
