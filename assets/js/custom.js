@@ -338,6 +338,32 @@ jQuery(document).ready(function ($) {
 	// Handle all contact form submissions to show success popup
 	$('form').on('submit', function (e) {
 		e.preventDefault();
+		var $form = $(this);
+		var name = $form.find('#name').val();
+		var email = $form.find('#email').val();
+		var phone = $form.find('#phone').val();
+
+		if (name && name.trim().length < 2) {
+			alert("Please enter a valid full name.");
+			return;
+		}
+
+		if (email) {
+			var emailReg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+			if (!emailReg.test(email.trim())) {
+				alert("Please enter a valid email address.");
+				return;
+			}
+		}
+
+		if (phone) {
+			var phoneReg = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+			if (phone.trim().length < 7 || !phoneReg.test(phone.trim())) {
+				alert("Please enter a valid phone number.");
+				return;
+			}
+		}
+
 		this.reset();
 		$('#successModal').addClass('active');
 		$('body').css('overflow', 'hidden');

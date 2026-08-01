@@ -8,11 +8,32 @@
   <meta name="description"
     content="Learn about TalentIQ Staffing LLC — a veteran-owned staffing and recruitment firm committed to integrity, quality hiring, and lasting employer partnerships across the United States.">
   <meta name="author" content="TalentIQ Staffing LLC">
+  <meta name="robots" content="index, follow">
+
+  <!-- Preconnect and Preload Assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
     rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/about.webp">
 
   <title>About Us - TalentIQ Staffing LLC</title>
+  <link rel="canonical" href="https://talentiqstaffing.com/about.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://talentiqstaffing.com/about.html">
+  <meta property="og:title" content="About Us - TalentIQ Staffing LLC">
+  <meta property="og:description" content="Learn about TalentIQ Staffing LLC — a veteran-owned staffing and recruitment firm committed to integrity, quality hiring, and lasting employer partnerships across the United States.">
+  <meta property="og:image" content="https://talentiqstaffing.com/assets/images/logo.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://talentiqstaffing.com/about.html">
+  <meta name="twitter:title" content="About Us - TalentIQ Staffing LLC">
+  <meta name="twitter:description" content="Learn about TalentIQ Staffing LLC — a veteran-owned staffing and recruitment firm committed to integrity, quality hiring, and lasting employer partnerships across the United States.">
+  <meta name="twitter:image" content="https://talentiqstaffing.com/assets/images/logo.webp">
 
   <!-- CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -39,7 +60,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="assets/images/logo.webp" alt="Logo" width="200px" height="200px">
+          <img src="assets/images/logo.webp" alt="TalentIQ Staffing LLC Logo" width="200px" height="200px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +116,7 @@
         <!-- LEFT COLUMN (55%) -->
         <div class="about-redesign-col-left fade-up-trigger">
           <div class="about-redesign-img-wrapper">
-            <img src="assets/images/about-image.jpg" alt="TalentIQ Staffing LLC Team" class="about-redesign-img">
+            <img src="assets/images/about-image.jpg" alt="TalentIQ Staffing LLC Team" class="about-redesign-img" loading="lazy">
             <!-- Floating Badge -->
             <div class="about-redesign-badge">
               <div class="about-redesign-badge-emblem">
@@ -459,9 +480,9 @@
           <p>A veteran-owned staffing and recruitment firm connecting exceptional talent with outstanding employers
             across the United States through honest, reliable, and people-focused services.</p>
           <ul class="social-icons">
-            <li><a rel="nofollow" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://www.linkedin.com/company/talentiq-staffing-llc/"><i class="fa fa-linkedin"></i></a></li>
+            <li><a rel="nofollow noopener noreferrer" href="#" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/talentiq-staffing-llc/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 footer-item">
@@ -606,21 +627,9 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Additional Scripts -->
-  <script src="assets/js/custom.js"></script>
-  <script src="assets/js/owl.js"></script>
-  <script src="assets/js/slick.js"></script>
-  <script src="assets/js/accordions.js"></script>
-
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
-        t.style.color = '#fff';
-      }
-    }
-  </script>
+  <script src="assets/js/custom.js" defer></script>
+  <script src="assets/js/slick.js" defer></script>
+  <script src="assets/js/accordions.js" defer></script>
 
 </body>
 
