@@ -1264,4 +1264,11 @@
   }
 }
 
+/* Center contact list on mobile/tablet viewports */
+@media (max-width: 991px) {
+  .contact-list li {
+    justify-content: center !important;
+  }
+}
+
 /* End mobile carousel styles */
