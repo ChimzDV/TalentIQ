@@ -613,6 +613,7 @@ header.background-header .navbar-brand h2 {
   align-items: center;
   justify-content: flex-end;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .navbar-nav {
@@ -620,7 +621,7 @@ header.background-header .navbar-brand h2 {
   align-items: center;
   gap: 36px;
   margin-left: auto;
-  margin-right: -75px;
+  margin-right: 0;
   margin-top: -70px;
   list-style: none;
   padding-left: 0;
@@ -665,6 +666,7 @@ header.background-header .nav-link {
 
 .nav-cta-item {
   margin-left: 10px;
+  flex-shrink: 0;
 }
 
 .nav-cta-item .nav-cta-button {
@@ -1784,17 +1786,17 @@ footer {
 }
 
 .about-hero {
-  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 61, 145, 0.85) 100%), url('../images/about.png');
+  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 61, 145, 0.400) 100%), url('../images/about.png');
   background-position: center 30%;
 }
 
 .services-hero {
-  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 61, 145, 0.85) 100%), url('../images/service.png');
+  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 61, 145, 0.400) 100%), url('../images/service.png');
   background-position: center 4%;
 }
 
 .contact-hero {
-  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 60, 145, 0.401) 100%), url('../images/contact.png');
+  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 60, 145, 0.400) 100%), url('../images/contact.png');
   background-position: center 4%;
 }
 

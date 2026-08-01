@@ -52,6 +52,23 @@
 }
 
 /* --------------------------------------------------------------------------
+   1.5. TABLET LANDSCAPE / SMALL DESKTOP ADJUSTMENTS (992px - 1199px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar-nav {
+    gap: 20px !important;
+  }
+
+  .nav-cta-item {
+    flex-shrink: 0 !important;
+  }
+
+  .nav-cta-item .nav-cta-button {
+    padding: 11px 18px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
    2. TABLET BREAKPOINT (768px - 991px)
    -------------------------------------------------------------------------- */
 @media (max-width: 991px) {
