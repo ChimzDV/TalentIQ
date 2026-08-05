@@ -5426,13 +5426,25 @@ div[class*="section"]:nth-of-type(even)::after {
 }
 
 @keyframes mapNodePulse {
-  0%, 100% { r: 4.5px; stroke-width: 2px; stroke: rgba(198, 146, 20, 0.8); }
-  50% { r: 6px; stroke-width: 4px; stroke: rgba(198, 146, 20, 0.4); }
+
+  0%,
+  100% {
+    r: 4.5px;
+    stroke-width: 2px;
+    stroke: rgba(198, 146, 20, 0.8);
+  }
+
+  50% {
+    r: 6px;
+    stroke-width: 4px;
+    stroke: rgba(198, 146, 20, 0.4);
+  }
 }
 
 .reach-map-bg .map-node {
   animation: mapNodePulse 3s ease-in-out infinite;
 }
+
 .reach-map-bg .map-node:nth-child(odd) {
   animation-delay: 1.5s;
 }
@@ -5461,8 +5473,13 @@ div[class*="section"]:nth-of-type(even)::after {
 }
 
 @keyframes gearRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .rotating-gear {
@@ -5485,21 +5502,119 @@ div[class*="section"]:nth-of-type(even)::after {
   background: radial-gradient(circle, rgba(198, 146, 20, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
-/* Enhance existing connector line to be gold */
+/* Hide the old dashed timeline connector */
 .process-horizontal-timeline::before {
-  border-top: 2px dashed rgba(198, 146, 20, 0.35) !important;
+  display: none !important;
+}
+
+/* Connector traveler wrapper */
+.process-connector-svg-wrap {
+  position: absolute;
+  top: 1px;
+  /* Aligned center vertically with the 52px icon wrappers */
+  left: 60px;
+  right: 60px;
+  height: 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.process-connector-svg-wrap-mobile {
+  display: none !important;
 }
 
 /* Float highlights slowly */
 @keyframes floatHighlightCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 .stats-premium-card .stat-premium-row {
   animation: floatHighlightCard 5s ease-in-out infinite;
 }
-.stats-premium-card .stat-premium-row:nth-child(1) { animation-delay: 0s; }
-.stats-premium-card .stat-premium-row:nth-child(2) { animation-delay: 1.2s; }
-.stats-premium-card .stat-premium-row:nth-child(3) { animation-delay: 2.4s; }
-.stats-premium-card .stat-premium-row:nth-child(4) { animation-delay: 3.6s; }
+
+.stats-premium-card .stat-premium-row:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.stats-premium-card .stat-premium-row:nth-child(2) {
+  animation-delay: 1.2s;
+}
+
+.stats-premium-card .stat-premium-row:nth-child(3) {
+  animation-delay: 2.4s;
+}
+
+.stats-premium-card .stat-premium-row:nth-child(4) {
+  animation-delay: 3.6s;
+}
+
+/* Mobile view adjustments for the connector flow line (< 768px) */
+@media (max-width: 767px) {
+  .process-connector-svg-wrap {
+    display: none !important; /* Hide desktop horizontal line */
+  }
+  
+  .process-connector-svg-wrap-mobile {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Mobile step highlights synchronized with the 6s dot */
+  @keyframes mobileStepHighlight1 {
+    0%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+    1%, 8% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
+    9% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+  }
+  @keyframes mobileStepHighlight2 {
+    0%, 15% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+    18%, 25% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
+    26%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+  }
+  @keyframes mobileStepHighlight3 {
+    0%, 47% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+    50%, 57% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
+    58%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+  }
+  @keyframes mobileStepHighlight4 {
+    0%, 65% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+    68%, 75% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
+    76%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+  }
+  @keyframes mobileStepHighlight5 {
+    0%, 93% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+    96%, 100% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
+  }
+
+  .timeline-step-item:nth-of-type(1) .step-icon-wrapper {
+    animation: mobileStepHighlight1 6s linear infinite;
+  }
+  .timeline-step-item:nth-of-type(2) .step-icon-wrapper {
+    animation: mobileStepHighlight2 6s linear infinite;
+  }
+  .timeline-step-item:nth-of-type(3) .step-icon-wrapper {
+    animation: mobileStepHighlight3 6s linear infinite;
+  }
+  .timeline-step-item:nth-of-type(4) .step-icon-wrapper {
+    animation: mobileStepHighlight4 6s linear infinite;
+  }
+  .timeline-step-item:nth-of-type(5) .step-icon-wrapper {
+    animation: mobileStepHighlight5 6s linear infinite;
+  }
+}
