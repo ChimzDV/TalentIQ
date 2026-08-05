@@ -4899,7 +4899,8 @@ div[class*="section"]:nth-of-type(even)::after {
 /* =========================================================================
    22c. FORENSIC INDUSTRIES SECTION (SERVICES PAGE REDESIGN)
    ========================================================================= */
-#industries {
+#industries,
+#why-partner {
   scroll-margin-top: 135px; /* Offset for fixed header + breathing room */
 }
 
