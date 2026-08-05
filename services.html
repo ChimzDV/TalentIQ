@@ -376,56 +376,482 @@
           </div>
         </div>
       </div>
-      <div class="industries-refined-grid">
-        <!-- Industry 1: IT & Digital Staffing -->
-        <div class="industry-refined-card">
-          <div class="irc-icon-wrap">
-            <i class="fa fa-laptop"></i>
-          </div>
-          <h5>IT &amp; Digital Staffing</h5>
-          <p>Software developers, cybersecurity professionals, cloud engineers, data specialists, AI experts, and
-            digital transformation talent.</p>
-        </div>
-        <!-- Industry 2: Healthcare Staffing -->
-        <div class="industry-refined-card">
-          <div class="irc-icon-wrap">
-            <i class="fa fa-user-md"></i>
-          </div>
-          <h5>Healthcare Staffing</h5>
-          <p>Nurses, allied health specialists, healthcare administrators, and medical support personnel for clinical
-            and administrative roles.</p>
-        </div>
-        <!-- Industry 3: Engineering & Technical Staffing -->
-        <div class="industry-refined-card">
-          <div class="irc-icon-wrap">
-            <i class="fa fa-cogs"></i>
-          </div>
-          <h5>Engineering &amp; Technical</h5>
-          <p>Mechanical, electrical, civil, industrial, manufacturing, and technical professionals for mission-critical
-            projects nationwide.</p>
-        </div>
-        <!-- Industry 4: Aerospace & Defense Staffing -->
-        <div class="industry-refined-card">
-          <div class="irc-icon-wrap">
-            <i class="fa fa-plane"></i>
-          </div>
-          <h5>Aerospace &amp; Defense</h5>
-          <p>Qualified professionals for aerospace, aviation, defense contractors, military support services, and
-            advanced technology programs.</p>
-        </div>
-        <!-- Industry 5: Federal & Government Staffing -->
-        <div class="industry-refined-card">
-          <div class="irc-icon-wrap">
-            <i class="fa fa-university"></i>
-          </div>
-          <h5>Federal &amp; Government</h5>
-          <p>Experienced professionals for federal agencies, government contractors, public sector organizations, and
-            compliance-driven projects.</p>
+      <div class="ind-navigation-tabs-container">
+        <div class="ind-tabs-list" role="tablist">
+          <div class="ind-active-indicator"></div>
+          <button class="ind-tab-item active" role="tab" aria-selected="true" aria-controls="ind-panel-1" id="ind-tab-1" data-index="0">
+            <span class="ind-tab-icon-wrap"><i class="fa fa-laptop"></i></span>
+            <span class="ind-tab-title">IT & Digital Staffing</span>
+          </button>
+          
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-2" id="ind-tab-2" data-index="1">
+            <span class="ind-tab-icon-wrap"><i class="fa fa-user-md"></i></span>
+            <span class="ind-tab-title">Healthcare Staffing</span>
+          </button>
+          
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-3" id="ind-tab-3" data-index="2">
+            <span class="ind-tab-icon-wrap"><i class="fa fa-cogs"></i></span>
+            <span class="ind-tab-title">Engineering & Technical</span>
+          </button>
+          
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-4" id="ind-tab-4" data-index="3">
+            <span class="ind-tab-icon-wrap"><i class="fa fa-plane"></i></span>
+            <span class="ind-tab-title">Aerospace & Defense</span>
+          </button>
+          
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-5" id="ind-tab-5" data-index="4">
+            <span class="ind-tab-icon-wrap"><i class="fa fa-university"></i></span>
+            <span class="ind-tab-title">Federal & Government</span>
+          </button>
         </div>
       </div>
-      <!-- Call to Action -->
-      <div class="text-center industries-cta-refined">
-        <a href="contact.html" class="filled-button accent-button">Contact TalentIQ Staffing LLC</a>
+
+      <!-- Main Content Card -->
+      <div class="ind-main-content-card">
+        <!-- Panel 1: IT & Digital Staffing (Active) -->
+        <div class="ind-content-panel active" id="ind-panel-1" role="tabpanel" aria-labelledby="ind-tab-1">
+          <div class="ind-card-layout">
+            <div class="ind-panel-left">
+              <div class="ind-left-icon-box">
+                <i class="fa fa-laptop"></i>
+              </div>
+              <span class="ind-left-tag">Technology. Innovation. Talent.</span>
+              <h3 class="ind-left-heading">IT & Digital Staffing</h3>
+              <p class="ind-left-desc">We connect innovative companies with top-tier tech talent to build, scale, and secure the digital future.</p>
+              
+              <span class="ind-left-bullets-title">How We Support This Industry</span>
+              <ul class="ind-bullets-list">
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Specialized Talent Network</strong>
+                    <span>Access to pre-vetted IT experts across emerging and traditional technologies.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Agile Hiring Solutions</strong>
+                    <span>Quick turnaround to help you scale teams for critical projects.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Skills That Drive Innovation</strong>
+                    <span>From developers to data scientists, we deliver skills that fuel growth.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Long-Term Partnership</strong>
+                    <span>We align with your goals and evolve with your business needs.</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <a href="apply.html" class="ind-left-btn">View IT & Digital Roles <span class="btn-arrow">↗</span></a>
+            </div>
+            
+            <div class="ind-panel-right">
+              <div class="ind-right-image-wrap">
+                <img src="assets/images/page-heading-bg.webp" alt="IT & Digital Staffing" class="ind-right-img">
+                <div class="ind-stats-overlay">
+                  <div class="ind-stat-card">
+                    <i class="fa fa-users ind-stat-icon"></i>
+                    <span class="ind-stat-title">People First</span>
+                    <span class="ind-stat-lbl">Every Candidate Matters</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-handshake-o ind-stat-icon"></i>
+                    <span class="ind-stat-title">Lasting Partnerships</span>
+                    <span class="ind-stat-lbl">Building Relationships That Last</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-bullseye ind-stat-icon"></i>
+                    <span class="ind-stat-title">Right Talent</span>
+                    <span class="ind-stat-lbl">Matching Skills With Opportunity</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-briefcase ind-stat-icon"></i>
+                    <span class="ind-stat-title">Career Success</span>
+                    <span class="ind-stat-lbl">Connecting People With Purpose</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Healthcare Staffing -->
+        <div class="ind-content-panel" id="ind-panel-2" role="tabpanel" aria-labelledby="ind-tab-2" style="display: none;">
+          <div class="ind-card-layout">
+            <div class="ind-panel-left">
+              <div class="ind-left-icon-box">
+                <i class="fa fa-user-md"></i>
+              </div>
+              <span class="ind-left-tag">Care. Compliance. Clinical Excellence.</span>
+              <h3 class="ind-left-heading">Healthcare Staffing</h3>
+              <p class="ind-left-desc">Our dedicated healthcare staffing solutions deliver pre-screened clinical and administrative professionals who provide top-tier patient care.</p>
+              
+              <span class="ind-left-bullets-title">How We Support This Industry</span>
+              <ul class="ind-bullets-list">
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Pre-Screened Professionals</strong>
+                    <span>Access to credentialed nurses, allied health specialists, and administrators.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Rapid Deployment</strong>
+                    <span>Quick placement to maintain optimal staffing levels in critical care environments.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>100% Compliance</strong>
+                    <span>Strict adherence to healthcare regulations, licensing, and credentialing standards.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Compassionate Care</strong>
+                    <span>Sourcing professionals who align with your facility's patient-first mission.</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <a href="apply.html" class="ind-left-btn">View Healthcare Roles <span class="btn-arrow">↗</span></a>
+            </div>
+            
+            <div class="ind-panel-right">
+              <div class="ind-right-image-wrap">
+                <img src="assets/images/single_service_01.jpg" alt="Healthcare Staffing" class="ind-right-img">
+                <div class="ind-stats-overlay">
+                  <div class="ind-stat-card">
+                    <i class="fa fa-users ind-stat-icon"></i>
+                    <span class="ind-stat-title">People First</span>
+                    <span class="ind-stat-lbl">Every Candidate Matters</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-handshake-o ind-stat-icon"></i>
+                    <span class="ind-stat-title">Lasting Partnerships</span>
+                    <span class="ind-stat-lbl">Building Relationships That Last</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-bullseye ind-stat-icon"></i>
+                    <span class="ind-stat-title">Right Talent</span>
+                    <span class="ind-stat-lbl">Matching Skills With Opportunity</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-briefcase ind-stat-icon"></i>
+                    <span class="ind-stat-title">Career Success</span>
+                    <span class="ind-stat-lbl">Connecting People With Purpose</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Engineering & Technical -->
+        <div class="ind-content-panel" id="ind-panel-3" role="tabpanel" aria-labelledby="ind-tab-3" style="display: none;">
+          <div class="ind-card-layout">
+            <div class="ind-panel-left">
+              <div class="ind-left-icon-box">
+                <i class="fa fa-cogs"></i>
+              </div>
+              <span class="ind-left-tag">Precision. Innovation. Infrastructure.</span>
+              <h3 class="ind-left-heading">Engineering & Technical</h3>
+              <p class="ind-left-desc">We resource highly qualified engineering professionals across mechanical, electrical, civil, and industrial disciplines to support complex, mission-critical projects.</p>
+              
+              <span class="ind-left-bullets-title">How We Support This Industry</span>
+              <ul class="ind-bullets-list">
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Multidisciplinary Talent</strong>
+                    <span>Access to design, manufacturing, civil, and structural engineering specialists.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Project-Based Sourcing</strong>
+                    <span>Scalable staffing solutions for short-term projects or permanent technical roles.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Vetted Technical Expertise</strong>
+                    <span>Rigorous screening of practical skills, software proficiency, and certifications.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Operational Efficiency</strong>
+                    <span>Sourcing talent that optimizes workflows, reduces waste, and boosts productivity.</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <a href="apply.html" class="ind-left-btn">View Engineering Roles <span class="btn-arrow">↗</span></a>
+            </div>
+            
+            <div class="ind-panel-right">
+              <div class="ind-right-image-wrap">
+                <img src="assets/images/slide_02.jpg" alt="Engineering & Technical" class="ind-right-img">
+                <div class="ind-stats-overlay">
+                  <div class="ind-stat-card">
+                    <i class="fa fa-users ind-stat-icon"></i>
+                    <span class="ind-stat-title">People First</span>
+                    <span class="ind-stat-lbl">Every Candidate Matters</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-handshake-o ind-stat-icon"></i>
+                    <span class="ind-stat-title">Lasting Partnerships</span>
+                    <span class="ind-stat-lbl">Building Relationships That Last</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-bullseye ind-stat-icon"></i>
+                    <span class="ind-stat-title">Right Talent</span>
+                    <span class="ind-stat-lbl">Matching Skills With Opportunity</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-briefcase ind-stat-icon"></i>
+                    <span class="ind-stat-title">Career Success</span>
+                    <span class="ind-stat-lbl">Connecting People With Purpose</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Aerospace & Defense -->
+        <div class="ind-content-panel" id="ind-panel-4" role="tabpanel" aria-labelledby="ind-tab-4" style="display: none;">
+          <div class="ind-card-layout">
+            <div class="ind-panel-left">
+              <div class="ind-left-icon-box">
+                <i class="fa fa-plane"></i>
+              </div>
+              <span class="ind-left-tag">Security. Defense. Aerospace Excellence.</span>
+              <h3 class="ind-left-heading">Aerospace & Defense</h3>
+              <p class="ind-left-desc">As a veteran-owned firm, we understand the specialized standards required in aerospace and defense programs. We connect defense contractors and aviation pioneers with skilled talent.</p>
+              
+              <span class="ind-left-bullets-title">How We Support This Industry</span>
+              <ul class="ind-bullets-list">
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Cleared Candidate Pool</strong>
+                    <span>Direct access to professionals with Active Security Clearances (Secret, TS/SCI).</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Veteran-First Recruiting</strong>
+                    <span>Leveraging our extensive military network to source highly trained technical operators.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Strict Compliance</strong>
+                    <span>Adherence to ITAR, NIST, and DOD staffing and security protocols.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Advanced Technology</strong>
+                    <span>Sourcing pioneers in avionics, systems engineering, and military hardware.</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <a href="apply.html" class="ind-left-btn">View Defense Roles <span class="btn-arrow">↗</span></a>
+            </div>
+            
+            <div class="ind-panel-right">
+              <div class="ind-right-image-wrap">
+                <img src="assets/images/page-heading-bg.webp" alt="Aerospace & Defense" class="ind-right-img">
+                <div class="ind-stats-overlay">
+                  <div class="ind-stat-card">
+                    <i class="fa fa-users ind-stat-icon"></i>
+                    <span class="ind-stat-title">People First</span>
+                    <span class="ind-stat-lbl">Every Candidate Matters</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-handshake-o ind-stat-icon"></i>
+                    <span class="ind-stat-title">Lasting Partnerships</span>
+                    <span class="ind-stat-lbl">Building Relationships That Last</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-bullseye ind-stat-icon"></i>
+                    <span class="ind-stat-title">Right Talent</span>
+                    <span class="ind-stat-lbl">Matching Skills With Opportunity</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-briefcase ind-stat-icon"></i>
+                    <span class="ind-stat-title">Career Success</span>
+                    <span class="ind-stat-lbl">Connecting People With Purpose</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 5: Federal & Government -->
+        <div class="ind-content-panel" id="ind-panel-5" role="tabpanel" aria-labelledby="ind-tab-5" style="display: none;">
+          <div class="ind-card-layout">
+            <div class="ind-panel-left">
+              <div class="ind-left-icon-box">
+                <i class="fa fa-university"></i>
+              </div>
+              <span class="ind-left-tag">Compliance. Government. Public Sector.</span>
+              <h3 class="ind-left-heading">Federal & Government</h3>
+              <p class="ind-left-desc">We deliver scalable, compliant recruitment services to federal agencies, state organizations, and public sector prime contractors.</p>
+              
+              <span class="ind-left-bullets-title">How We Support This Industry</span>
+              <ul class="ind-bullets-list">
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>GSA Schedule Sourcing</strong>
+                    <span>Fast and compliant procurement pathways for federal staffing requirements.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Administrative Support</strong>
+                    <span>Sourcing database managers, administrative staff, and program managers.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Contract Compliance</strong>
+                    <span>Rigorous compliance tracking for socio-economic goals and EEO requirements.</span>
+                  </div>
+                </li>
+                <li class="ind-bullet-item">
+                  <div class="ind-bullet-icon"><i class="fa fa-check"></i></div>
+                  <div class="ind-bullet-content">
+                    <strong>Socio-Economic Partnerships</strong>
+                    <span>Helping primes meet small business and veteran-owned participation credits.</span>
+                  </div>
+                </li>
+              </ul>
+              
+              <a href="apply.html" class="ind-left-btn">View Government Roles <span class="btn-arrow">↗</span></a>
+            </div>
+            
+            <div class="ind-panel-right">
+              <div class="ind-right-image-wrap">
+                <img src="assets/images/service_02.jpg" alt="Federal & Government" class="ind-right-img">
+                <div class="ind-stats-overlay">
+                  <div class="ind-stat-card">
+                    <i class="fa fa-users ind-stat-icon"></i>
+                    <span class="ind-stat-title">People First</span>
+                    <span class="ind-stat-lbl">Every Candidate Matters</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-handshake-o ind-stat-icon"></i>
+                    <span class="ind-stat-title">Lasting Partnerships</span>
+                    <span class="ind-stat-lbl">Building Relationships That Last</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-bullseye ind-stat-icon"></i>
+                    <span class="ind-stat-title">Right Talent</span>
+                    <span class="ind-stat-lbl">Matching Skills With Opportunity</span>
+                  </div>
+                  <div class="ind-stat-card">
+                    <i class="fa fa-briefcase ind-stat-icon"></i>
+                    <span class="ind-stat-title">Career Success</span>
+                    <span class="ind-stat-lbl">Connecting People With Purpose</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner Logos Banner -->
+      <div class="ind-logos-banner">
+        <div class="ind-banner-left">
+          <div class="ind-star-circle">
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="ind-banner-text">
+            <h6>Serving Industry Leaders Nationwide</h6>
+            <p>We partner with innovative organizations across the country to build high-performing teams.</p>
+          </div>
+        </div>
+        
+        <div class="ind-banner-logos">
+          <!-- Cisco Logo -->
+          <div class="ind-logo-item" style="display: flex; align-items: center;">
+            <svg viewBox="0 0 100 40" style="height: 28px; fill: #00b0ea;">
+              <rect x="10" y="24" width="4" height="12"/>
+              <rect x="20" y="16" width="4" height="20"/>
+              <rect x="30" y="8" width="4" height="28"/>
+              <rect x="40" y="16" width="4" height="20"/>
+              <rect x="50" y="20" width="4" height="16"/>
+              <rect x="60" y="16" width="4" height="20"/>
+              <rect x="70" y="8" width="4" height="28"/>
+              <rect x="80" y="16" width="4" height="20"/>
+              <rect x="86" y="24" width="4" height="12"/>
+            </svg>
+            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 800; font-size: 1.3rem; color: #07222c; margin-left: 5px; letter-spacing: -0.5px;">cisco</span>
+          </div>
+          
+          <!-- Microsoft Logo -->
+          <div class="ind-logo-item" style="display: flex; align-items: center; gap: 8px;">
+            <svg viewBox="0 0 23 23" style="height: 20px; width: 20px;">
+              <rect x="0" y="0" width="11" height="11" fill="#f25022"/>
+              <rect x="12" y="0" width="11" height="11" fill="#7fba00"/>
+              <rect x="0" y="12" width="11" height="11" fill="#00a4ef"/>
+              <rect x="12" y="12" width="11" height="11" fill="#ffb900"/>
+            </svg>
+            <span style="font-family: 'Segoe UI', 'Source Sans 3', sans-serif; font-weight: 600; font-size: 1.15rem; color: #737373; letter-spacing: -0.2px;">Microsoft</span>
+          </div>
+
+          <!-- AWS Logo -->
+          <div class="ind-logo-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 800; font-size: 1.2rem; color: #232f3e; line-height: 1;">aws</span>
+            <svg viewBox="0 0 50 15" style="width: 35px; height: 10px; fill: #ff9900; margin-top: -2px;">
+              <path d="M5 2 c 12 6, 28 6, 40 0 c 2 -1, 3 1, 1 2 c -12 7, -29 7, -42 0 c -2 -1, -1 -3, 1 -2 Z"/>
+              <path d="M43 4 l 4 4 l -1 -5 Z"/>
+            </svg>
+          </div>
+
+          <!-- Dell Logo -->
+          <div class="ind-logo-item" style="display: flex; align-items: center;">
+            <svg viewBox="0 0 50 50" style="height: 28px; width: 28px; fill: #007db8; margin-right: 5px;">
+              <path d="M25 0 C 11.2 0, 0 11.2, 0 25 C 0 38.8, 11.2 50, 25 50 C 38.8 50, 50 38.8, 50 25 C 50 11.2, 38.8 0, 25 0 Z M 25 4 C 36.6 4, 46 13.4, 46 25 C 46 36.6, 36.6 46, 25 46 C 13.4 46, 4 36.6, 4 25 C 4 13.4, 13.4 4, 25 4 Z"/>
+            </svg>
+            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 1.3rem; color: #007db8; letter-spacing: -0.5px;">DELL</span>
+          </div>
+
+          <!-- Oracle Logo -->
+          <div class="ind-logo-item" style="display: flex; align-items: center;">
+            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 800; font-size: 1.25rem; color: #f80000; letter-spacing: 0.5px; text-transform: uppercase;">Oracle</span>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>

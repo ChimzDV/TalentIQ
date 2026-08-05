@@ -812,5 +812,149 @@ jQuery(document).ready(function ($) {
 		});
 	})();
 
+	// =========================================================================
+	// FORENSIC INDUSTRIES SECTION (SERVICES PAGE REDESIGN)
+	// =========================================================================
+	(function initForensicIndustries() {
+		var $tabs = $('.ind-tab-item');
+		var $panels = $('.ind-content-panel');
+		var $prevBtn = $('.ind-prev-btn');
+		var $nextBtn = $('.ind-next-btn');
+		var $tabsList = $('.ind-tabs-list');
+		var $indicator = $('.ind-active-indicator');
+
+		if (!$tabs.length || !$panels.length) return;
+
+		// Initialize Active Indicator position
+		function updateIndicator($activeTab) {
+			if (!$indicator.length || !$activeTab.length) return;
+			var tabWidth = $activeTab.outerWidth();
+			var tabLeft = $activeTab[0].offsetLeft;
+			$indicator.css({
+				left: tabLeft + 'px',
+				width: tabWidth + 'px'
+			});
+		}
+
+		// Count up statistics animation
+		function animateCounters($panel) {
+			$panel.find('.ind-stat-val').each(function () {
+				var $this = $(this);
+				var targetVal = parseFloat($this.attr('data-val'));
+				var suffix = $this.attr('data-suffix') || '';
+				var decimals = parseInt($this.attr('data-decimals')) || 0;
+				
+				$({ countNum: 0 }).animate({ countNum: targetVal }, {
+					duration: 1000,
+					easing: 'swing',
+					step: function () {
+						if (decimals > 0) {
+							$this.text(this.countNum.toFixed(decimals) + suffix);
+						} else {
+							var formatted = Math.floor(this.countNum);
+							if (formatted >= 1000) {
+								formatted = formatted.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+							}
+							$this.text(formatted + suffix);
+						}
+					},
+					complete: function () {
+						if (decimals > 0) {
+							$this.text(targetVal.toFixed(decimals) + suffix);
+						} else {
+							var formatted = targetVal;
+							if (formatted >= 1000) {
+								formatted = formatted.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+							}
+							$this.text(formatted + suffix);
+						}
+					}
+				});
+			});
+		}
+
+		function switchTab(index) {
+			if (index < 0 || index >= $tabs.length) return;
+
+			var $targetTab = $tabs.eq(index);
+			var targetId = $targetTab.attr('aria-controls');
+			var $targetPanel = $('#' + targetId);
+
+			if (!$targetPanel.length || $targetPanel.hasClass('active')) return;
+
+			// Update tabs and active indicator
+			$tabs.removeClass('active').attr('aria-selected', 'false');
+			$targetTab.addClass('active').attr('aria-selected', 'true');
+			updateIndicator($targetTab);
+
+			var $activePanel = $panels.filter('.active');
+			
+			// 1. Add leaving class for smooth fade out & slide left (300ms)
+			$activePanel.addClass('leaving');
+			
+			setTimeout(function () {
+				$activePanel.removeClass('active leaving').hide();
+				
+				// Show new panel
+				$targetPanel.css('display', 'block').width(); // force reflow
+				$targetPanel.addClass('active');
+				
+				// Trigger counter animation
+				animateCounters($targetPanel);
+			}, 300);
+
+			// Scroll active tab into view in horizontal list
+			var tabEl = $targetTab[0];
+			if (tabEl && $tabsList.length) {
+				var containerLeft = $tabsList.scrollLeft();
+				var containerWidth = $tabsList.width();
+				var tabLeft = tabEl.offsetLeft;
+				var tabWidth = $targetTab.outerWidth();
+
+				if (tabLeft < containerLeft) {
+					$tabsList.animate({ scrollLeft: tabLeft - 20 }, 200);
+				} else if ((tabLeft + tabWidth) > (containerLeft + containerWidth)) {
+					$tabsList.animate({ scrollLeft: (tabLeft + tabWidth - containerWidth) + 20 }, 200);
+				}
+			}
+		}
+
+		// Initial setup
+		var $initActiveTab = $tabs.filter('.active');
+		if ($initActiveTab.length) {
+			setTimeout(function() {
+				updateIndicator($initActiveTab);
+				animateCounters($panels.filter('.active'));
+			}, 100);
+		}
+
+		$tabs.on('click', function (e) {
+			e.preventDefault();
+			switchTab($(this).data('index'));
+		});
+
+		$prevBtn.on('click', function (e) {
+			e.preventDefault();
+			var curIdx = $tabs.filter('.active').data('index');
+			var newIdx = (curIdx - 1 + $tabs.length) % $tabs.length;
+			switchTab(newIdx);
+		});
+
+		$nextBtn.on('click', function (e) {
+			e.preventDefault();
+			var curIdx = $tabs.filter('.active').data('index');
+			var newIdx = (curIdx + 1) % $tabs.length;
+			switchTab(newIdx);
+		});
+
+		// Handle resize to update active indicator width/position
+		$(window).on('resize.forensicTabs', function () {
+			var $activeTab = $tabs.filter('.active');
+			if ($activeTab.length) {
+				updateIndicator($activeTab);
+			}
+		});
+	})();
+
 });
 
