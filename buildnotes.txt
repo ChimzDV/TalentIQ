@@ -1,5 +1,0 @@
-
-*add top 3 leaders section in about us page
-*add chatbot
-*add industries we serve section on services page
-*add map image on homepage showing work in USA & India
