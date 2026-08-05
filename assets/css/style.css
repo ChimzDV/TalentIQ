@@ -1432,7 +1432,7 @@ header.background-header .nav-link {
       rgba(7, 25, 55, 0.82) 0%,
       rgba(7, 25, 55, 0.68) 45%,
       rgba(7, 25, 55, 0.40) 100%),
-    url('../images/about-image.jpg');
+    url('../images/content1.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -5560,9 +5560,10 @@ div[class*="section"]:nth-of-type(even)::after {
 /* Mobile view adjustments for the connector flow line (< 768px) */
 @media (max-width: 767px) {
   .process-connector-svg-wrap {
-    display: none !important; /* Hide desktop horizontal line */
+    display: none !important;
+    /* Hide desktop horizontal line */
   }
-  
+
   .process-connector-svg-wrap-mobile {
     display: block !important;
     position: absolute;
@@ -5578,42 +5579,138 @@ div[class*="section"]:nth-of-type(even)::after {
 
   /* Mobile step highlights synchronized with the 6s dot */
   @keyframes mobileStepHighlight1 {
-    0%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
-    1%, 8% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
-    9% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+
+    0%,
+    100% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
+
+    1%,
+    8% {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(198, 146, 20, 0.4);
+    }
+
+    9% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
   }
+
   @keyframes mobileStepHighlight2 {
-    0%, 15% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
-    18%, 25% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
-    26%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+
+    0%,
+    15% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
+
+    18%,
+    25% {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(198, 146, 20, 0.4);
+    }
+
+    26%,
+    100% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
   }
+
   @keyframes mobileStepHighlight3 {
-    0%, 47% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
-    50%, 57% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
-    58%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+
+    0%,
+    47% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
+
+    50%,
+    57% {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(198, 146, 20, 0.4);
+    }
+
+    58%,
+    100% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
   }
+
   @keyframes mobileStepHighlight4 {
-    0%, 65% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
-    68%, 75% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
-    76%, 100% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
+
+    0%,
+    65% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
+
+    68%,
+    75% {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(198, 146, 20, 0.4);
+    }
+
+    76%,
+    100% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
   }
+
   @keyframes mobileStepHighlight5 {
-    0%, 93% { border-color: var(--primary-navy); background: var(--bg-light); color: var(--primary-navy); }
-    96%, 100% { border-color: var(--accent-gold); background: var(--accent-gold); color: #ffffff; box-shadow: 0 0 10px rgba(198, 146, 20, 0.4); }
+
+    0%,
+    93% {
+      border-color: var(--primary-navy);
+      background: var(--bg-light);
+      color: var(--primary-navy);
+    }
+
+    96%,
+    100% {
+      border-color: var(--accent-gold);
+      background: var(--accent-gold);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(198, 146, 20, 0.4);
+    }
   }
 
   .timeline-step-item:nth-of-type(1) .step-icon-wrapper {
     animation: mobileStepHighlight1 6s linear infinite;
   }
+
   .timeline-step-item:nth-of-type(2) .step-icon-wrapper {
     animation: mobileStepHighlight2 6s linear infinite;
   }
+
   .timeline-step-item:nth-of-type(3) .step-icon-wrapper {
     animation: mobileStepHighlight3 6s linear infinite;
   }
+
   .timeline-step-item:nth-of-type(4) .step-icon-wrapper {
     animation: mobileStepHighlight4 6s linear infinite;
   }
+
   .timeline-step-item:nth-of-type(5) .step-icon-wrapper {
     animation: mobileStepHighlight5 6s linear infinite;
   }
