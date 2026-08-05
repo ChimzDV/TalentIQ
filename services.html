@@ -42,6 +42,67 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="icon" type="image/png" href="assets/images/lg.png">
+  <style>
+    /* Industry Selector Mobile Layout Improvement */
+    @media (max-width: 767px) {
+
+      /* Only target the Services page industry selector */
+      .ind-navigation-tabs-container .ind-tabs-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        /* Prevent any horizontal scrolling */
+      }
+
+      .ind-navigation-tabs-container .ind-tabs-list .ind-tab-item {
+        width: auto !important;
+        min-width: 0 !important;
+        flex: none !important;
+        padding: 14px 10px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0 !important;
+        height: 100% !important;
+        /* Keep all cards in the same row the same height */
+        box-sizing: border-box !important;
+        justify-content: center !important;
+      }
+
+      .ind-navigation-tabs-container .ind-tabs-list .ind-tab-item .ind-tab-icon-wrap {
+        width: 38px !important;
+        height: 38px !important;
+        margin-bottom: 8px !important;
+        margin-right: 0 !important;
+        /* Reset any horizontal margins */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .ind-navigation-tabs-container .ind-tabs-list .ind-tab-item .ind-tab-icon-wrap i {
+        font-size: 16px !important;
+      }
+
+      .ind-navigation-tabs-container .ind-tabs-list .ind-tab-item .ind-tab-title {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* Fifth Card (Federal & Government) spans both columns and is centered */
+      .ind-navigation-tabs-container .ind-tabs-list .ind-tab-item:nth-of-type(5) {
+        grid-column: span 2 !important;
+        max-width: 80% !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -366,7 +427,7 @@
   </div>
 
   <!-- Industries We Serve Section -->
-  <div id="industries" class="industries-section-refined fade-in-up">
+  <section id="industries" class="industries-section-refined fade-in-up">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -379,27 +440,32 @@
       <div class="ind-navigation-tabs-container">
         <div class="ind-tabs-list" role="tablist">
           <div class="ind-active-indicator"></div>
-          <button class="ind-tab-item active" role="tab" aria-selected="true" aria-controls="ind-panel-1" id="ind-tab-1" data-index="0">
+          <button class="ind-tab-item active" role="tab" aria-selected="true" aria-controls="ind-panel-1" id="ind-tab-1"
+            data-index="0">
             <span class="ind-tab-icon-wrap"><i class="fa fa-laptop"></i></span>
             <span class="ind-tab-title">IT & Digital Staffing</span>
           </button>
-          
-          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-2" id="ind-tab-2" data-index="1">
+
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-2" id="ind-tab-2"
+            data-index="1">
             <span class="ind-tab-icon-wrap"><i class="fa fa-user-md"></i></span>
             <span class="ind-tab-title">Healthcare Staffing</span>
           </button>
-          
-          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-3" id="ind-tab-3" data-index="2">
+
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-3" id="ind-tab-3"
+            data-index="2">
             <span class="ind-tab-icon-wrap"><i class="fa fa-cogs"></i></span>
             <span class="ind-tab-title">Engineering & Technical</span>
           </button>
-          
-          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-4" id="ind-tab-4" data-index="3">
+
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-4" id="ind-tab-4"
+            data-index="3">
             <span class="ind-tab-icon-wrap"><i class="fa fa-plane"></i></span>
             <span class="ind-tab-title">Aerospace & Defense</span>
           </button>
-          
-          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-5" id="ind-tab-5" data-index="4">
+
+          <button class="ind-tab-item" role="tab" aria-selected="false" aria-controls="ind-panel-5" id="ind-tab-5"
+            data-index="4">
             <span class="ind-tab-icon-wrap"><i class="fa fa-university"></i></span>
             <span class="ind-tab-title">Federal & Government</span>
           </button>
@@ -417,8 +483,9 @@
               </div>
               <span class="ind-left-tag">Technology. Innovation. Talent.</span>
               <h3 class="ind-left-heading">IT & Digital Staffing</h3>
-              <p class="ind-left-desc">We connect innovative companies with top-tier tech talent to build, scale, and secure the digital future.</p>
-              
+              <p class="ind-left-desc">We connect innovative companies with top-tier tech talent to build, scale, and
+                secure the digital future.</p>
+
               <span class="ind-left-bullets-title">How We Support This Industry</span>
               <ul class="ind-bullets-list">
                 <li class="ind-bullet-item">
@@ -450,10 +517,11 @@
                   </div>
                 </li>
               </ul>
-              
-              <a href="apply.html" class="ind-left-btn">View IT & Digital Roles <span class="btn-arrow">↗</span></a>
+
+              <a href="careers.html?industry=it" class="ind-left-btn">View IT & Digital Roles <span
+                  class="btn-arrow">↗</span></a>
             </div>
-            
+
             <div class="ind-panel-right">
               <div class="ind-right-image-wrap">
                 <img src="assets/images/page-heading-bg.webp" alt="IT & Digital Staffing" class="ind-right-img">
@@ -485,7 +553,8 @@
         </div>
 
         <!-- Panel 2: Healthcare Staffing -->
-        <div class="ind-content-panel" id="ind-panel-2" role="tabpanel" aria-labelledby="ind-tab-2" style="display: none;">
+        <div class="ind-content-panel" id="ind-panel-2" role="tabpanel" aria-labelledby="ind-tab-2"
+          style="display: none;">
           <div class="ind-card-layout">
             <div class="ind-panel-left">
               <div class="ind-left-icon-box">
@@ -493,8 +562,9 @@
               </div>
               <span class="ind-left-tag">Care. Compliance. Clinical Excellence.</span>
               <h3 class="ind-left-heading">Healthcare Staffing</h3>
-              <p class="ind-left-desc">Our dedicated healthcare staffing solutions deliver pre-screened clinical and administrative professionals who provide top-tier patient care.</p>
-              
+              <p class="ind-left-desc">Our dedicated healthcare staffing solutions deliver pre-screened clinical and
+                administrative professionals who provide top-tier patient care.</p>
+
               <span class="ind-left-bullets-title">How We Support This Industry</span>
               <ul class="ind-bullets-list">
                 <li class="ind-bullet-item">
@@ -526,10 +596,11 @@
                   </div>
                 </li>
               </ul>
-              
-              <a href="apply.html" class="ind-left-btn">View Healthcare Roles <span class="btn-arrow">↗</span></a>
+
+              <a href="careers.html?industry=healthcare" class="ind-left-btn">View Healthcare Roles <span
+                  class="btn-arrow">↗</span></a>
             </div>
-            
+
             <div class="ind-panel-right">
               <div class="ind-right-image-wrap">
                 <img src="assets/images/single_service_01.jpg" alt="Healthcare Staffing" class="ind-right-img">
@@ -561,7 +632,8 @@
         </div>
 
         <!-- Panel 3: Engineering & Technical -->
-        <div class="ind-content-panel" id="ind-panel-3" role="tabpanel" aria-labelledby="ind-tab-3" style="display: none;">
+        <div class="ind-content-panel" id="ind-panel-3" role="tabpanel" aria-labelledby="ind-tab-3"
+          style="display: none;">
           <div class="ind-card-layout">
             <div class="ind-panel-left">
               <div class="ind-left-icon-box">
@@ -569,8 +641,9 @@
               </div>
               <span class="ind-left-tag">Precision. Innovation. Infrastructure.</span>
               <h3 class="ind-left-heading">Engineering & Technical</h3>
-              <p class="ind-left-desc">We resource highly qualified engineering professionals across mechanical, electrical, civil, and industrial disciplines to support complex, mission-critical projects.</p>
-              
+              <p class="ind-left-desc">We resource highly qualified engineering professionals across mechanical,
+                electrical, civil, and industrial disciplines to support complex, mission-critical projects.</p>
+
               <span class="ind-left-bullets-title">How We Support This Industry</span>
               <ul class="ind-bullets-list">
                 <li class="ind-bullet-item">
@@ -602,10 +675,11 @@
                   </div>
                 </li>
               </ul>
-              
-              <a href="apply.html" class="ind-left-btn">View Engineering Roles <span class="btn-arrow">↗</span></a>
+
+              <a href="careers.html?industry=engineering" class="ind-left-btn">View Engineering Roles <span
+                  class="btn-arrow">↗</span></a>
             </div>
-            
+
             <div class="ind-panel-right">
               <div class="ind-right-image-wrap">
                 <img src="assets/images/slide_02.jpg" alt="Engineering & Technical" class="ind-right-img">
@@ -637,7 +711,8 @@
         </div>
 
         <!-- Panel 4: Aerospace & Defense -->
-        <div class="ind-content-panel" id="ind-panel-4" role="tabpanel" aria-labelledby="ind-tab-4" style="display: none;">
+        <div class="ind-content-panel" id="ind-panel-4" role="tabpanel" aria-labelledby="ind-tab-4"
+          style="display: none;">
           <div class="ind-card-layout">
             <div class="ind-panel-left">
               <div class="ind-left-icon-box">
@@ -645,8 +720,10 @@
               </div>
               <span class="ind-left-tag">Security. Defense. Aerospace Excellence.</span>
               <h3 class="ind-left-heading">Aerospace & Defense</h3>
-              <p class="ind-left-desc">As a veteran-owned firm, we understand the specialized standards required in aerospace and defense programs. We connect defense contractors and aviation pioneers with skilled talent.</p>
-              
+              <p class="ind-left-desc">As a veteran-owned firm, we understand the specialized standards required in
+                aerospace and defense programs. We connect defense contractors and aviation pioneers with skilled
+                talent.</p>
+
               <span class="ind-left-bullets-title">How We Support This Industry</span>
               <ul class="ind-bullets-list">
                 <li class="ind-bullet-item">
@@ -678,10 +755,11 @@
                   </div>
                 </li>
               </ul>
-              
-              <a href="apply.html" class="ind-left-btn">View Defense Roles <span class="btn-arrow">↗</span></a>
+
+              <a href="careers.html?industry=aerospace" class="ind-left-btn">View Defense Roles <span
+                  class="btn-arrow">↗</span></a>
             </div>
-            
+
             <div class="ind-panel-right">
               <div class="ind-right-image-wrap">
                 <img src="assets/images/page-heading-bg.webp" alt="Aerospace & Defense" class="ind-right-img">
@@ -713,7 +791,8 @@
         </div>
 
         <!-- Panel 5: Federal & Government -->
-        <div class="ind-content-panel" id="ind-panel-5" role="tabpanel" aria-labelledby="ind-tab-5" style="display: none;">
+        <div class="ind-content-panel" id="ind-panel-5" role="tabpanel" aria-labelledby="ind-tab-5"
+          style="display: none;">
           <div class="ind-card-layout">
             <div class="ind-panel-left">
               <div class="ind-left-icon-box">
@@ -721,8 +800,9 @@
               </div>
               <span class="ind-left-tag">Compliance. Government. Public Sector.</span>
               <h3 class="ind-left-heading">Federal & Government</h3>
-              <p class="ind-left-desc">We deliver scalable, compliant recruitment services to federal agencies, state organizations, and public sector prime contractors.</p>
-              
+              <p class="ind-left-desc">We deliver scalable, compliant recruitment services to federal agencies, state
+                organizations, and public sector prime contractors.</p>
+
               <span class="ind-left-bullets-title">How We Support This Industry</span>
               <ul class="ind-bullets-list">
                 <li class="ind-bullet-item">
@@ -754,10 +834,11 @@
                   </div>
                 </li>
               </ul>
-              
-              <a href="apply.html" class="ind-left-btn">View Government Roles <span class="btn-arrow">↗</span></a>
+
+              <a href="careers.html?industry=federal" class="ind-left-btn">View Government Roles <span
+                  class="btn-arrow">↗</span></a>
             </div>
-            
+
             <div class="ind-panel-right">
               <div class="ind-right-image-wrap">
                 <img src="assets/images/service_02.jpg" alt="Federal & Government" class="ind-right-img">
@@ -789,72 +870,8 @@
         </div>
       </div>
 
-      <!-- Partner Logos Banner -->
-      <div class="ind-logos-banner">
-        <div class="ind-banner-left">
-          <div class="ind-star-circle">
-            <i class="fa fa-star"></i>
-          </div>
-          <div class="ind-banner-text">
-            <h6>Serving Industry Leaders Nationwide</h6>
-            <p>We partner with innovative organizations across the country to build high-performing teams.</p>
-          </div>
-        </div>
-        
-        <div class="ind-banner-logos">
-          <!-- Cisco Logo -->
-          <div class="ind-logo-item" style="display: flex; align-items: center;">
-            <svg viewBox="0 0 100 40" style="height: 28px; fill: #00b0ea;">
-              <rect x="10" y="24" width="4" height="12"/>
-              <rect x="20" y="16" width="4" height="20"/>
-              <rect x="30" y="8" width="4" height="28"/>
-              <rect x="40" y="16" width="4" height="20"/>
-              <rect x="50" y="20" width="4" height="16"/>
-              <rect x="60" y="16" width="4" height="20"/>
-              <rect x="70" y="8" width="4" height="28"/>
-              <rect x="80" y="16" width="4" height="20"/>
-              <rect x="86" y="24" width="4" height="12"/>
-            </svg>
-            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 800; font-size: 1.3rem; color: #07222c; margin-left: 5px; letter-spacing: -0.5px;">cisco</span>
-          </div>
-          
-          <!-- Microsoft Logo -->
-          <div class="ind-logo-item" style="display: flex; align-items: center; gap: 8px;">
-            <svg viewBox="0 0 23 23" style="height: 20px; width: 20px;">
-              <rect x="0" y="0" width="11" height="11" fill="#f25022"/>
-              <rect x="12" y="0" width="11" height="11" fill="#7fba00"/>
-              <rect x="0" y="12" width="11" height="11" fill="#00a4ef"/>
-              <rect x="12" y="12" width="11" height="11" fill="#ffb900"/>
-            </svg>
-            <span style="font-family: 'Segoe UI', 'Source Sans 3', sans-serif; font-weight: 600; font-size: 1.15rem; color: #737373; letter-spacing: -0.2px;">Microsoft</span>
-          </div>
-
-          <!-- AWS Logo -->
-          <div class="ind-logo-item" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 800; font-size: 1.2rem; color: #232f3e; line-height: 1;">aws</span>
-            <svg viewBox="0 0 50 15" style="width: 35px; height: 10px; fill: #ff9900; margin-top: -2px;">
-              <path d="M5 2 c 12 6, 28 6, 40 0 c 2 -1, 3 1, 1 2 c -12 7, -29 7, -42 0 c -2 -1, -1 -3, 1 -2 Z"/>
-              <path d="M43 4 l 4 4 l -1 -5 Z"/>
-            </svg>
-          </div>
-
-          <!-- Dell Logo -->
-          <div class="ind-logo-item" style="display: flex; align-items: center;">
-            <svg viewBox="0 0 50 50" style="height: 28px; width: 28px; fill: #007db8; margin-right: 5px;">
-              <path d="M25 0 C 11.2 0, 0 11.2, 0 25 C 0 38.8, 11.2 50, 25 50 C 38.8 50, 50 38.8, 50 25 C 50 11.2, 38.8 0, 25 0 Z M 25 4 C 36.6 4, 46 13.4, 46 25 C 46 36.6, 36.6 46, 25 46 C 13.4 46, 4 36.6, 4 25 C 4 13.4, 13.4 4, 25 4 Z"/>
-            </svg>
-            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 700; font-size: 1.3rem; color: #007db8; letter-spacing: -0.5px;">DELL</span>
-          </div>
-
-          <!-- Oracle Logo -->
-          <div class="ind-logo-item" style="display: flex; align-items: center;">
-            <span style="font-family: 'Source Sans 3', sans-serif; font-weight: 800; font-size: 1.25rem; color: #f80000; letter-spacing: 0.5px; text-transform: uppercase;">Oracle</span>
-          </div>
-        </div>
-      </div>
-      </div>
     </div>
-  </div>
+  </section>
 
   <!-- Partner Benefits Section -->
   <div class="partner-benefits-refined fade-in-up">

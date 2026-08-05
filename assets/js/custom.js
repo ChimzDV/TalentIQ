@@ -920,12 +920,32 @@ jQuery(document).ready(function ($) {
 		}
 
 		// Initial setup
-		var $initActiveTab = $tabs.filter('.active');
-		if ($initActiveTab.length) {
+		var urlParams = new URLSearchParams(window.location.search);
+		var industryParam = urlParams.get('industry');
+		var industryMap = {
+			'it': 0,
+			'healthcare': 1,
+			'engineering': 2,
+			'aerospace': 3,
+			'federal': 4
+		};
+		var targetIndex = 0;
+		if (industryParam && industryMap.hasOwnProperty(industryParam.toLowerCase())) {
+			targetIndex = industryMap[industryParam.toLowerCase()];
+		}
+
+		if (targetIndex !== 0) {
 			setTimeout(function() {
-				updateIndicator($initActiveTab);
-				animateCounters($panels.filter('.active'));
-			}, 100);
+				switchTab(targetIndex);
+			}, 150);
+		} else {
+			var $initActiveTab = $tabs.filter('.active');
+			if ($initActiveTab.length) {
+				setTimeout(function() {
+					updateIndicator($initActiveTab);
+					animateCounters($panels.filter('.active'));
+				}, 100);
+			}
 		}
 
 		$tabs.on('click', function (e) {

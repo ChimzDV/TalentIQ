@@ -141,9 +141,8 @@
         <div class="col-md-12">
           <div class="jobs-grid" id="jobs-container">
             
-            <!-- Job Card 1 -->
-            <div class="job-card-item" data-title="Administrative Assistant" data-type="full-time">
-              <div class="job-card">
+            <div class="job-card-item" data-title="Administrative Assistant" data-type="full-time" data-industry="federal">
+              <div class="job-card" data-industry="federal">
                 <div class="job-card-header">
                   <h3 class="job-card-title">Administrative Assistant</h3>
                   <span class="job-badge full-time">Full-Time</span>
@@ -170,9 +169,8 @@
               </div>
             </div>
 
-            <!-- Job Card 2 -->
-            <div class="job-card-item" data-title="Customer Service Representative" data-type="full-time">
-              <div class="job-card">
+            <div class="job-card-item" data-title="Customer Service Representative" data-type="full-time" data-industry="it">
+              <div class="job-card" data-industry="it">
                 <div class="job-card-header">
                   <h3 class="job-card-title">Customer Service Representative</h3>
                   <span class="job-badge full-time">Full-Time</span>
@@ -199,9 +197,8 @@
               </div>
             </div>
 
-            <!-- Job Card 3 -->
-            <div class="job-card-item" data-title="Warehouse Associate" data-type="part-time">
-              <div class="job-card">
+            <div class="job-card-item" data-title="Warehouse Associate" data-type="part-time" data-industry="engineering">
+              <div class="job-card" data-industry="engineering">
                 <div class="job-card-header">
                   <h3 class="job-card-title">Warehouse Associate</h3>
                   <span class="job-badge part-time">Part-Time</span>
@@ -228,9 +225,8 @@
               </div>
             </div>
 
-            <!-- Job Card 4 -->
-            <div class="job-card-item" data-title="Registered Nurse" data-type="full-time">
-              <div class="job-card">
+            <div class="job-card-item" data-title="Registered Nurse" data-type="full-time" data-industry="healthcare">
+              <div class="job-card" data-industry="healthcare">
                 <div class="job-card-header">
                   <h3 class="job-card-title">Registered Nurse</h3>
                   <span class="job-badge full-time">Full-Time</span>
@@ -257,9 +253,8 @@
               </div>
             </div>
 
-            <!-- Job Card 5 -->
-            <div class="job-card-item" data-title="Sales Executive" data-type="contract">
-              <div class="job-card">
+            <div class="job-card-item" data-title="Sales Executive" data-type="contract" data-industry="aerospace">
+              <div class="job-card" data-industry="aerospace">
                 <div class="job-card-header">
                   <h3 class="job-card-title">Sales Executive</h3>
                   <span class="job-badge contract">Contract</span>
@@ -286,9 +281,8 @@
               </div>
             </div>
 
-            <!-- Job Card 6 -->
-            <div class="job-card-item" data-title="HR Coordinator" data-type="full-time">
-              <div class="job-card">
+            <div class="job-card-item" data-title="HR Coordinator" data-type="full-time" data-industry="federal">
+              <div class="job-card" data-industry="federal">
                 <div class="job-card-header">
                   <h3 class="job-card-title">HR Coordinator</h3>
                   <span class="job-badge full-time">Full-Time</span>
@@ -435,19 +429,41 @@
       const searchInput = document.getElementById('job-search');
       const typeFilter = document.getElementById('type-filter');
       const jobItems = document.querySelectorAll('.job-card-item');
+      const jobsContainer = document.getElementById('jobs-container');
 
-      function filterJobs() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const industry = urlParams.get('industry');
+      const industryNames = {
+        'it': 'IT & Digital Staffing',
+        'healthcare': 'Healthcare Staffing',
+        'engineering': 'Engineering & Technical',
+        'aerospace': 'Aerospace & Defense',
+        'federal': 'Federal & Government'
+      };
+
+      // Set initial page heading if industry is selected
+      if (industry && industryNames[industry.toLowerCase()]) {
+        const selectedIndustryName = industryNames[industry.toLowerCase()];
+        const heroHeading = document.querySelector('.careers-hero h1');
+        if (heroHeading) {
+          heroHeading.textContent = selectedIndustryName + ' Careers';
+        }
+      }
+
+      function applyFilter() {
         const query = searchInput.value.toLowerCase();
         const type = typeFilter.value;
 
         jobItems.forEach(item => {
           const title = item.getAttribute('data-title').toLowerCase();
           const jobType = item.getAttribute('data-type');
-          
+          const jobIndustry = item.getAttribute('data-industry');
+
           const matchQuery = title.includes(query);
           const matchType = type === 'all' || jobType === type;
+          const matchIndustry = !industry || (jobIndustry && jobIndustry.toLowerCase() === industry.toLowerCase());
 
-          if (matchQuery && matchType) {
+          if (matchQuery && matchType && matchIndustry) {
             item.style.display = 'block';
           } else {
             item.style.display = 'none';
@@ -455,8 +471,24 @@
         });
       }
 
-      searchInput.addEventListener('input', filterJobs);
-      typeFilter.addEventListener('change', filterJobs);
+      function filterJobsWithTransition() {
+        if (!jobsContainer) {
+          applyFilter();
+          return;
+        }
+        jobsContainer.style.transition = 'opacity 200ms ease-in-out';
+        jobsContainer.style.opacity = '0';
+        setTimeout(function() {
+          applyFilter();
+          jobsContainer.style.opacity = '1';
+        }, 200);
+      }
+
+      // Initial filter on load
+      applyFilter();
+
+      searchInput.addEventListener('input', filterJobsWithTransition);
+      typeFilter.addEventListener('change', filterJobsWithTransition);
 
       // 2. Job Modal details population
       const modal = document.getElementById('jobDetailsModal');
