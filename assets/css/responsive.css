@@ -1033,6 +1033,10 @@
   .navbar-brand img {
     max-width: 140px !important;
   }
+
+  .navbar-logo-phrase {
+    font-size: 8.8px !important;
+  }
 }
 
 

@@ -167,7 +167,7 @@ em {
 /* Section Headings */
 .section-heading {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-top: 30px;
 }
 
@@ -561,7 +561,7 @@ header.background-header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: black !important;
+  background-color: rgba(0, 0, 0, 0.867) !important;
   box-shadow: 0 4px 25px rgba(6, 18, 36, 0.08);
 }
 
@@ -584,6 +584,27 @@ header.background-header .navbar {
   margin-right: 0;
   padding: 0;
   flex-shrink: 0;
+}
+
+.navbar-brand-home {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar-logo-phrase {
+  font-size: 8.8px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.1px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+}
+
+.navbar-logo-phrase .phrase-dot {
+  color: var(--accent-gold);
+  font-weight: 900;
+  margin: 0 4px;
 }
 
 .navbar-brand h2 {
@@ -1866,7 +1887,7 @@ footer {
 }
 
 .contact-hero {
-  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 60, 145, 0.400) 100%), url('../images/contact.webp');
+  background-image: linear-gradient(135deg, rgba(7, 22, 44, 0.92) 0%, rgba(11, 60, 145, 0.400) 100%), url('../images/contactus.webp');
   background-position: center 4%;
 }
 
@@ -1961,7 +1982,7 @@ footer {
 }
 
 .executive-leadership-heading {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .executive-leadership-label {
@@ -3186,7 +3207,7 @@ body.drawer-open {
   background: #fff;
   border: none;
   border-bottom: 1px solid var(--border-color);
-  padding: 12px 20px 12px 15px;
+  padding: 14px 12px 8px 15px;
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -3333,7 +3354,7 @@ body.drawer-open {
   height: 70px;
   border: 1px solid var(--accent-gold-light);
   border-radius: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   background: var(--bg-gold-tint);
 }
 
@@ -3355,7 +3376,7 @@ body.drawer-open {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary-navy);
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .panel-service-desc {
@@ -3363,7 +3384,7 @@ body.drawer-open {
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .panel-bullets-list {
@@ -3451,7 +3472,7 @@ body.drawer-open {
    22b. Industries We Serve — Premium 5-Column Grid
    -------------------------------------------------------------------------- */
 .industries-section-refined {
-  padding: 80px 0 70px;
+  padding: 20px 0 18px;
   background-color: var(--bg-light);
 }
 
@@ -3532,7 +3553,7 @@ body.drawer-open {
    22c. Why Partner With Us — Executive Feature Grid
    -------------------------------------------------------------------------- */
 .partner-benefits-refined {
-  padding: 50px 0 70px;
+  padding: 18px 0 40px;
   background-color: var(--bg-white);
 }
 
@@ -4907,7 +4928,7 @@ div[class*="section"]:nth-of-type(even)::after {
 
 .ind-navigation-tabs-container {
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
   position: relative;
 }
 
@@ -5130,21 +5151,21 @@ div[class*="section"]:nth-of-type(even)::after {
   font-size: 1.05rem;
   line-height: 1.6;
   color: #55637a;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 
 .ind-left-bullets-title {
   font-size: 1.1rem;
   font-weight: 700;
   color: #0F2345;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   display: block;
 }
 
 .ind-bullets-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 35px 0;
+  margin: 0 0 20px 0;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -5408,6 +5429,7 @@ div[class*="section"]:nth-of-type(even)::after {
   position: relative;
   z-index: 3;
 }
+
 /* Center Card: Process decorations */
 .recruitment-process-col {
   position: relative !important;
