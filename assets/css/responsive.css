@@ -530,11 +530,6 @@
   .executive-leader-card-body {
     padding: 32px 28px 28px;
   }
-
-  .reach-map-bg,
-  .reach-network-bg {
-    bottom: -12px;
-  }
 }
 
 /* Responsive Overrides (<768px) */
