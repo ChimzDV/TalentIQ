@@ -532,15 +532,33 @@
   <!-- Custom Modal: Success Submission Popup -->
   <div id="successModal" class="custom-modal">
     <div class="custom-modal-content text-center">
-      <span class="custom-modal-close" data-target="#successModal">&times;</span>
-      <i class="fa fa-check-circle"
-        style="font-size: 60px; color: var(--accent-color); margin-bottom: 20px; display: block;"></i>
+      <span class="custom-modal-close custom-modal-close-top" data-target="#successModal">&times;</span>
+      
+      <div class="success-icon-wrapper">
+        <div class="success-icon-glow"></div>
+        <div class="success-icon-circle">
+          <i class="fa fa-check"></i>
+        </div>
+        <span class="success-icon-dot dot-1"></span>
+        <span class="success-icon-dot dot-2"></span>
+        <span class="success-icon-dot dot-3"></span>
+      </div>
+
       <h3>Request Submitted Successfully!</h3>
-      <p style="font-size: 16px; margin-bottom: 25px;">Thank you for contacting TalentIQ Staffing LLC. Our recruitment
-        team will review your details and reach out within one business day to discuss your hiring or career needs.
+      <div class="success-heading-divider"></div>
+
+      <p class="success-body-text">
+        Thank you for contacting TalentIQ Staffing LLC. Our recruitment team will review your details and reach out within one business day to discuss your hiring or career needs.
       </p>
-      <button class="filled-button accent-button custom-modal-close" data-target="#successModal"
-        style="border: none; padding: 12px 40px; cursor: pointer; float: none;">Close Window</button>
+
+      <div class="success-footer-container">
+        <svg viewBox="0 0 720 40" preserveAspectRatio="none" class="success-footer-curve">
+          <path d="M0,40 Q360,0 720,40 L720,150 L0,150 Z" fill="#0E1B3D"></path>
+        </svg>
+        <div class="success-footer-content">
+          <button class="filled-button custom-modal-close success-close-btn" data-target="#successModal">Close Window</button>
+        </div>
+      </div>
     </div>
   </div>
 
