@@ -2,155 +2,7 @@ jQuery(document).ready(function ($) {
 
 	"use strict";
 
-	// --- TalentIQ Staffing LLC Interactive Chatbot Widget ---
-	function initChatbotWidget() {
-		var $toggleBtn = $('#chatbot-toggle-btn');
-		var $drawer = $('#chatbot-window');
-		var $closeBtn = $('#chatbot-close-btn');
 
-		if (!$toggleBtn.length || !$drawer.length) {
-			return;
-		}
-
-		var chatbotWelcomeSent = false;
-
-		function addChatbotMessage(text, sender, isWelcome) {
-			var msgClass = sender === 'bot' ? 'bot' : 'user';
-			if (isWelcome) {
-				msgClass += ' welcome-card';
-			}
-			var msgHtml = '<div class="chat-msg ' + msgClass + '">' + text + '</div>';
-			var $msgContainer = $('#chatbot-messages');
-			$msgContainer.append(msgHtml);
-			$msgContainer.scrollTop($msgContainer[0].scrollHeight);
-		}
-
-		function showTypingIndicator() {
-			var $msgContainer = $('#chatbot-messages');
-			if ($msgContainer.find('.typing-indicator').length === 0) {
-				var indicatorHtml = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
-				$msgContainer.append(indicatorHtml);
-				$msgContainer.scrollTop($msgContainer[0].scrollHeight);
-			}
-		}
-
-		function removeTypingIndicator() {
-			var $msgContainer = $('#chatbot-messages');
-			$msgContainer.find('.typing-indicator').remove();
-		}
-
-		function renderQuickReplies() {
-			var replies = [
-				{ text: "Request Talent", action: "request_staff" },
-				{ text: "View Services", action: "view_services" },
-				{ text: "Find a Job", action: "find_job" }
-			];
-			var $repliesContainer = $('#chatbot-quick-replies');
-			$repliesContainer.empty().addClass('has-replies');
-			replies.forEach(function (reply) {
-				var btnHtml = '<button type="button" class="quick-reply-btn" data-action="' + reply.action + '">' + reply.text + '</button>';
-				$repliesContainer.append(btnHtml);
-			});
-
-			var $msgContainer = $('#chatbot-messages');
-			setTimeout(function () {
-				$msgContainer.scrollTop($msgContainer[0].scrollHeight);
-			}, 100);
-		}
-
-		function handleBotResponse(action) {
-			var botReply = "";
-
-			if (action === "request_staff") {
-				botReply = "Excellent! You can request talent across IT & Digital, Healthcare, Engineering & Technical, Aerospace & Defense, or Federal & Government Staffing by visiting our <a href='contact.html'>Contact Us page</a> or filling out the form on our homepage.";
-			} else if (action === "view_services") {
-				botReply = "We specialize in 5 core staffing categories: IT & Digital, Healthcare, Engineering & Technical, Aerospace & Defense, and Federal & Government Staffing. Explore all services on our <a href='services.html'>Services page</a>.";
-			} else if (action === "find_job") {
-				botReply = "We are always looking for outstanding talent! You can explore career opportunities by visiting our <a href='contact.html'>Contact Us page</a> and sharing your resume or details with us.";
-			} else if (action === "contact_us") {
-				botReply = "Feel free to reach out on our <a href='contact.html'>Contact page</a> or email us at <a href='mailto:info@talentiqstaffing.com'>info@talentiqstaffing.com</a>.";
-			} else {
-				botReply = "Thank you for your message! A TalentIQ Staffing LLC representative will contact you shortly, or you can use the quick links below to explore our services.";
-			}
-
-			showTypingIndicator();
-
-			setTimeout(function () {
-				removeTypingIndicator();
-				addChatbotMessage(botReply, 'bot');
-				renderQuickReplies();
-			}, 1000);
-		}
-
-		function openChatbot() {
-			$drawer.addClass('active');
-
-			if (!chatbotWelcomeSent) {
-				chatbotWelcomeSent = true;
-				showTypingIndicator();
-				setTimeout(function () {
-					removeTypingIndicator();
-					addChatbotMessage("Hello! Whether you're looking to hire top professionals or find your next opportunity, how can TalentIQ Staffing LLC help you today?", "bot", true);
-					renderQuickReplies();
-				}, 800);
-			}
-		}
-
-		function closeChatbot() {
-			$drawer.removeClass('active');
-		}
-
-		$toggleBtn.off('click.chatbot').on('click.chatbot', function (e) {
-			e.preventDefault();
-			e.stopPropagation();
-
-			if ($drawer.hasClass('active')) {
-				closeChatbot();
-			} else {
-				openChatbot();
-			}
-		});
-
-		$closeBtn.off('click.chatbot').on('click.chatbot', function (e) {
-			e.preventDefault();
-			e.stopPropagation();
-			closeChatbot();
-		});
-
-		$('#chatbot-quick-replies').off('click.chatbot').on('click.chatbot', '.quick-reply-btn', function (e) {
-			e.preventDefault();
-			var action = $(this).attr('data-action');
-			var text = $(this).text();
-			addChatbotMessage(text, 'user');
-			$('#chatbot-quick-replies').empty().removeClass('has-replies');
-			handleBotResponse(action);
-		});
-
-		function submitChatInput() {
-			var $input = $('#chatbot-text-input');
-			var text = $input.val().trim();
-			if (text) {
-				addChatbotMessage(text, 'user');
-				$input.val('');
-				$('#chatbot-quick-replies').empty().removeClass('has-replies');
-				handleBotResponse('custom');
-			}
-		}
-
-		$('#chatbot-send-btn').off('click.chatbot').on('click.chatbot', function (e) {
-			e.preventDefault();
-			submitChatInput();
-		});
-
-		$('#chatbot-text-input').off('keypress.chatbot').on('keypress.chatbot', function (e) {
-			if (e.which === 13) {
-				e.preventDefault();
-				submitChatInput();
-			}
-		});
-	}
-
-	initChatbotWidget();
 
 	if ($("#tabs").length && $.fn.tabs) {
 		$("#tabs").tabs();
@@ -364,9 +216,94 @@ jQuery(document).ready(function ($) {
 			}
 		}
 
-		this.reset();
-		$('#successModal').addClass('active');
-		$('body').css('overflow', 'hidden');
+		var formId = $form.attr('id');
+		if (formId === 'contact' || formId === 'request-talent-form') {
+			var subject = '';
+			var message = '';
+
+			if (formId === 'contact') {
+				var company = $form.find('#company').val() || '';
+				var messageVal = $form.find('#message').val() || '';
+				subject = 'Contact Form Submission' + (company ? ' from ' + company : '');
+				message = messageVal + (company ? '\n\nCompany: ' + company : '');
+			} else if (formId === 'request-talent-form') {
+				var company = $form.find('#company').val() || '';
+				var industry = $form.find('#industry').val() || '';
+				var positionsHiring = $form.find('#positions_hiring').val() || '';
+				var numberPositions = $form.find('#number_positions').val() || '';
+				var employmentType = $form.find('#employment_type').val() || '';
+				var location = $form.find('#location').val() || '';
+				var startDate = $form.find('#start_date').val() || '';
+				var jobDescription = $form.find('#job_description').val() || '';
+				var additionalRequirements = $form.find('#additional_requirements').val() || '';
+
+				subject = 'Talent Acquisition Request - ' + positionsHiring + (company ? ' at ' + company : '');
+				message = 'Company: ' + company + '\n' +
+						  'Industry: ' + industry + '\n' +
+						  'Position(s) Hiring For: ' + positionsHiring + '\n' +
+						  'Number of Positions: ' + numberPositions + '\n' +
+						  'Employment Type: ' + employmentType + '\n' +
+						  'Location: ' + location + '\n' +
+						  'Preferred Start Date: ' + startDate + '\n\n' +
+						  'Job Description / Requirements:\n' + jobDescription + '\n\n' +
+						  'Additional Requirements:\n' + additionalRequirements;
+			}
+
+			var $submitBtn = $form.find('button[type="submit"]');
+			var originalBtnText = $submitBtn.text();
+			$submitBtn.prop('disabled', true).text('Submitting...');
+
+			console.log('Sending form data to Apps Script:', {
+				name: name,
+				email: email,
+				phone: phone,
+				subject: subject,
+				message: message
+			});
+
+			fetch('https://script.google.com/macros/s/AKfycbzxg0uBUa_seoALRoi6E8OUofAxePZHrnmJWJ9jS4XRxJLorpLRtUjEhPJgAM8tUaBg/exec', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'text/plain;charset=utf-8'
+				},
+				body: JSON.stringify({
+					name: name,
+					email: email,
+					phone: phone,
+					subject: subject,
+					message: message
+				})
+			})
+			.then(function (response) {
+				console.log('Apps Script raw response status:', response.status);
+				if (!response.ok) {
+					throw new Error('Network response was not ok (status: ' + response.status + ')');
+				}
+				return response.json();
+			})
+			.then(function (data) {
+				console.log('Apps Script parsed JSON response:', data);
+				if (data && data.success === true) {
+					$form[0].reset();
+					$('#successModal').addClass('active');
+					$('body').css('overflow', 'hidden');
+				} else {
+					var errMsg = data && data.error ? data.error : 'Submission not successful';
+					throw new Error(errMsg);
+				}
+			})
+			.catch(function (error) {
+				console.error('Error submitting form:', error);
+				alert("There was an error submitting your request. Please try again.");
+			})
+			.finally(function () {
+				$submitBtn.prop('disabled', false).text(originalBtnText);
+			});
+		} else {
+			this.reset();
+			$('#successModal').addClass('active');
+			$('body').css('overflow', 'hidden');
+		}
 	});
 
 	// --- Executive Profile Drawer Logic ---

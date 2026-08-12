@@ -1,0 +1,4 @@
+*backend for all forms linked to email and drive
+*chatbot full functionality
+*admin panel for jobs adding, editing and removing jobs. Only accessible via link an dshould not be present in any to the front end
+*make the address in the footer open in google maps app or maps on iOS

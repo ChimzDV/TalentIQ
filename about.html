@@ -503,7 +503,7 @@
           <ul class="contact-list">
             <li>
               <i class="fa fa-map-marker"></i>
-              <span>450 Lexington Ave, New York, NY 10017</span>
+              <a href="https://maps.google.com/?q=450+Lexington+Ave,+New+York,+NY+10017" target="_blank" rel="noopener noreferrer">450 Lexington Ave, New York, NY 10017</a>
             </li>
             <li>
               <i class="fa fa-phone"></i>
@@ -562,40 +562,6 @@
     </div>
   </div>
 
-  <!-- Chatbot Widget -->
-  <div class="chatbot-widget">
-    <div id="chatbot-toggle-btn" class="chatbot-toggle">
-      <i class="fa fa-comments"></i>
-    </div>
-    <div id="chatbot-window" class="chatbot-drawer">
-      <div class="chatbot-header">
-        <div class="chatbot-header-logo-container">
-          <img src="assets/images/logo.webp" class="chatbot-header-logo" alt="TalentIQ Logo">
-          <div class="chatbot-header-title-container">
-            <span class="chatbot-header-title">TalentIQ Assistant</span>
-            <div class="chatbot-status-indicator">
-              <span class="status-dot"></span>
-              <span class="status-text">Online</span>
-            </div>
-          </div>
-        </div>
-        <button id="chatbot-close-btn" class="chatbot-close">&times;</button>
-      </div>
-      <div id="chatbot-messages" class="chatbot-messages">
-        <!-- Messages will be dynamically rendered here -->
-      </div>
-      <div id="chatbot-quick-replies" class="chatbot-quick-replies">
-        <!-- Quick replies will be dynamically rendered here -->
-      </div>
-      <div class="chatbot-input-area">
-        <div class="chatbot-input-wrapper">
-          <i class="fa fa-keyboard-o chatbot-input-icon"></i>
-          <input type="text" id="chatbot-text-input" placeholder="Type a message..." autocomplete="off">
-        </div>
-        <button id="chatbot-send-btn" class="chatbot-send-btn"><i class="fa fa-paper-plane"></i></button>
-      </div>
-    </div>
-  </div>
 
   <!-- Premium Executive Profile Drawer commented out for later use
   <div id="executive-drawer-backdrop" class="executive-drawer-backdrop" aria-hidden="true"></div>
@@ -652,6 +618,19 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tawk.to Live Chat -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6a795301b080171d470f0a8f/1jvkuofkg';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
 
   <!-- Additional Scripts -->
   <script src="assets/js/custom.js" defer></script>

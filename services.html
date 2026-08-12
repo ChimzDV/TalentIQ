@@ -221,7 +221,7 @@
                   </ul>
                 </div>
                 <div class="panel-right-image">
-                  <img src="assets/images/content1.webp" alt="Permanent Placement Staffing" class="panel-img">
+                  <img src="assets/images/permanent.webp" alt="Permanent Placement Staffing" class="panel-img">
                 </div>
               </div>
             </div>
@@ -323,7 +323,7 @@
                   </ul>
                 </div>
                 <div class="panel-right-image">
-                  <img src="assets/images/slide_02.jpg" alt="IT & Digital Staffing" class="panel-img">
+                  <img src="assets/images/conf.webp" alt="IT & Digital Staffing" class="panel-img">
                 </div>
               </div>
             </div>
@@ -349,7 +349,7 @@
                   </ul>
                 </div>
                 <div class="panel-right-image">
-                  <img src="assets/images/slide_03.jpg" alt="Healthcare Staffing" class="panel-img">
+                  <img src="assets/images/service_01.webp" alt="Healthcare Staffing" class="panel-img">
                 </div>
               </div>
             </div>
@@ -544,7 +544,7 @@
 
             <div class="ind-panel-right">
               <div class="ind-right-image-wrap">
-                <img src="assets/images/single_service_01.jpg" alt="Healthcare Staffing" class="ind-right-img">
+                <img src="assets/images/service_01.webp" alt="Healthcare Staffing" class="ind-right-img">
                 <div class="ind-stats-overlay">
                   <div class="ind-stat-card">
                     <i class="fa fa-users ind-stat-icon"></i>
@@ -623,7 +623,7 @@
 
             <div class="ind-panel-right">
               <div class="ind-right-image-wrap">
-                <img src="assets/images/slide_02.jpg" alt="Engineering & Technical" class="ind-right-img">
+                <img src="assets/images/conf.webp" alt="Engineering & Technical" class="ind-right-img">
                 <div class="ind-stats-overlay">
                   <div class="ind-stat-card">
                     <i class="fa fa-users ind-stat-icon"></i>
@@ -922,7 +922,8 @@
           <ul class="contact-list">
             <li>
               <i class="fa fa-map-marker"></i>
-              <span>450 Lexington Ave, New York, NY 10017</span>
+              <a href="https://maps.google.com/?q=450+Lexington+Ave,+New+York,+NY+10017" target="_blank"
+                rel="noopener noreferrer">450 Lexington Ave, New York, NY 10017</a>
             </li>
             <li>
               <i class="fa fa-phone"></i>
@@ -952,7 +953,7 @@
   <div id="successModal" class="custom-modal">
     <div class="custom-modal-content text-center">
       <span class="custom-modal-close custom-modal-close-top" data-target="#successModal">&times;</span>
-      
+
       <div class="success-icon-wrapper">
         <div class="success-icon-glow"></div>
         <div class="success-icon-circle">
@@ -967,7 +968,8 @@
       <div class="success-heading-divider"></div>
 
       <p class="success-body-text">
-        Thank you for contacting TalentIQ Staffing LLC. Our recruitment team will review your details and reach out within one business day to discuss your hiring or career needs.
+        Thank you for contacting TalentIQ Staffing LLC. Our recruitment team will review your details and reach out
+        within one business day to discuss your hiring or career needs.
       </p>
 
       <div class="success-footer-container">
@@ -975,51 +977,30 @@
           <path d="M0,40 Q360,0 720,40 L720,150 L0,150 Z" fill="#0E1B3D"></path>
         </svg>
         <div class="success-footer-content">
-          <button class="filled-button custom-modal-close success-close-btn" data-target="#successModal">Close Window</button>
+          <button class="filled-button custom-modal-close success-close-btn" data-target="#successModal">Close
+            Window</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Chatbot Widget -->
-  <div class="chatbot-widget">
-    <div id="chatbot-toggle-btn" class="chatbot-toggle">
-      <i class="fa fa-comments"></i>
-    </div>
-    <div id="chatbot-window" class="chatbot-drawer">
-      <div class="chatbot-header">
-        <div class="chatbot-header-logo-container">
-          <img src="assets/images/logo.webp" class="chatbot-header-logo" alt="TalentIQ Logo">
-          <div class="chatbot-header-title-container">
-            <span class="chatbot-header-title">TalentIQ Assistant</span>
-            <div class="chatbot-status-indicator">
-              <span class="status-dot"></span>
-              <span class="status-text">Online</span>
-            </div>
-          </div>
-        </div>
-        <button id="chatbot-close-btn" class="chatbot-close" aria-label="Close Chatbot">&times;</button>
-      </div>
-      <div id="chatbot-messages" class="chatbot-messages">
-        <!-- Messages will be dynamically rendered here -->
-      </div>
-      <div id="chatbot-quick-replies" class="chatbot-quick-replies">
-        <!-- Quick replies will be dynamically rendered here -->
-      </div>
-      <div class="chatbot-input-area">
-        <div class="chatbot-input-wrapper">
-          <i class="fa fa-keyboard-o chatbot-input-icon"></i>
-          <input type="text" id="chatbot-text-input" placeholder="Type a message..." autocomplete="off">
-        </div>
-        <button id="chatbot-send-btn" class="chatbot-send-btn" aria-label="Send Message"><i
-            class="fa fa-paper-plane"></i></button>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tawk.to Live Chat -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6a795301b080171d470f0a8f/1jvkuofkg';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
 
   <!-- Additional Scripts -->
   <script src="assets/js/custom.js" defer></script>
