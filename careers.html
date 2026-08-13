@@ -199,7 +199,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p>Copyright &copy; 2026 TalentIQ Staffing LLC. All Rights Reserved.</p>
+          <p>Copyright &copy; 2026 TalentIQ Staffing LLC. All Rights Reserved. | <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
       </div>
     </div>
@@ -234,6 +234,7 @@
   </script>
 
   <!-- Additional Scripts -->
+  <script src="assets/js/config.js"></script>
   <script src="assets/js/custom.js" defer></script>
   <script src="assets/js/slick.js" defer></script>
   <script src="assets/js/accordions.js" defer></script>
@@ -305,7 +306,8 @@
       // Fetch and Render Jobs from Backend
       async function loadJobs() {
         try {
-          const apiUrl = window.location.origin.includes('localhost:3000') || window.location.origin.includes('127.0.0.1:3000') ? '/api/jobs' : 'http://localhost:3000/api/jobs';
+          const baseUrl = window.API_BASE_URL || 'http://localhost:3000';
+          const apiUrl = `${baseUrl}/api/jobs`;
           const res = await fetch(apiUrl);
           if (!res.ok) throw new Error('Failed to fetch jobs');
           const jobs = await res.json();

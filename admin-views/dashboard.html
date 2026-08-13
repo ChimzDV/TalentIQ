@@ -588,15 +588,17 @@
     </div>
   </div>
 
+  <script src="../assets/js/config.js"></script>
   <script>
     let allJobs = [];
     const modal = document.getElementById('job-modal');
     const jobForm = document.getElementById('job-form');
     const modalTitle = document.getElementById('modal-title');
+    const getBaseUrl = () => window.API_BASE_URL || 'http://localhost:3000';
 
     async function fetchJobs() {
       try {
-        const res = await fetch('/api/admin/jobs');
+        const res = await fetch(`${getBaseUrl()}/api/admin/jobs`);
         if (!res.ok) throw new Error('Unauthenticated');
         allJobs = await res.json();
         renderStats();
@@ -689,7 +691,7 @@
     async function deleteJob(id) {
       if (confirm('Are you absolutely sure you want to delete this job listing? This action cannot be undone.')) {
         try {
-          const res = await fetch(`/api/admin/jobs/${id}`, { method: 'DELETE' });
+          const res = await fetch(`${getBaseUrl()}/api/admin/jobs/${id}`, { method: 'DELETE' });
           if (res.ok) {
             fetchJobs();
           } else {
@@ -707,7 +709,7 @@
 
       const updatedJob = { ...job, status: currentStatus === 'published' ? 'draft' : 'published' };
       try {
-        const res = await fetch(`/api/admin/jobs/${id}`, {
+        const res = await fetch(`${getBaseUrl()}/api/admin/jobs/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(updatedJob)
@@ -742,7 +744,7 @@
         benefits: document.getElementById('f-benefits').value
       };
 
-      const url = id ? `/api/admin/jobs/${id}` : '/api/admin/jobs';
+      const url = id ? `${getBaseUrl()}/api/admin/jobs/${id}` : `${getBaseUrl()}/api/admin/jobs`;
       const method = id ? 'PUT' : 'POST';
 
       try {

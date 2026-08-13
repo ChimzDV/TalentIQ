@@ -299,6 +299,102 @@ jQuery(document).ready(function ($) {
 			.finally(function () {
 				$submitBtn.prop('disabled', false).text(originalBtnText);
 			});
+		} else if (formId === 'candidate-apply-form') {
+			var locationVal = $form.find('#location').val() || '';
+			var desiredPosition = $form.find('#desired_position').val() || '';
+			var experience = $form.find('#experience').val() || '';
+			var linkedin = $form.find('#linkedin').val() || '';
+			var workAuth = $form.find('#work_authorization').val() || '';
+			var startDateVal = $form.find('#start_date').val() || '';
+			var coverLetter = $form.find('#cover_letter').val() || '';
+			var fileInput = $form.find('#resume')[0];
+
+			if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+				alert("Please upload your resume.");
+				return;
+			}
+
+			var file = fileInput.files[0];
+			var maxFileSizeMB = 10;
+			var maxFileSizeBytes = maxFileSizeMB * 1024 * 1024;
+
+			if (file.size > maxFileSizeBytes) {
+				alert("File size exceeds the limit of " + maxFileSizeMB + " MB. Please choose a smaller file.");
+				return;
+			}
+
+			var allowedExtensions = ['pdf', 'doc', 'docx'];
+			var fileExt = file.name.split('.').pop().toLowerCase();
+			if (allowedExtensions.indexOf(fileExt) === -1) {
+				alert("Invalid file type. Please upload a PDF, DOC, or DOCX file.");
+				return;
+			}
+
+			var $submitBtn = $form.find('button[type="submit"]');
+			var originalBtnText = $submitBtn.text();
+			$submitBtn.prop('disabled', true).text('Submitting...');
+
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				var base64Data = e.target.result.split(',')[1];
+				var payload = {
+					form_type: 'candidate',
+					name: name,
+					email: email,
+					phone: phone,
+					location: locationVal,
+					desired_position: desiredPosition,
+					experience: experience,
+					linkedin: linkedin,
+					work_authorization: workAuth,
+					start_date: startDateVal,
+					cover_letter: coverLetter,
+					file: {
+						base64: base64Data,
+						filename: file.name,
+						mimeType: file.type || 'application/octet-stream'
+					}
+				};
+
+				fetch('https://script.google.com/macros/s/AKfycbzxg0uBUa_seoALRoi6E8OUofAxePZHrnmJWJ9jS4XRxJLorpLRtUjEhPJgAM8tUaBg/exec', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'text/plain;charset=utf-8'
+					},
+					body: JSON.stringify(payload)
+				})
+				.then(function (response) {
+					if (!response.ok) {
+						throw new Error('Network response was not ok (status: ' + response.status + ')');
+					}
+					return response.json();
+				})
+				.then(function (data) {
+					if (data && data.success === true) {
+						$form[0].reset();
+						$('#successModal').addClass('active');
+						$('body').css('overflow', 'hidden');
+					} else {
+						var errMsg = data && data.error ? data.error : 'Submission not successful';
+						throw new Error(errMsg);
+					}
+				})
+				.catch(function (error) {
+					console.error('Error submitting application:', error);
+					alert("There was an error submitting your application: " + (error.message || "Please try again."));
+				})
+				.finally(function () {
+					$submitBtn.prop('disabled', false).text(originalBtnText);
+				});
+			};
+
+			reader.onerror = function (err) {
+				console.error('Error reading file:', err);
+				alert("Could not read the uploaded resume file. Please try again.");
+				$submitBtn.prop('disabled', false).text(originalBtnText);
+			};
+
+			reader.readAsDataURL(file);
 		} else {
 			this.reset();
 			$('#successModal').addClass('active');

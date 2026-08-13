@@ -161,6 +161,7 @@
     </form>
   </div>
 
+  <script src="../assets/js/config.js"></script>
   <script>
     document.getElementById('login-form').addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -171,7 +172,8 @@
       errorBox.style.display = 'none';
 
       try {
-        const response = await fetch('/api/admin/login', {
+        const baseUrl = window.API_BASE_URL || 'http://localhost:3000';
+        const response = await fetch(`${baseUrl}/api/admin/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
