@@ -172,7 +172,7 @@
       errorBox.style.display = 'none';
 
       try {
-        const baseUrl = window.API_BASE_URL || 'http://localhost:3000';
+        const baseUrl = window.API_BASE_URL || 'http://localhost:5000';
         const response = await fetch(`${baseUrl}/api/admin/login`, {
           method: 'POST',
           headers: {

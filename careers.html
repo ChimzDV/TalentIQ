@@ -306,7 +306,7 @@
       // Fetch and Render Jobs from Backend
       async function loadJobs() {
         try {
-          const baseUrl = window.API_BASE_URL || 'http://localhost:3000';
+          const baseUrl = window.API_BASE_URL || 'http://localhost:5000';
           const apiUrl = `${baseUrl}/api/jobs`;
           const res = await fetch(apiUrl);
           if (!res.ok) throw new Error('Failed to fetch jobs');

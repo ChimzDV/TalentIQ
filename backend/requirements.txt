@@ -1,0 +1,14 @@
+# TalentIQ Staffing — Flask Backend Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core web framework
+Flask>=3.0.0
+
+# Cross-Origin Resource Sharing support
+Flask-Cors>=4.0.0
+
+# Password hashing (bcrypt hashes are cross-compatible with Node.js bcryptjs)
+bcrypt>=4.0.0
+
+# Environment variable loading from .env file
+python-dotenv>=1.0.0
